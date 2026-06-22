@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment / secrets
+.env
+.env.local
+*.local.js
+
+# Build output
+Frontend/dist/
+dist/
+
+# Runtime / generated data
+Backend/results.json
+Backend/pixazo_config.backup.json
+Backend/model_names.json
+Backend/scraper/model_names.json
+
+# Scraper debug artifacts
+debug_*.png
+
+# OS / editor
+.DS_Store
+.agents/
+*.log

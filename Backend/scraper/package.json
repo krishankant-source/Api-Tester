@@ -1,0 +1,14 @@
+{
+  "name": "pixazo-scraper",
+  "version": "5.0.0",
+  "description": "Scrapes pixazo.ai/models for model names, endpoints, headers, request bodies, and per-parameter allowed values.",
+  "main": "scrapper.js",
+  "scripts": {
+    "start": "node scrapper.js",
+    "install-browsers": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0"
+  },
+  "type": "commonjs"
+}
