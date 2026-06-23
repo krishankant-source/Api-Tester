@@ -6,6 +6,7 @@ import HistoryPanel from './components/HistoryPanel.jsx'
 import AllModelsPanel from './components/AllModelsPanel.jsx'
 import RequestEditor from './components/RequestEditor.jsx'
 import ScraperModal from './components/ScraperModal.jsx'
+import ValidationPanel from './components/ValidationPanel.jsx'
 
 const TABS = ['Test', 'History']
 
@@ -36,6 +37,13 @@ export default function App() {
 
   const [history, setHistory] = useState([])
   const [scrapeOpen, setScrapeOpen] = useState(false)
+
+  // Validation mode (no-cost health probing)
+  const [validationMode, setValidationMode] = useState(false)
+  const [valResults, setValResults] = useState([])
+  const [valExpected, setValExpected] = useState(null)
+  const [valModelsProgress, setValModelsProgress] = useState(null) // { done, total } for validate-all
+
   const esRef = useRef(null)
 
   // ── Loaders ──────────────────────────────────────────────────────────────
@@ -113,17 +121,19 @@ export default function App() {
   }
 
   function attachSingleHandlers(es) {
+    let settled = false
     es.addEventListener('progress', e => {
       const { label, message } = JSON.parse(e.data)
       setProgressByLabel(prev => ({ ...prev, [label]: [...(prev[label] || []), message] }))
     })
     es.addEventListener('result', e => setResults(prev => [...prev, JSON.parse(e.data)]))
-    es.addEventListener('done', e => { setCurrentRun(JSON.parse(e.data)); setTestState('done'); es.close() })
+    es.addEventListener('done', e => { settled = true; setCurrentRun(JSON.parse(e.data)); setTestState('done'); es.close() })
     es.addEventListener('error', e => {
+      settled = true
       if (e.data) setErrorMsg(JSON.parse(e.data).message)
       setTestState('error'); es.close()
     })
-    es.onerror = () => { setTestState('error'); setErrorMsg('Connection to server lost'); es.close() }
+    es.onerror = () => { if (settled) return; setTestState('error'); setErrorMsg('Connection to server lost'); es.close() }
   }
 
   // ── Start single model / modality test ───────────────────────────────────
@@ -131,6 +141,7 @@ export default function App() {
   async function startTest() {
     if (!selected || testState === 'running') return
     resetSingleState()
+    resetValState()
     setTestMode('single')
     setTestState('running')
     setShowEditor(false)
@@ -162,10 +173,12 @@ export default function App() {
     if (testState === 'running') return
     resetAllState()
     resetSingleState()
+    resetValState()
     setTestMode('all')
     setTestState('running')
     setShowEditor(false)
 
+    let settled = false
     const es = openSSE('/api/test-all/stream')
 
     es.addEventListener('models', e => {
@@ -199,13 +212,60 @@ export default function App() {
       const { model, error } = JSON.parse(e.data)
       setModelStates(prev => ({ ...prev, [model]: { ...prev[model], status: 'error', error } }))
     })
-    es.addEventListener('done', e => { setCurrentRun(JSON.parse(e.data)); setTestState('done'); es.close() })
+    es.addEventListener('done', e => { settled = true; setCurrentRun(JSON.parse(e.data)); setTestState('done'); es.close() })
     es.addEventListener('error', e => {
+      settled = true
       if (e.data) setErrorMsg(JSON.parse(e.data).message)
       setTestState('error'); es.close()
     })
-    es.onerror = () => { setTestState('error'); setErrorMsg('Connection to server lost'); es.close() }
+    es.onerror = () => { if (settled) return; setTestState('error'); setErrorMsg('Connection to server lost'); es.close() }
   }
+
+  // ── Validation mode (no-cost probes) ──────────────────────────────────────
+
+  function resetValState() {
+    setValResults([])
+    setValExpected(null)
+    setValModelsProgress(null)
+  }
+
+  function startValidate() {
+    if (!selected || testState === 'running') return
+    resetValState(); resetSingleState(); resetAllState()
+    setTestMode('validate'); setTestState('running'); setShowEditor(false)
+
+    const params = new URLSearchParams()
+    if (selectedModality !== '') params.set('modalityIdx', selectedModality)
+    const qs = params.toString()
+    let settled = false
+    const es = openSSE(`/api/validate/${encodeURIComponent(selected)}/stream${qs ? '?' + qs : ''}`)
+
+    es.addEventListener('start', e => setValExpected(JSON.parse(e.data).count))
+    es.addEventListener('result', e => setValResults(prev => [...prev, JSON.parse(e.data)]))
+    es.addEventListener('done', () => { settled = true; setTestState('done'); es.close() })
+    es.addEventListener('error', e => { settled = true; if (e.data) setErrorMsg(JSON.parse(e.data).message); setTestState('error'); es.close() })
+    es.onerror = () => { if (settled) return; setTestState('error'); setErrorMsg('Connection to server lost'); es.close() }
+  }
+
+  function startValidateAll() {
+    if (testState === 'running') return
+    resetValState(); resetSingleState(); resetAllState()
+    setTestMode('validate-all'); setTestState('running'); setShowEditor(false)
+
+    let settled = false
+    const es = openSSE('/api/validate-all/stream')
+    es.addEventListener('models', e => setValModelsProgress({ done: 0, total: JSON.parse(e.data).total }))
+    es.addEventListener('result', e => setValResults(prev => [...prev, JSON.parse(e.data)]))
+    es.addEventListener('model-done', () => setValModelsProgress(prev => prev ? { ...prev, done: prev.done + 1 } : prev))
+    es.addEventListener('model-error', () => setValModelsProgress(prev => prev ? { ...prev, done: prev.done + 1 } : prev))
+    es.addEventListener('done', () => { settled = true; setTestState('done'); es.close() })
+    es.addEventListener('error', e => { settled = true; if (e.data) setErrorMsg(JSON.parse(e.data).message); setTestState('error'); es.close() })
+    es.onerror = () => { if (settled) return; setTestState('error'); setErrorMsg('Connection to server lost'); es.close() }
+  }
+
+  // Route the action buttons to test or validate depending on the toggle
+  function handleStart() { validationMode ? startValidate() : startTest() }
+  function handleTestAll() { validationMode ? startValidateAll() : startTestAll() }
 
   // ── Derived ───────────────────────────────────────────────────────────────
 
@@ -256,12 +316,14 @@ export default function App() {
                 modalities={modalities}
                 selectedModality={selectedModality}
                 onModalityChange={setSelectedModality}
-                onStart={startTest}
-                onTestAll={startTestAll}
+                onStart={handleStart}
+                onTestAll={handleTestAll}
                 running={running}
                 showEditor={showEditor}
                 onToggleEditor={() => setShowEditor(v => !v)}
                 hasOverrides={hasOverrides}
+                validationMode={validationMode}
+                onToggleValidation={() => setValidationMode(v => !v)}
               />
               {selected && modalities.length > 0 && selectedModality !== '' && (
                 <p className="text-xs text-slate-500">
@@ -327,11 +389,26 @@ export default function App() {
               <AllModelsPanel models={allModels} modelStates={modelStates} />
             )}
 
+            {/* Validation results (no-cost) */}
+            {(testMode === 'validate' || testMode === 'validate-all') && (
+              <ValidationPanel
+                results={valResults}
+                expected={testMode === 'validate' ? valExpected : null}
+                running={running}
+                grouped={testMode === 'validate-all'}
+                modelsProgress={testMode === 'validate-all' ? valModelsProgress : null}
+              />
+            )}
+
             {/* Idle */}
             {testMode === null && (
               <div className="text-center py-16 text-slate-600">
-                <p className="text-5xl mb-4">⚡</p>
-                <p className="text-sm">Pick a model and hit <span className="text-slate-500">Test Model</span>, or hit <span className="text-slate-500">Test All Models</span> to run everything</p>
+                <p className="text-5xl mb-4">{validationMode ? '🛡️' : '⚡'}</p>
+                {validationMode ? (
+                  <p className="text-sm">Validation mode is <span className="text-emerald-400">ON</span> — hit <span className="text-slate-400">Validate Model</span> / <span className="text-slate-400">Validate All</span> to health-check endpoints with <span className="text-emerald-400">no credits used</span></p>
+                ) : (
+                  <p className="text-sm">Pick a model and hit <span className="text-slate-500">Test Model</span>, or hit <span className="text-slate-500">Test All Models</span> to run everything</p>
+                )}
               </div>
             )}
           </>

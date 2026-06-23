@@ -8,6 +8,7 @@
  *   node index.js happy-horse
  */
 
+import 'dotenv/config'; // load .env into process.env before anything reads it
 import readline from 'readline';
 import { listModels, getModalities } from './configLoader.js';
 import { runModel } from './Runner.js';

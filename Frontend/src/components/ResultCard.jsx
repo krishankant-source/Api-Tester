@@ -99,22 +99,26 @@ export default function ResultCard({ result }) {
       )}
 
       {/* Footer */}
-      <div className="px-4 py-2 border-t border-slate-800 flex items-center gap-3 flex-wrap">
-        {result.elapsedMs && (
-          <span className="text-xs text-slate-500">{(result.elapsedMs / 1000).toFixed(1)}s</span>
+      <div className="px-4 py-2 border-t border-slate-800">
+        <div className="flex items-center gap-3 flex-wrap">
+          {result.elapsedMs && (
+            <span className="text-xs text-slate-500">{(result.elapsedMs / 1000).toFixed(1)}s</span>
+          )}
+          {result.requestId && (
+            <span className="text-xs text-slate-600 font-mono truncate">id: {result.requestId}</span>
+          )}
+        </div>
+        {result.endpoint && (
+          <a
+            href={result.endpoint}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-1.5 block text-xs font-mono text-slate-500 hover:text-slate-300 whitespace-nowrap overflow-x-auto"
+            title={result.endpoint}
+          >
+            {result.endpoint}
+          </a>
         )}
-        {result.requestId && (
-          <span className="text-xs text-slate-600 font-mono truncate">id: {result.requestId}</span>
-        )}
-        <a
-          href={result.endpoint}
-          target="_blank"
-          rel="noreferrer"
-          className="text-xs text-slate-600 hover:text-slate-400 truncate ml-auto"
-          title={result.endpoint}
-        >
-          {result.endpoint?.replace('https://gateway.pixazo.ai/', '')}
-        </a>
       </div>
     </div>
   )

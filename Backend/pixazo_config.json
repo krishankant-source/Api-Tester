@@ -4808,7 +4808,7 @@
               "Ocp-Apim-Subscription-Key": "process.env.subscription_key"
             },
             "exampleRequest": {
-              "video_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/Video.mp4",
+              "video_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/v1/kling-video-v3-turbo-pro-text-to-video_019edac0-c975-705c-e20f-ce1f6479b8ae7/output.mp4",
               "output_container_and_codec": "webm_vp9",
               "preserve_audio": true,
               "background_color": "Transparent"
@@ -5360,34 +5360,6 @@
         ]
       },
       {
-        "name": "GLM Image check status - GLM Image",
-        "modalities": [
-          {
-            "name": "GLM Image check status - GLM Image",
-            "modelType": "text-to-image",
-            "method": "POST",
-            "endpoint": "https://gateway.pixazo.ai/v2/requests/status/glm-image_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "headers": {
-              "Ocp-Apim-Subscription-Key": "process.env.subscription_key"
-            },
-            "exampleRequest": {
-              "request_id": "glm-image_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-            },
-            "parameters": [
-              {
-                "name": "request_id",
-                "type": "string",
-                "required": true,
-                "control": "text",
-                "default": "glm-image_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                "description": "The unique identifier returned from the initial /glm-image-request call.",
-                "inExample": true
-              }
-            ]
-          }
-        ]
-      },
-      {
         "name": "GLM Image (Image to Image) generate request - GLM Image (Image to Image)",
         "modalities": [
           {
@@ -5403,7 +5375,7 @@
             "exampleRequest": {
               "prompt": "Make the dress red.",
               "image_urls": [
-                "https://example.com/example_inputs/catwalk.png"
+                "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/v1/gpt-image-2_019edb08-d4da-720a-a600-7840f4f82a321/output.png"
               ]
             },
             "parameters": [
@@ -5516,35 +5488,6 @@
                 ],
                 "description": "If true, enhances the input prompt using an LLM to add context, detail, and stylistic cues for improved generation.",
                 "inExample": false
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "GLM Image (Image to Image) check status - GLM Image (Image to Image)",
-        "modalities": [
-          {
-            "name": "GLM Image (Image to Image) check status - GLM Image (Image to Image)",
-            "modelType": "image-to-image",
-            "method": "POST",
-            "endpoint": "https://gateway.pixazo.ai/glm-image-image-to-image/v1/glm-image-image-to-image-request-result",
-            "headers": {
-              "Content-Type": "application/json",
-              "Ocp-Apim-Subscription-Key": "process.env.subscription_key"
-            },
-            "exampleRequest": {
-              "request_id": "glm-image-image-to-image_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-            },
-            "parameters": [
-              {
-                "name": "request_id",
-                "type": "string",
-                "required": true,
-                "control": "text",
-                "default": "glm-image-image-to-image_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-                "description": "The unique identifier returned from the initial request to /glm-image-image-to-image-request.",
-                "inExample": true
               }
             ]
           }

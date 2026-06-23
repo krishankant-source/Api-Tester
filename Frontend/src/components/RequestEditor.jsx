@@ -145,43 +145,51 @@ function ModalityEditor({ modality, value, onChange }) {
   return (
     <div className={`rounded-xl border overflow-hidden ${modified ? 'border-amber-600/50' : 'border-slate-700'}`}>
       {/* Header */}
-      <div className="flex items-center justify-between gap-3 px-4 py-2.5 bg-slate-800/60">
-        <div className="min-w-0">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-mono text-slate-500 flex-shrink-0">#{modality.index}</span>
-            <span className="text-sm font-medium text-slate-200">{modality.modalityName}</span>
-            {modality.endpoint && (
-              <span className="text-xs font-mono text-slate-400 truncate" title={modality.endpoint} style={{ maxWidth: 320 }}>
-                {modality.endpoint}
-              </span>
-            )}
-            {modified && (
-              <span className="text-xs bg-amber-900/60 text-amber-300 px-1.5 py-0.5 rounded-full flex-shrink-0">edited</span>
-            )}
+      <div className="px-4 py-2.5 bg-slate-800/60">
+        <div className="flex items-center justify-between gap-3">
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-xs font-mono text-slate-500 flex-shrink-0">#{modality.index}</span>
+              <span className="text-sm font-medium text-slate-200">{modality.modalityName}</span>
+              {modified && (
+                <span className="text-xs bg-amber-900/60 text-amber-300 px-1.5 py-0.5 rounded-full flex-shrink-0">edited</span>
+              )}
+            </div>
+            {modality.modelType && <span className="text-xs text-indigo-400">{modality.modelType}</span>}
           </div>
-          {modality.modelType && <span className="text-xs text-indigo-400">{modality.modelType}</span>}
+
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {/* View switch */}
+            <div className="flex bg-slate-900 border border-slate-700 rounded-lg p-0.5">
+              <button
+                onClick={() => setView('form')}
+                disabled={!canForm}
+                title={canForm ? '' : 'No parameter metadata — run the scraper'}
+                className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors disabled:opacity-30 disabled:cursor-not-allowed ${view === 'form' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}
+              >
+                Form
+              </button>
+              <button
+                onClick={() => setView('json')}
+                className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors ${view === 'json' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}
+              >
+                JSON
+              </button>
+            </div>
+            <button onClick={() => onChange(null)} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">↺ Reset</button>
+          </div>
         </div>
 
-        <div className="flex items-center gap-2 flex-shrink-0">
-          {/* View switch */}
-          <div className="flex bg-slate-900 border border-slate-700 rounded-lg p-0.5">
-            <button
-              onClick={() => setView('form')}
-              disabled={!canForm}
-              title={canForm ? '' : 'No parameter metadata — run the scraper'}
-              className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors disabled:opacity-30 disabled:cursor-not-allowed ${view === 'form' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}
-            >
-              Form
-            </button>
-            <button
-              onClick={() => setView('json')}
-              className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors ${view === 'json' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}
-            >
-              JSON
-            </button>
+        {/* Full request URL — one line, never wraps; scroll horizontally to read it end-to-end */}
+        {modality.endpoint && (
+          <div
+            className="mt-2 flex items-center gap-2 bg-slate-950/70 border border-slate-700/60 rounded-md px-2.5 py-1.5 text-xs font-mono overflow-x-auto whitespace-nowrap"
+            title={modality.endpoint}
+          >
+            <span className="text-emerald-400 font-semibold flex-shrink-0">{modality.method || 'POST'}</span>
+            <span className="text-slate-300">{modality.endpoint}</span>
           </div>
-          <button onClick={() => onChange(null)} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">↺ Reset</button>
-        </div>
+        )}
       </div>
 
       {/* Body */}

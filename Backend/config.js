@@ -8,8 +8,8 @@
 
 const config = {
     // Your Pixazo API subscription key — provide it via the PIXAZO_KEY environment
-    // variable (e.g. a .env or `PIXAZO_KEY=your_key node index.js`). Never commit a
-    // real key to source control.
+    // variable, set in Backend/.env (PIXAZO_KEY=your_key) or exported in your shell.
+    // Never commit a real key to source control.
     subscriptionKey: process.env.PIXAZO_KEY || '',
 
     // Path to the scraped config file

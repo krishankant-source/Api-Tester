@@ -5,6 +5,7 @@ export default function ModelSelector({
   modalities, selectedModality, onModalityChange,
   onStart, onTestAll, running,
   showEditor, onToggleEditor, hasOverrides,
+  validationMode, onToggleValidation,
 }) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
@@ -92,11 +93,12 @@ export default function ModelSelector({
           </div>
         )}
 
-        {/* Edit Request Params — only when a model is selected */}
+        {/* Edit Request Params — only when a model is selected (irrelevant in validation mode) */}
         {selected && (
           <button
             onClick={onToggleEditor}
-            disabled={running}
+            disabled={running || validationMode}
+            title={validationMode ? 'Parameters are not used in validation mode (it sends an empty body)' : ''}
             className={`flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors border disabled:opacity-40 disabled:cursor-not-allowed ${
               showEditor
                 ? 'bg-amber-900/40 border-amber-600/60 text-amber-300 hover:bg-amber-900/60'
@@ -110,27 +112,51 @@ export default function ModelSelector({
           </button>
         )}
 
-        {/* Start Test */}
+        {/* Validation-mode toggle (no-cost probing) */}
+        <button
+          onClick={onToggleValidation}
+          disabled={running}
+          title="Validation mode sends a no-cost probe (empty body, never polled) to check each endpoint without generating or spending credits"
+          className={`flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors border disabled:opacity-40 disabled:cursor-not-allowed ${
+            validationMode
+              ? 'bg-emerald-900/40 border-emerald-500/60 text-emerald-300 hover:bg-emerald-900/60'
+              : 'bg-slate-800 border-slate-600 text-slate-300 hover:bg-slate-700'
+          }`}
+        >
+          🛡️ Validation {validationMode ? 'ON' : 'OFF'}
+        </button>
+
+        {/* Start — Test or Validate the selected model */}
         <button
           onClick={onStart}
           disabled={!selected || running}
-          className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-semibold transition-colors"
+          className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm font-semibold transition-colors ${
+            validationMode ? 'bg-emerald-600 hover:bg-emerald-500' : 'bg-indigo-600 hover:bg-indigo-500'
+          }`}
         >
           {running ? (
             <><span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />Running…</>
+          ) : validationMode ? (
+            <>🛡️ Validate {selectedModality !== '' ? 'Modality' : 'Model'}</>
           ) : (
             <>▶ {selectedModality !== '' ? 'Test Modality' : 'Test Model'}</>
           )}
         </button>
 
-        {/* Test All Models */}
+        {/* All — Test All or Validate All */}
         <button
           onClick={onTestAll}
           disabled={running}
-          className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-slate-700 hover:bg-slate-600 disabled:opacity-40 disabled:cursor-not-allowed text-slate-200 text-sm font-semibold transition-colors border border-slate-600"
+          className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg disabled:opacity-40 disabled:cursor-not-allowed text-sm font-semibold transition-colors border ${
+            validationMode
+              ? 'bg-emerald-900/40 border-emerald-500/60 text-emerald-200 hover:bg-emerald-900/60'
+              : 'bg-slate-700 hover:bg-slate-600 text-slate-200 border-slate-600'
+          }`}
         >
           {running ? (
             <><span className="w-3.5 h-3.5 border-2 border-slate-400/30 border-t-slate-300 rounded-full animate-spin" />Running…</>
+          ) : validationMode ? (
+            <>🛡️ Validate All</>
           ) : (
             <>⚡ Test All Models</>
           )}

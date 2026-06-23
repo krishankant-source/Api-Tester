@@ -1,3 +1,4 @@
+import 'dotenv/config'; // load .env into process.env before anything reads it
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs';
@@ -7,6 +8,7 @@ import { fileURLToPath } from 'url';
 import { listModels, getModalities, reloadConfig } from './configLoader.js';
 import { runModel } from './Runner.js';
 import { sendRequest, pollUntilDone } from './apiClient.js';
+import { probeModality } from './validator.js';
 import cfg from './config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -302,6 +304,74 @@ app.get('/api/test-all/stream', async (_, res) => {
     history.unshift(run);
     saveHistory(history.slice(0, 100));
     emit('done', run);
+    res.end();
+});
+
+// ── Validation mode (NO-COST health probes) ─────────────────────────────────
+// Sends an empty body to each endpoint and reads only the initial status —
+// never polls, so no generation runs. See validator.js for classification.
+
+// SSE: validate one model (all modalities, or ?modalityIdx=N)
+app.get('/api/validate/:model/stream', async (req, res) => {
+    const emit = sseSetup(res);
+    const { modalityIdx } = req.query;
+    try {
+        const mods = getModalities(req.params.model);
+        let list;
+        if (modalityIdx !== undefined) {
+            const idx = parseInt(modalityIdx, 10);
+            if (isNaN(idx) || idx < 0 || idx >= mods.length) {
+                emit('error', { message: `Invalid modality index ${modalityIdx}` });
+                return res.end();
+            }
+            list = [{ mod: mods[idx] }];
+        } else {
+            list = mods.map(mod => ({ mod }));
+        }
+
+        emit('start', { count: list.length });
+        await runWithConcurrencyLocal(list, cfg.concurrency, async ({ mod }) => {
+            const label = `[${mod.subModelName}] ${mod.modalityName}`;
+            emit('progress', { label, message: 'Probing (empty body, no poll)…' });
+            const r = await probeModality(mod);
+            emit('result', {
+                label, subModelName: mod.subModelName, modalityName: mod.modalityName,
+                modelType: mod.modelType, endpoint: mod.endpoint, ...r,
+            });
+        });
+        emit('done', {});
+    } catch (err) {
+        emit('error', { message: err.message });
+    }
+    res.end();
+});
+
+// SSE: validate ALL models (modalities probed concurrently per model)
+app.get('/api/validate-all/stream', async (_req, res) => {
+    const emit = sseSetup(res);
+    const models = listModels();
+    emit('models', { models, total: models.length });
+
+    for (let i = 0; i < models.length; i++) {
+        const model = models[i];
+        emit('model-start', { model, index: i, total: models.length });
+
+        let mods;
+        try { mods = getModalities(model); }
+        catch (err) { emit('model-error', { model, index: i, error: err.message }); continue; }
+
+        const list = mods.map(mod => ({ mod }));
+        await runWithConcurrencyLocal(list, cfg.concurrency, async ({ mod }) => {
+            const label = `[${mod.subModelName}] ${mod.modalityName}`;
+            const r = await probeModality(mod);
+            emit('result', {
+                model, label, subModelName: mod.subModelName, modalityName: mod.modalityName,
+                modelType: mod.modelType, endpoint: mod.endpoint, ...r,
+            });
+        });
+        emit('model-done', { model, index: i });
+    }
+    emit('done', {});
     res.end();
 });
 
