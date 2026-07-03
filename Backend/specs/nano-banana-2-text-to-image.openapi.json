@@ -1,0 +1,94 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Nano Banana 2 — Text to Image (Fast)",
+    "version": "1.0.0",
+    "description": "Generate images from a text prompt. Fast variant."
+  },
+  "servers": [
+    { "url": "https://gateway.pixazo.ai/nano-banana-2/v1" }
+  ],
+  "paths": {
+    "/text-to-image": {
+      "post": {
+        "operationId": "text-to-image",
+        "summary": "Text to Image (Fast)",
+        "security": [{ "ApimSubscriptionKey": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TextToImageRequest" },
+              "example": {
+                "prompt": "A futuristic cityscape at golden hour with neon-lit skyscrapers and reflections on wet streets",
+                "num_images": 1,
+                "aspect_ratio": "16:9",
+                "resolution": "1K",
+                "output_format": "jpeg",
+                "enable_web_search": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Image generation job accepted / result returned." },
+          "400": { "description": "Validation error (missing/invalid fields)." },
+          "401": { "description": "Missing or invalid subscription key." },
+          "429": { "description": "Rate limited." }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApimSubscriptionKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Ocp-Apim-Subscription-Key"
+      }
+    },
+    "schemas": {
+      "TextToImageRequest": {
+        "type": "object",
+        "required": ["prompt"],
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 50000,
+            "description": "Text prompt for image generation."
+          },
+          "num_images": {
+            "type": "integer",
+            "default": 1,
+            "minimum": 1,
+            "maximum": 10,
+            "description": "Number of images to generate. Fast caps at 10. Each image is billed separately."
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "default": "auto",
+            "enum": ["auto","21:9","16:9","3:2","4:3","5:4","1:1","4:5","3:4","2:3","9:16","4:1","1:4","8:1","1:8"],
+            "description": "Output aspect ratio."
+          },
+          "resolution": {
+            "type": "string",
+            "default": "1K",
+            "enum": ["0.5K","1K","2K","4K"],
+            "description": "Output resolution."
+          },
+          "output_format": {
+            "type": "string",
+            "default": "jpeg",
+            "description": "Output image format."
+          },
+          "enable_web_search": {
+            "type": "boolean",
+            "default": false,
+            "description": "Allow the model to ground generation with web search."
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,6 +7,8 @@ import AllModelsPanel from './components/AllModelsPanel.jsx'
 import RequestEditor from './components/RequestEditor.jsx'
 import ScraperModal from './components/ScraperModal.jsx'
 import ValidationPanel from './components/ValidationPanel.jsx'
+import ModalitySearchList from './components/ModalitySearchList.jsx'
+import TestSetPanel from './components/TestSetPanel.jsx'
 
 const TABS = ['Test', 'History']
 
@@ -37,6 +39,13 @@ export default function App() {
 
   const [history, setHistory] = useState([])
   const [scrapeOpen, setScrapeOpen] = useState(false)
+  const [buildSpecsOpen, setBuildSpecsOpen] = useState(false)
+  const [source, setSource] = useState('scraped') // 'scraped' | 'spec'
+
+  // Cross-model test set (cart of modalities from different models)
+  const [testSet, setTestSet] = useState([]) // { key, model, modalityIdx, ...full modality }
+  const [selectionOverrides, setSelectionOverrides] = useState({}) // { [item.key]: customBody }
+  const [searchIndex, setSearchIndex] = useState({}) // model -> { endpoints, modalities } for endpoint search
 
   // Validation mode (no-cost health probing)
   const [validationMode, setValidationMode] = useState(false)
@@ -48,9 +57,53 @@ export default function App() {
 
   // ── Loaders ──────────────────────────────────────────────────────────────
 
+  function loadSearchIndex() {
+    fetch('/api/search-index').then(r => r.json()).then(arr => {
+      const map = {}
+      for (const x of arr) map[x.name] = { endpoints: x.endpoints || [], modalities: x.modalities || [] }
+      setSearchIndex(map)
+    }).catch(() => {})
+  }
+
   useEffect(() => {
     fetch('/api/models').then(r => r.json()).then(setModels).catch(() => {})
+    fetch('/api/source').then(r => r.json()).then(d => setSource(d.source)).catch(() => {})
+    loadSearchIndex()
   }, [])
+
+  // Switch config source (scraped ↔ spec ↔ models); reset selection + reload model list
+  function changeSource(src) {
+    if (src === source || running) return
+    fetch('/api/source', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ source: src }) })
+      .then(r => r.json())
+      .then(d => {
+        if (d.error) { setErrorMsg(d.error); return }
+        setSource(d.source)
+        setSelected(''); setSelectedModality(''); setModalities([]); setOverrides({})
+        setTestSet([]); setSelectionOverrides({}) // indices are per-source; a stale set would point at wrong modalities
+        setTestMode(null); setTestState('idle')
+        fetch('/api/models').then(r => r.json()).then(setModels).catch(() => {})
+        loadSearchIndex()
+      })
+      .catch(() => {})
+  }
+
+  // Re-parse Backend/Models/ (the "models" source is built from those files on
+  // the fly) so files added/edited after load are picked up without a restart.
+  function rescanModels() {
+    if (running) return
+    fetch('/api/source', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ source: 'models' }) })
+      .then(r => r.json())
+      .then(d => {
+        if (d.error) { setErrorMsg(d.error); return }
+        setSelected(''); setSelectedModality(''); setModalities([]); setOverrides({})
+        setTestSet([]); setSelectionOverrides({})
+        setTestMode(null); setTestState('idle')
+        fetch('/api/models').then(r => r.json()).then(setModels).catch(() => {})
+        loadSearchIndex()
+      })
+      .catch(() => {})
+  }
 
   useEffect(() => {
     if (tab === 'History') refreshHistory()
@@ -85,6 +138,7 @@ export default function App() {
   // Re-fetch models + current modalities (called after a scrape completes)
   function refreshAfterScrape() {
     fetch('/api/models').then(r => r.json()).then(setModels).catch(() => {})
+    loadSearchIndex()
     if (selected) {
       fetch(`/api/models/${encodeURIComponent(selected)}/modalities`)
         .then(r => r.json())
@@ -267,6 +321,70 @@ export default function App() {
   function handleStart() { validationMode ? startValidate() : startTest() }
   function handleTestAll() { validationMode ? startValidateAll() : startTestAll() }
 
+  // ── Test set (cross-model selection) ──────────────────────────────────────
+  const setKey = (model, idx) => `${model}#${idx}`
+  const isInSet = (model, idx) => testSet.some(s => s.key === setKey(model, idx))
+  function toggleInSet(model, mod) {
+    const key = setKey(model, mod.index)
+    setTestSet(prev => {
+      if (prev.some(s => s.key === key)) {
+        setSelectionOverrides(o => { const n = { ...o }; delete n[key]; return n })
+        return prev.filter(s => s.key !== key)
+      }
+      return [...prev, {
+        key, model, modalityIdx: mod.index,
+        subModelName: mod.subModelName, modalityName: mod.modalityName,
+        endpoint: mod.endpoint, method: mod.method, modelType: mod.modelType,
+        exampleRequest: mod.exampleRequest, parameters: mod.parameters || [], hasExample: mod.hasExample,
+      }]
+    })
+  }
+  const removeFromSet = key => {
+    setTestSet(prev => prev.filter(s => s.key !== key))
+    setSelectionOverrides(o => { const n = { ...o }; delete n[key]; return n })
+  }
+  const clearSet = () => { setTestSet([]); setSelectionOverrides({}) }
+  function setItemOverride(key, val) {
+    setSelectionOverrides(prev => {
+      if (val == null) { const n = { ...prev }; delete n[key]; return n }
+      return { ...prev, [key]: val }
+    })
+  }
+
+  async function startSelection() {
+    if (!testSet.length || testState === 'running') return
+    const validate = validationMode
+    resetSingleState(); resetAllState(); resetValState()
+    setTestMode(validate ? 'selection-validate' : 'selection')
+    setTestState('running'); setShowEditor(false)
+
+    let selectionId = null
+    try {
+      const r = await fetch('/api/selection/prepare', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ selections: testSet.map(s => ({ model: s.model, modalityIdx: s.modalityIdx, override: selectionOverrides[s.key] })) }),
+      })
+      selectionId = (await r.json()).selectionId
+    } catch { setTestState('error'); setErrorMsg('Could not prepare the selection'); return }
+
+    let settled = false
+    const es = openSSE(`/api/selection/stream?selectionId=${encodeURIComponent(selectionId)}&mode=${validate ? 'validate' : 'test'}`)
+    if (validate) {
+      es.addEventListener('start', e => setValExpected(JSON.parse(e.data).count))
+      es.addEventListener('result', e => setValResults(prev => [...prev, JSON.parse(e.data)]))
+      es.addEventListener('done', () => { settled = true; setTestState('done'); es.close() })
+    } else {
+      es.addEventListener('progress', e => {
+        const { label, message } = JSON.parse(e.data)
+        setProgressByLabel(prev => ({ ...prev, [label]: [...(prev[label] || []), message] }))
+      })
+      es.addEventListener('result', e => setResults(prev => [...prev, JSON.parse(e.data)]))
+      es.addEventListener('done', e => { settled = true; setCurrentRun(JSON.parse(e.data)); setTestState('done'); es.close() })
+    }
+    es.addEventListener('error', e => { settled = true; if (e.data) setErrorMsg(JSON.parse(e.data).message); setTestState('error'); es.close() })
+    es.onerror = () => { if (settled) return; setTestState('error'); setErrorMsg('Connection to server lost'); es.close() }
+  }
+
   // ── Derived ───────────────────────────────────────────────────────────────
 
   const passed = results.filter(r => r.success).length
@@ -281,9 +399,42 @@ export default function App() {
           <h1 className="text-lg font-bold text-white leading-none">Pixazo API Tester</h1>
           <p className="text-xs text-slate-500 mt-0.5">Test generative AI model endpoints</p>
         </div>
+        {/* Config source switch */}
+        <div className="ml-auto flex items-center gap-2">
+          <span className="text-xs text-slate-500">Source:</span>
+          <div className="flex bg-slate-900 border border-slate-700 rounded-lg p-0.5" title="Which config the tester uses to send requests">
+            <button onClick={() => changeSource('scraped')} disabled={running}
+              className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors disabled:opacity-40 ${source === 'scraped' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}>
+              Scraped
+            </button>
+            <button onClick={() => changeSource('spec')} disabled={running}
+              className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors disabled:opacity-40 ${source === 'spec' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}>
+              Spec
+            </button>
+            <button onClick={() => changeSource('models')} disabled={running}
+              title="Model doc files you drop into Backend/Models/ (parsed HTML)"
+              className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors disabled:opacity-40 ${source === 'models' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}>
+              Models
+            </button>
+          </div>
+          {source === 'models' && (
+            <button onClick={rescanModels} disabled={running}
+              title="Re-read Backend/Models/ to pick up newly added or edited files"
+              className="px-2 py-1 rounded-md text-xs font-semibold border border-slate-700 text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors disabled:opacity-40">
+              ↻ Rescan
+            </button>
+          )}
+        </div>
+        <button
+          onClick={() => setBuildSpecsOpen(true)}
+          className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white text-sm font-medium transition-colors"
+          title="Build config from OpenAPI specs (api_id → endpoints + curl)"
+        >
+          📦 Build from Specs
+        </button>
         <button
           onClick={() => setScrapeOpen(true)}
-          className="ml-auto flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white text-sm font-medium transition-colors"
+          className="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white text-sm font-medium transition-colors"
           title="Re-scrape pixazo.ai for models & parameters"
         >
           🕷️ Run Scraper
@@ -324,6 +475,7 @@ export default function App() {
                 hasOverrides={hasOverrides}
                 validationMode={validationMode}
                 onToggleValidation={() => setValidationMode(v => !v)}
+                searchIndex={searchIndex}
               />
               {selected && modalities.length > 0 && selectedModality !== '' && (
                 <p className="text-xs text-slate-500">
@@ -345,6 +497,29 @@ export default function App() {
               />
             )}
 
+            {/* Search modalities of the selected model + add to the test set */}
+            {selected && modalities.length > 0 && (
+              <ModalitySearchList
+                model={selected}
+                modalities={modalities}
+                isInSet={idx => isInSet(selected, idx)}
+                onToggle={mod => toggleInSet(selected, mod)}
+                running={running}
+              />
+            )}
+
+            {/* Cross-model test set (cart) */}
+            <TestSetPanel
+              items={testSet}
+              overrides={selectionOverrides}
+              onSetOverride={setItemOverride}
+              onRemove={removeFromSet}
+              onClear={clearSet}
+              onRun={startSelection}
+              validationMode={validationMode}
+              running={running}
+            />
+
             {/* Error banner */}
             {testState === 'error' && (
               <div className="bg-red-950/50 border border-red-800 rounded-xl p-4 text-sm text-red-300">
@@ -352,8 +527,8 @@ export default function App() {
               </div>
             )}
 
-            {/* Single model results */}
-            {testMode === 'single' && (
+            {/* Single model / test-set results */}
+            {(testMode === 'single' || testMode === 'selection') && (
               <>
                 {(running || testState === 'done') && (
                   <LiveFeed progressByLabel={progressByLabel} results={results} />
@@ -389,13 +564,13 @@ export default function App() {
               <AllModelsPanel models={allModels} modelStates={modelStates} />
             )}
 
-            {/* Validation results (no-cost) */}
-            {(testMode === 'validate' || testMode === 'validate-all') && (
+            {/* Validation results (no-cost) — single model, all models, or test set */}
+            {(testMode === 'validate' || testMode === 'validate-all' || testMode === 'selection-validate') && (
               <ValidationPanel
                 results={valResults}
-                expected={testMode === 'validate' ? valExpected : null}
+                expected={testMode === 'validate-all' ? null : valExpected}
                 running={running}
-                grouped={testMode === 'validate-all'}
+                grouped={testMode === 'validate-all' || testMode === 'selection-validate'}
                 modelsProgress={testMode === 'validate-all' ? valModelsProgress : null}
               />
             )}
@@ -423,6 +598,19 @@ export default function App() {
         open={scrapeOpen}
         onClose={() => setScrapeOpen(false)}
         onComplete={refreshAfterScrape}
+      />
+
+      <ScraperModal
+        open={buildSpecsOpen}
+        onClose={() => setBuildSpecsOpen(false)}
+        onComplete={refreshAfterScrape}
+        streamUrl="/api/build-specs/stream"
+        icon="📦"
+        title="Build from OpenAPI Specs"
+        subtitle="Fetches specs by api_id → endpoints, example bodies & curl commands"
+        idleText="This reads specs/model-docs*.json, fetches each model's live OpenAPI spec from Pixazo's API Management, and writes pixazo_config.spec.json (endpoints + example bodies + a curl per modality). Switch Source to “Spec” to test against it. Takes ~1–2 minutes."
+        startLabel="▶ Build Config"
+        runningLabel="Building from specs… (~1–2 min)"
       />
     </div>
   )

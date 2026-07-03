@@ -1,0 +1,583 @@
+<!-- Base URL Section -->
+  <section id="doc-base-url" class="sectionn border-0">
+    <div class="card">
+      <h2>Base URL</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>https://gateway.pixazo.ai/qwen-image-max-edit/v1/qwen-image-max-edit-request</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authentication Section -->
+  <section id="doc-authentication" class="sectionn">
+    <div class="card">
+      <h2>Authentication</h2>
+      <p class="muted">All requests require an API key passed via header.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Header</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ocp-Apim-Subscription-Key</td>
+            <td>string</td>
+            <td>Yes</td>
+            <td>Your API subscription key</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="doc-qwen-image-max-edit-qwen-image-max-edit-request" class="sectionn">
+    <h2 class="section-heading">Qwen Image Max Edit generate request - Qwen Image Max Edit</h2>
+
+    <div id="doc-qwen-image-max-edit-qwen-image-max-edit-request-code" class="grid grid-2">
+      <div class="card">
+        <h2>Request Code</h2>
+        <div class="nav-tabs">
+          <button class="nav-tab active" onclick="showTab('http-doc-qwen-image-max-edit-qwen-image-max-edit-request', this)">HTTP</button>
+          <button class="nav-tab" onclick="showTab('python-doc-qwen-image-max-edit-qwen-image-max-edit-request', this)">Python</button>
+          <button class="nav-tab" onclick="showTab('javascript-doc-qwen-image-max-edit-qwen-image-max-edit-request', this)">JavaScript</button>
+          <button class="nav-tab" onclick="showTab('curl-doc-qwen-image-max-edit-qwen-image-max-edit-request', this)">cURL</button>
+        </div>
+
+        <div id="http-doc-qwen-image-max-edit-qwen-image-max-edit-request" class="tab-content active">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>POST https://gateway.pixazo.ai/qwen-image-max-edit/v1/qwen-image-max-edit-request
+Content-Type: application/json
+Cache-Control: no-cache
+Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY
+
+{
+  "prompt": "Transform the background into a serene mountain landscape with snow-capped peaks and a clear blue sky",
+  "image_urls": [
+    "https://imagesai.appypie.com/7686410/JUEOHp2Y3FDjmXwOQJVy_017731476841749.png"
+  ]
+}</code></pre>
+          </div>
+          </div>
+        </div>
+
+        <div id="python-doc-qwen-image-max-edit-qwen-image-max-edit-request" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>import requests
+
+url = "https://gateway.pixazo.ai/qwen-image-max-edit/v1/qwen-image-max-edit-request"
+headers = {
+    "Content-Type": "application/json",
+    "Cache-Control": "no-cache",
+    "Ocp-Apim-Subscription-Key": "YOUR_SUBSCRIPTION_KEY"
+}
+data = {
+    "prompt": "Transform the background into a serene mountain landscape with snow-capped peaks and a clear blue sky",
+    "image_urls": [
+        "https://imagesai.appypie.com/7686410/JUEOHp2Y3FDjmXwOQJVy_017731476841749.png"
+    ]
+}
+
+response = requests.post(url, json=data, headers=headers)
+print(response.json())</code></pre>
+          </div>
+          </div>
+        </div>
+
+        <div id="javascript-doc-qwen-image-max-edit-qwen-image-max-edit-request" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>const url = 'https://gateway.pixazo.ai/qwen-image-max-edit/v1/qwen-image-max-edit-request';
+
+const headers = {
+  'Content-Type': 'application/json',
+  'Cache-Control': 'no-cache',
+  'Ocp-Apim-Subscription-Key': 'YOUR_SUBSCRIPTION_KEY'
+};
+
+const data = {
+  prompt: 'Transform the background into a serene mountain landscape with snow-capped peaks and a clear blue sky',
+  image_urls: [
+    'https://imagesai.appypie.com/7686410/JUEOHp2Y3FDjmXwOQJVy_017731476841749.png'
+  ]
+};
+
+fetch(url, {
+  method: 'POST',
+  headers: headers,
+  body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));</code></pre>
+          </div>
+          </div>
+        </div>
+
+        <div id="curl-doc-qwen-image-max-edit-qwen-image-max-edit-request" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>curl -X POST "https://gateway.pixazo.ai/qwen-image-max-edit/v1/qwen-image-max-edit-request" \
+  -H "Content-Type: application/json" \
+  -H "Cache-Control: no-cache" \
+  -H "Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY" \
+  --data-raw '{
+    "prompt": "Transform the background into a serene mountain landscape with snow-capped peaks and a clear blue sky",
+    "image_urls": [
+      "https://imagesai.appypie.com/7686410/JUEOHp2Y3FDjmXwOQJVy_017731476841749.png"
+    ]
+  }'</code></pre>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Output</h2>
+        <div class="copy-wrap">
+          <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "request_id": "qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "QUEUED",
+  "polling_url": "https://gateway.pixazo.ai/v2/requests/status/qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-now-wrapper">
+      <a href="https://api.pixazo.ai/api-details#api=qwen-image-max-edit&operation=qwen-image-max-edit-request" target="_blank" class="btn-primary btn-try-now">Try Now</a>
+    </div>
+  </section>
+  <section class="sectionn">
+    <div class="card">
+      <h2>Webhook (Optional)</h2>
+      <p class="muted">Add the <code>X-Webhook-URL</code> header to your submit request to receive a <code>POST</code> callback when the job completes &mdash; no polling required.</p>
+
+      <p class="muted" style="margin-top:12px"><strong>Using curl?</strong> These are HTTP request headers &mdash; pass each with <code>-H</code>, e.g. <code>-H "X-Webhook-URL: https://your-server.com/webhook/callback"</code>. Do not paste them as bare lines, and end every line of a multi-line command with <code>\</code>.</p>
+      <h3 style="margin-top:20px">Webhook Headers</h3>
+      <div class="tableOuter">
+        <table>
+          <thead>
+            <tr><th>Header</th><th>Required</th><th>Default</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>X-Webhook-URL</code></td><td>Yes (to enable)</td><td>&mdash;</td><td>HTTPS endpoint on your server that will receive the <code>POST</code> callback. Must respond <code>2xx</code> within a few seconds (process async if needed).</td></tr>
+            <tr><td><code>X-Webhook-Mode</code></td><td>No</td><td><code>terminal</code></td><td><code>terminal</code> &mdash; fires once at the final status (<code>COMPLETED</code>/<code>FAILED</code>/<code>ERROR</code>). <code>sync</code> &mdash; fires on every poll cycle plus the terminal event, and caps the queue&rsquo;s polling delay at <strong>15s</strong> for tighter progress updates.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:24px">Example: enable webhook</h3>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>X-Webhook-URL: https://your-server.com/webhook/callback
+X-Webhook-Mode: terminal</code></pre>
+      </div>
+
+      <h3 style="margin-top:24px">Callback Payload</h3>
+      <p class="muted">Your endpoint receives a <code>POST application/json</code> with the same shape as the <code>GET /v2/requests/status/&#123;request_id&#125;</code> response. Example terminal callback (mode <code>terminal</code>):</p>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>{
+  "request_id": "qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "COMPLETED",
+  "model_id": "qwen-image-max-edit",
+  "error": null,
+  "output": {
+    "media_url": [
+      "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/v1/qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/output.png"
+    ],
+    "media_type": "image/png"
+  },
+  "created_at": "2026-05-22T13:17:32.110Z",
+  "updated_at": "2026-05-22 13:19:23",
+  "completed_at": "2026-05-22 13:19:23"
+}</code></pre>
+      </div>
+
+      <h3 style="margin-top:24px">Failure callback shape</h3>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>{
+  "request_id": "qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "ERROR",
+  "model_id": "qwen-image-max-edit",
+  "error": "Description of the error",
+  "output": null,
+  "created_at": "...",
+  "updated_at": "...",
+  "completed_at": "..."
+}</code></pre>
+      </div>
+
+      <h3 style="margin-top:24px">Delivery semantics</h3>
+      <ul class="muted">
+        <li><strong>terminal mode (default)</strong> &mdash; exactly one <code>POST</code> when the request reaches a terminal status. No callback during <code>PROCESSING</code>.</li>
+        <li><strong>sync mode</strong> &mdash; <code>POST</code> on every status poll (with delay capped at ~15s) plus a final <code>POST</code> at terminal status. Use when you want progress updates.</li>
+        <li><strong>Idempotency</strong> &mdash; use <code>request_id</code> as your idempotency key. Network retries can deliver the same callback more than once; your handler must tolerate duplicates.</li>
+        <li><strong>Response</strong> &mdash; respond <code>200 OK</code> within a few seconds. The queue does not block on slow handlers, but persistent failures may stop further deliveries.</li>
+        <li><strong>HTTPS required</strong> &mdash; plain <code>http://</code> URLs are rejected.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- Parameters for this operation -->
+  <section id="doc-qwen-image-max-edit-qwen-image-max-edit-request-params" class="sectionn">
+    <div class="card">
+      <h2>Request Parameters - Qwen Image Max Edit generate request</h2>
+      <div class="tableOuter">
+        <table><thead><tr><th>Parameter</th><th>Required</th><th>Type</th><th>Default</th><th>Allowed values / range</th><th>Description</th></tr></thead><tbody><tr><td>prompt</td><td>Yes</td><td>string</td><td>—</td><td>&mdash;</td><td>Detailed text description of the desired image edit. Specifies what changes to apply to the input image.</td></tr><tr><td>negative_prompt</td><td>No</td><td>string</td><td>—</td><td>&mdash;</td><td>Describes unwanted elements or artifacts to avoid in the output. Improves output quality by exclusion.</td></tr><tr><td>enable_prompt_expansion</td><td>No</td><td>boolean</td><td>true</td><td>true, false</td><td>Automatically rewrites and enriches your prompt with extra detail before generation to improve results.</td></tr><tr><td>enable_safety_checker</td><td>No</td><td>boolean</td><td>true</td><td>true, false</td><td>Turns on automatic filtering of unsafe or explicit (NSFW) content. Leave enabled unless you have a specific reason to disable it.</td></tr><tr><td>num_images</td><td>No</td><td>integer</td><td>1</td><td>1–4.</td><td>Number of edited images to generate. Must be between 1 and 4.</td></tr><tr><td>output_format</td><td>No</td><td>string</td><td>png</td><td>png, jpeg, webp</td><td>Output image format. Supported values: png, jpeg, webp.</td></tr><tr><td>image_urls</td><td>Yes</td><td>array of strings</td><td>—</td><td>&mdash;</td><td>Array of one or more public HTTP URLs pointing to the source images to be edited. Only the first URL is processed if multiple are provided.</td></tr></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Request/Response for this operation -->
+  <section id="doc-qwen-image-max-edit-qwen-image-max-edit-request-example" class="sectionn">
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Minimum Request</h2>
+        <div class="copy-wrap">
+          <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "prompt": "Transform the background into a serene mountain landscape with snow-capped peaks and a clear blue sky",
+  "image_urls": [
+    "https://imagesai.appypie.com/7686410/JUEOHp2Y3FDjmXwOQJVy_017731476841749.png"
+  ]
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Full Request (all options)</h2>
+        <div class="copy-wrap">
+          <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "prompt": "Transform the background into a serene mountain landscape with snow-capped peaks and a clear blue sky",
+  "negative_prompt": "low resolution, error, worst quality, low quality, deformed",
+  "enable_prompt_expansion": true,
+  "enable_safety_checker": true,
+  "num_images": 1,
+  "output_format": "png",
+  "image_urls": [
+    "https://imagesai.appypie.com/7686410/JUEOHp2Y3FDjmXwOQJVy_017731476841749.png"
+  ]
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="doc-qwen-image-max-edit-qwen-image-max-edit-request-response" class="card" style="margin-top:24px">
+      <h2>Response</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "request_id": "qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "QUEUED",
+  "polling_url": "https://gateway.pixazo.ai/v2/requests/status/qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}</code></pre>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Fields for this operation -->
+  
+
+  <section id="doc-qwen-image-max-edit-qwen-image-max-edit-request-headers" class="sectionn">
+    <div class="card">
+      <h2>Request Headers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Header</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Content-Type</td>
+            <td>application/json</td>
+          </tr>
+          <tr>
+            <td>Cache-Control</td>
+            <td>no-cache</td>
+          </tr>
+          <tr>
+            <td>Ocp-Apim-Subscription-Key</td>
+            <td>Your API subscription key</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="doc-qwen-image-max-edit-qwen-image-max-edit-request-response-handling" class="sectionn">
+    <div class="card">
+      <h2>Response Handling</h2>
+      <p class="muted">Common status codes for Qwen Image Max Edit generate request.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="ok">202</td>
+            <td>Accepted — Request queued</td>
+          </tr>
+          <tr>
+            <td class="wa">400</td>
+            <td>Bad Request</td>
+          </tr>
+          <tr>
+            <td class="er">401</td>
+            <td>Unauthorized</td>
+          </tr>
+          <tr>
+            <td class="er">403</td>
+            <td>Forbidden</td>
+          </tr>
+          <tr>
+            <td class="er">404</td>
+            <td>Not Found</td>
+          </tr>
+          <tr>
+            <td class="wa">429</td>
+            <td>Too Many Requests</td>
+          </tr>
+          <tr>
+            <td class="er">500</td>
+            <td>Internal Server Error</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- END OF OPERATION SECTION - Repeat above for each operation -->
+  <!-- ============================================ -->
+
+  <!-- Conditional: Error Responses Section (include only if API has specific error formats) -->
+  
+
+  <!-- Conditional: Status Values & Workflow (for async/polling APIs only) -->
+  
+
+  <!-- ADDED: Supplementary Sections for Polling/Results -->
+  
+
+  <!-- Parameters for this operation -->
+  
+
+  <!-- Example Request/Response for this operation -->
+  
+
+  <!-- Response Fields for this operation -->
+  
+
+  
+
+  
+
+  <!-- Conditional: Notes & Tips (include only if notable details exist) -->
+  <section id="doc-qwen-image-max-edit-notes" class="sectionn">
+    <div class="card">
+      <h2>Notes & Tips</h2>
+      <ol class="muted">
+        <li>Poll the results endpoint every 2–3 seconds until status is COMPLETED or FAILED</li>
+        <li>Implement exponential backoff for retry logic on 500 or 429 responses</li>
+        <li>Use clear, specific prompts that describe the desired change in context, lighting, or environment</li>
+        <li>Avoid overly vague prompts like “make it better”; specify elements such as “replace sky with sunset”</li>
+        <li>Validate image URLs are publicly accessible and use HTTPS before submission</li>
+        <li>Limit num_images to 1 unless multiple variations are required to
+  
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Error Responses</h2>
+      <p class="muted">Queue system errors and model validation errors.</p>
+      <h3 style="margin-top:16px">Queue System Errors</h3>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>// 402 — Insufficient balance
+{
+  "error": "Insufficient Balance",
+  "message": "Your wallet does not have enough balance."
+}</code></pre>
+      </div>
+      <div class="copy-wrap" style="margin-top:16px">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>// 400 — Model not found
+{
+  "error": "Model not found",
+  "message": "Model 'qwen-image-max-edit' not found or is disabled"
+}</code></pre>
+      </div>
+      <h3 style="margin-top:24px">Error via Status/Webhook</h3>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>{
+  "request_id": "qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "ERROR",
+  "model_id": "qwen-image-max-edit",
+  "error": "Description of the error",
+  "output": null
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Retrieving Results</h2>
+      <p class="muted">Poll the universal status endpoint to check progress and retrieve results.</p>
+      <h3 style="margin-top:20px">Endpoint</h3>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>GET https://gateway.pixazo.ai/v2/requests/status/{request_id}
+Ocp-Apim-Subscription-Key: YOUR_API_KEY</code></pre>
+      </div>
+      <div class="grid grid-2" style="margin-top:20px">
+        <div class="card">
+          <h2>cURL Example</h2>
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>curl -H "Ocp-Apim-Subscription-Key: YOUR_API_KEY" \
+  "https://gateway.pixazo.ai/v2/requests/status/qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"</code></pre>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Response (Completed)</h2>
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "request_id": "qwen-image-max-edit_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "COMPLETED",
+  "model_id": "qwen-image-max-edit",
+  "error": null,
+  "output": {
+    "media_url": [
+      "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/v1/qwen-image-max-edit_019dxxxx-xxxx/output.ext"
+    ],
+    "media_type": "application/octet-stream"
+  },
+  "created_at": "2026-03-31T10:00:00.000Z",
+  "updated_at": "2026-03-31T10:00:15.000Z",
+  "completed_at": "2026-03-31T10:00:15.000Z"
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Response Fields</h2>
+      <div class="tableOuter">
+        <table>
+          <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>request_id</td><td>string</td><td>Unique request identifier</td></tr>
+            <tr><td>status</td><td>string</td><td>QUEUED, PROCESSING, COMPLETED, FAILED, or ERROR</td></tr>
+            <tr><td>model_id</td><td>string</td><td>Model that processed the request</td></tr>
+            <tr><td>error</td><td>string|null</td><td>Error message if failed</td></tr>
+            <tr><td>output.media_url</td><td>array</td><td>URLs to generated media (R2 CDN)</td></tr>
+            <tr><td>output.media_type</td><td>string</td><td>MIME type of the output</td></tr>
+            <tr><td>created_at</td><td>string</td><td>When request was created</td></tr>
+            <tr><td>completed_at</td><td>string|null</td><td>When request completed</td></tr>
+            <tr><td>polling_url</td><td>string</td><td>Status URL (initial response only)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Status Values</h2>
+      <table>
+        <thead><tr><th>Status</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>QUEUED</td><td>Request accepted, waiting to be processed</td></tr>
+          <tr><td>PROCESSING</td><td>Being processed by the model</td></tr>
+          <tr><td>COMPLETED</td><td>Done — output contains the result</td></tr>
+          <tr><td>FAILED</td><td>Failed — check error field</td></tr>
+          <tr><td>ERROR</td><td>System error — not charged</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:24px">
+      <h2>Status Flow</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>QUEUED → PROCESSING → COMPLETED
+                    → FAILED
+                    → ERROR</code></pre>
+      </div>
+    </div>
+    <div class="card" style="margin-top:24px">
+      <h2>Typical Workflow</h2>
+      <ol>
+        <li><strong>Send a generate request</strong> to the API endpoint</li>
+        <li><strong>Save the <code>request_id</code></strong> from the response</li>
+        <li><strong>Poll</strong> every 5-10 seconds: <code>GET /v2/requests/status/{request_id}</code></li>
+        <li><strong>When <code>status</code> is <code>"COMPLETED"</code></strong>, download from <code>output.media_url</code></li>
+      </ol>
+      <p class="muted" style="margin-top:16px"><strong>Tip:</strong> Use <code>X-Webhook-URL</code> header to get a callback instead of polling.</p>
+    </div>
+  </section>
+</section>
+<script>
+    function copyCode(btn) {
+      var wrap = btn.closest('.copy-wrap');
+      var code = wrap ? wrap.querySelector('code') : null;
+      if (!code) return;
+      navigator.clipboard.writeText(code.textContent).then(function() {
+        var toast = document.createElement('div');
+        toast.textContent = 'Copied!';
+        toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#3cd19c;color:#000;padding:10px 24px;border-radius:8px;font-weight:600;font-size:14px;z-index:9999;animation:fadeInOut 2s ease;';
+        document.body.appendChild(toast);
+        setTimeout(function() { toast.remove(); }, 2000);
+        var orig = btn.innerHTML;
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3cd19c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+        setTimeout(function() { btn.innerHTML = orig; }, 2000);
+      });
+    }
+    function showTab(tabName, button) {
+      var navTabs = button.closest('.nav-tabs');
+      var parentCard = button.closest('.card');
+      navTabs.querySelectorAll('.nav-tab').forEach(function(tab) { tab.classList.remove('active'); });
+      parentCard.querySelectorAll('.tab-content').forEach(function(content) { content.classList.remove('active'); });
+      button.classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    }
+  </script>

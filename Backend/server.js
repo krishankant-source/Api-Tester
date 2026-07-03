@@ -5,7 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
-import { listModels, getModalities, reloadConfig } from './configLoader.js';
+import { listModels, getModalities, reloadConfig, getSource, setSource, listSources, getModelsReport } from './configLoader.js';
 import { runModel } from './Runner.js';
 import { sendRequest, pollUntilDone } from './apiClient.js';
 import { probeModality } from './validator.js';
@@ -21,6 +21,8 @@ app.use(express.json());
 
 // In-memory store for prepared test configs (custom overrides)
 const pendingTests = new Map();
+// In-memory store for prepared cross-model selections (a "test set")
+const pendingSelections = new Map();
 
 function loadHistory() {
     try { return JSON.parse(fs.readFileSync(RESULTS_FILE, 'utf8')); }
@@ -105,6 +107,22 @@ app.get('/api/models', (_req, res) => {
     catch (err) { res.status(500).json({ error: err.message }); }
 });
 
+// Lightweight search index so the main box can match a model by its name OR by
+// any of its modality endpoints / names. Reflects the active config source.
+app.get('/api/search-index', (_req, res) => {
+    try {
+        res.json(listModels().map(name => {
+            let mods = [];
+            try { mods = getModalities(name); } catch { /* skip broken model */ }
+            return {
+                name,
+                endpoints: mods.map(m => m.endpoint).filter(Boolean),
+                modalities: mods.map(m => m.modalityName).filter(Boolean),
+            };
+        }));
+    } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
 // Now includes exampleRequest so the frontend can show it for editing
 app.get('/api/models/:model/modalities', (req, res) => {
     try {
@@ -119,8 +137,65 @@ app.get('/api/models/:model/modalities', (req, res) => {
             endpoint: m.endpoint,
             exampleRequest: m.exampleRequest,
             parameters: m.parameters || [],
+            curl: m.curl || null,
+            hasExample: m.hasExample,
         })));
     } catch (err) { res.status(404).json({ error: err.message }); }
+});
+
+// ── Config source (scraped ↔ spec-built ↔ Models/*.html) ─────────────────────
+app.get('/api/source', (_req, res) => res.json({ source: getSource(), sources: listSources() }));
+app.post('/api/source', (req, res) => {
+    try {
+        const data = setSource(req.body.source);
+        res.json({ ok: true, source: getSource(), models: data.length });
+    } catch (err) { res.status(400).json({ error: err.message }); }
+});
+
+// Which Models/*.html files were parsed (and which were skipped) for the
+// "models" source — lets the UI confirm dropped files were picked up.
+app.get('/api/models-source/report', (_req, res) => res.json(getModelsReport()));
+
+// SSE: build pixazo_config.spec.json from the OpenAPI specs (api_id/operation_id
+// in specs/model-docs*.json → live APIM specs → endpoints + example bodies + curls).
+let buildSpecsRunning = false;
+app.get('/api/build-specs/stream', (req, res) => {
+    const emit = sseSetup(res);
+    if (buildSpecsRunning) { emit('error', { message: 'A spec build is already running.' }); return res.end(); }
+    buildSpecsRunning = true;
+
+    const scriptPath = path.join(__dirname, 'specs', 'build_from_specs.js');
+    if (!fs.existsSync(scriptPath)) {
+        buildSpecsRunning = false;
+        emit('error', { message: `Builder not found at ${scriptPath}` });
+        return res.end();
+    }
+
+    emit('start', { message: 'Building config from OpenAPI specs…' });
+    const child = spawn('node', [scriptPath], { cwd: __dirname });
+    let buffer = '';
+    const pump = (chunk, stream) => {
+        buffer += chunk.toString();
+        const lines = buffer.split('\n');
+        buffer = lines.pop();
+        for (const line of lines) if (line.trim()) emit('log', { stream, line: line.replace(/\s+$/, '') });
+    };
+    child.stdout.on('data', c => pump(c, 'out'));
+    child.stderr.on('data', c => pump(c, 'err'));
+    child.on('close', code => {
+        buildSpecsRunning = false;
+        if (buffer.trim()) emit('log', { stream: 'out', line: buffer.trim() });
+        if (code === 0) {
+            // If the spec source is active, reload it so new data is served.
+            try { if (getSource() === 'spec') reloadConfig(); } catch { /* ignore */ }
+            emit('done', { code });
+        } else {
+            emit('error', { message: `Builder exited with code ${code}` });
+        }
+        res.end();
+    });
+    child.on('error', err => { buildSpecsRunning = false; emit('error', { message: `Failed to start builder: ${err.message}` }); res.end(); });
+    req.on('close', () => { if (!child.killed) child.kill('SIGTERM'); });
 });
 
 app.get('/api/history', (_req, res) => res.json(loadHistory()));
@@ -372,6 +447,79 @@ app.get('/api/validate-all/stream', async (_req, res) => {
         emit('model-done', { model, index: i });
     }
     emit('done', {});
+    res.end();
+});
+
+// ── Cross-model selection ("test set") ──────────────────────────────────────
+// Test/validate a hand-picked set of modalities from DIFFERENT models together.
+
+// Store a selection [{ model, modalityIdx, override? }] and return a short id.
+app.post('/api/selection/prepare', (req, res) => {
+    const { selections } = req.body;
+    const id = Math.random().toString(36).slice(2) + Date.now().toString(36);
+    pendingSelections.set(id, Array.isArray(selections) ? selections : []);
+    setTimeout(() => pendingSelections.delete(id), 10 * 60 * 1000);
+    res.json({ selectionId: id });
+});
+
+// SSE: run a prepared selection concurrently. ?mode=test (default) | validate
+app.get('/api/selection/stream', async (req, res) => {
+    const emit = sseSetup(res);
+    const { selectionId, mode } = req.query;
+    const validate = mode === 'validate';
+    const selections = (selectionId && pendingSelections.get(selectionId)) || [];
+    if (selectionId) pendingSelections.delete(selectionId);
+
+    // Resolve each { model, modalityIdx } → the actual modality object.
+    const items = [];
+    for (const sel of selections) {
+        try {
+            const mods = getModalities(sel.model);
+            const idx = parseInt(sel.modalityIdx, 10);
+            if (isNaN(idx) || idx < 0 || idx >= mods.length) continue;
+            items.push({ sel, mod: mods[idx] });
+        } catch { /* unknown model — skip */ }
+    }
+
+    if (!items.length) { emit('error', { message: 'No valid modalities in the selection.' }); return res.end(); }
+
+    const startTime = Date.now();
+    const collected = [];
+    emit('start', { count: items.length });
+
+    try {
+        await runWithConcurrencyLocal(items, cfg.concurrency, async ({ sel, mod }) => {
+            const label = `[${sel.model}] ${mod.subModelName} · ${mod.modalityName}`;
+            if (validate) {
+                const r = await probeModality(mod);
+                emit('result', {
+                    model: sel.model, label, subModelName: mod.subModelName,
+                    modalityName: mod.modalityName, endpoint: mod.endpoint, ...r,
+                });
+            } else {
+                emit('progress', { label, message: 'Sending request...' });
+                const effective = sel.override ? { ...mod, exampleRequest: sel.override } : mod;
+                // Use our model-prefixed label (ignore runOneModality's internal one) so
+                // modalities from different models never collide in the live feed.
+                const result = await runOneModality(effective, (_l, m) => emit('progress', { label, message: m }));
+                const tagged = { ...result, model: sel.model, label };
+                collected.push(tagged);
+                emit('result', tagged);
+            }
+        });
+
+        if (validate) {
+            emit('done', {});
+        } else {
+            const run = { id: startTime.toString(), model: '__selection__', timestamp: new Date(startTime).toISOString(), durationMs: Date.now() - startTime, results: collected };
+            const history = loadHistory();
+            history.unshift(run);
+            saveHistory(history.slice(0, 100));
+            emit('done', run);
+        }
+    } catch (err) {
+        emit('error', { message: err.message });
+    }
     res.end();
 });
 

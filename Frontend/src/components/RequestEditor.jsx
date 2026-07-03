@@ -1,5 +1,21 @@
 import { useState, useEffect } from 'react'
 
+// Build a copy-pasteable curl from the modality + the body actually being sent.
+function buildCurl(method, endpoint, body) {
+  const headers = {
+    'Content-Type': 'application/json',
+    'Cache-Control': 'no-cache',
+    'Ocp-Apim-Subscription-Key': '$PIXAZO_KEY',
+  }
+  const lines = [`curl -X ${method || 'POST'} ${JSON.stringify(endpoint || '')}`]
+  // Headers double-quoted so $PIXAZO_KEY expands; body single-quoted so the JSON
+  // is literal (no $/backtick expansion or shell injection).
+  for (const [k, v] of Object.entries(headers)) lines.push(`  -H ${JSON.stringify(`${k}: ${v}`)}`)
+  const bodyStr = JSON.stringify(body ?? {})
+  lines.push(`  -d '${bodyStr.replace(/'/g, "'\\''")}'`)
+  return lines.join(' \\\n')
+}
+
 /* ── A single parameter control (dropdown / pills / toggle / number / text) ── */
 function ParamField({ param, current, onSet }) {
   const { name, type, control, options = [], min, max, description, required, inExample } = param
@@ -113,7 +129,7 @@ function ParamField({ param, current, onSet }) {
 }
 
 /* ── One modality: Form ⇄ JSON views ──────────────────────────────────────── */
-function ModalityEditor({ modality, value, onChange }) {
+export function ModalityEditor({ modality, value, onChange }) {
   const params = modality.parameters || []
   const isObj = value && typeof value === 'object' && !Array.isArray(value)
   const canForm = params.length > 0 && isObj
@@ -121,6 +137,15 @@ function ModalityEditor({ modality, value, onChange }) {
   const [view, setView] = useState(canForm ? 'form' : 'json')
   const [text, setText] = useState(() => JSON.stringify(value, null, 2))
   const [error, setError] = useState(null)
+  const [copied, setCopied] = useState(false)
+
+  function copyCurl() {
+    const curl = buildCurl(modality.method, modality.endpoint, value)
+    navigator.clipboard?.writeText(curl).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    }).catch(() => {})
+  }
 
   // Keep the JSON text in sync when `value` changes from outside (form edits / reset),
   // but don't reformat while the user is typing valid JSON that already equals value.
@@ -154,6 +179,12 @@ function ModalityEditor({ modality, value, onChange }) {
               {modified && (
                 <span className="text-xs bg-amber-900/60 text-amber-300 px-1.5 py-0.5 rounded-full flex-shrink-0">edited</span>
               )}
+              {modality.hasExample === false && (
+                <span className="text-xs bg-amber-900/40 text-amber-400 px-1.5 py-0.5 rounded-full flex-shrink-0"
+                  title="The spec had no example body for this modality — add one before a real test, or it sends an empty request.">
+                  ⚠ no example body
+                </span>
+              )}
             </div>
             {modality.modelType && <span className="text-xs text-indigo-400">{modality.modelType}</span>}
           </div>
@@ -176,6 +207,11 @@ function ModalityEditor({ modality, value, onChange }) {
                 JSON
               </button>
             </div>
+            <button onClick={copyCurl}
+              className={`text-xs transition-colors ${copied ? 'text-green-400' : 'text-slate-400 hover:text-slate-200'}`}
+              title="Copy this request as a curl command">
+              {copied ? '✓ copied' : '⧉ curl'}
+            </button>
             <button onClick={() => onChange(null)} className="text-xs text-slate-500 hover:text-slate-300 transition-colors">↺ Reset</button>
           </div>
         </div>

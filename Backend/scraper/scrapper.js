@@ -29,9 +29,12 @@
  *       "Run Scraper" button in the tester app). It never runs automatically.
  */
 
-const { chromium } = require('playwright');
-const fs = require('fs');
-const path = require('path');
+import { chromium } from 'playwright';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // --- Constants -------------------------------------------------------------
 const BASE_URL = 'https://pixazo.ai';

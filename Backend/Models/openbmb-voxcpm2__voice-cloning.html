@@ -1,0 +1,262 @@
+<!-- Base URL -->
+  <section id="doc-base-url" class="sectionn border-0">
+    <div class="card">
+      <h2>Base URL</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>https://gateway.pixazo.ai/voxcpm/v1/voice-cloning</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Endpoint URL -->
+  <section id="doc-endpoint-url" class="sectionn border-0">
+    <div class="card">
+      <h2 style="font-weight:700;">Openbmb VoxCPM2 v1.0 Voice Cloning API Documentation</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>POST https://gateway.pixazo.ai/voxcpm/v1/voice-cloning</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authentication -->
+  <section id="doc-authentication" class="sectionn">
+    <div class="card">
+      <h2 style="font-weight:700;">Authentication</h2>
+      <p class="muted">All requests require an API key passed via header.</p>
+      <table>
+        <thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Ocp-Apim-Subscription-Key</td><td>string</td><td>Yes</td><td>Your API subscription key</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="doc-openbmb-voxcpm2-voice-cloning" class="sectionn border-0">
+    <h2 class="section-heading">Voice Cloning - Openbmb VoxCPM2</h2>
+
+    <div id="doc-openbmb-voxcpm2-voice-cloning-code" class="grid grid-2">
+      <div class="card">
+        <h2>Request Code</h2>
+        <div class="nav-tabs">
+          <button class="nav-tab active" onclick="showTab('http-doc-openbmb-voxcpm2-voice-cloning', this)">HTTP</button>
+          <button class="nav-tab" onclick="showTab('python-doc-openbmb-voxcpm2-voice-cloning', this)">Python</button>
+          <button class="nav-tab" onclick="showTab('javascript-doc-openbmb-voxcpm2-voice-cloning', this)">JavaScript</button>
+          <button class="nav-tab" onclick="showTab('curl-doc-openbmb-voxcpm2-voice-cloning', this)">cURL</button>
+        </div>
+
+        <div id="http-doc-openbmb-voxcpm2-voice-cloning" class="tab-content active">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>POST https://gateway.pixazo.ai/voxcpm/v1/voice-cloning
+Content-Type: application/json
+Cache-Control: no-cache
+Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY
+
+{
+  "text": "Hello, this is a test.",
+  "reference_audio_url": "https://your-audio-file.wav",
+  "prompt_text": "transcript of reference audio (optional)"
+}</code></pre>
+          </div>
+        </div>
+
+        <div id="python-doc-openbmb-voxcpm2-voice-cloning" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>import requests
+
+url = "https://gateway.pixazo.ai/voxcpm/v1/voice-cloning"
+headers = {
+    "Content-Type": "application/json",
+    "Cache-Control": "no-cache",
+    "Ocp-Apim-Subscription-Key": "YOUR_SUBSCRIPTION_KEY"
+}
+data = {
+    "text": "Hello, this is a test.",
+    "reference_audio_url": "https://your-audio-file.wav",
+    "prompt_text": "transcript of reference audio (optional)"
+}
+
+response = requests.post(url, json=data, headers=headers)
+print(response.json())</code></pre>
+          </div>
+        </div>
+
+        <div id="javascript-doc-openbmb-voxcpm2-voice-cloning" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>const url = 'https://gateway.pixazo.ai/voxcpm/v1/voice-cloning';
+const headers = {
+  'Content-Type': 'application/json',
+  'Cache-Control': 'no-cache',
+  'Ocp-Apim-Subscription-Key': 'YOUR_SUBSCRIPTION_KEY'
+};
+const data = {
+  text: 'Hello, this is a test.',
+  reference_audio_url: 'https://your-audio-file.wav',
+  prompt_text: 'transcript of reference audio (optional)'
+};
+
+fetch(url, {
+  method: 'POST',
+  headers: headers,
+  body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));</code></pre>
+          </div>
+        </div>
+
+        <div id="curl-doc-openbmb-voxcpm2-voice-cloning" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>curl -v -X POST "https://gateway.pixazo.ai/voxcpm/v1/voice-cloning" \
+  -H "Content-Type: application/json" \
+  -H "Cache-Control: no-cache" \
+  -H "Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY" \
+  --data-raw '{
+    "text": "Hello, this is a test.",
+    "reference_audio_url": "https://your-audio-file.wav",
+    "prompt_text": "transcript of reference audio (optional)"
+  }'</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Output</h2>
+        <div class="copy-wrap">
+          <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>{
+  "url": "https://pub-xxx.r2.dev/voxcpm/abc123.wav",
+  "audio_url": "https://pub-xxx.r2.dev/voxcpm/abc123.wav",
+  "sample_rate": 48000,
+  "elapsed_s": 2.3,
+  "status": "done"
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="try-now-wrapper">
+      <a href="https://api.pixazo.ai/api-details#api=voxcpm&operation=voice-cloning" target="_blank" class="btn-primary btn-try-now">Try Now</a>
+    </div>
+  </section>
+
+  <!-- Parameters -->
+  <section id="doc-openbmb-voxcpm2-voice-cloning-params" class="sectionn">
+    <div class="card">
+      <h2>Request Parameters - Voice Cloning</h2>
+      <div class="tableOuter">
+        <table><thead><tr><th>Parameter</th><th>Required</th><th>Type</th><th>Default</th><th>Allowed values / range</th><th>Description</th></tr></thead><tbody><tr><td>text</td><td>Yes</td><td>string</td><td>&mdash;</td><td>&mdash;</td><td>The text to synthesize in the cloned voice. Supports natural-language sentences and punctuation for prosody control.</td></tr><tr><td>reference_audio_url</td><td>Yes</td><td>string (URL)</td><td>&mdash;</td><td>&mdash;</td><td>Publicly accessible URL of the reference audio file (<code>.wav</code> recommended) that the model will clone the voice from. The reference should be a clean recording of a single speaker.</td></tr><tr><td>prompt_text</td><td>No</td><td>string</td><td>&mdash;</td><td>&mdash;</td><td>Transcript of the <code>reference_audio_url</code>. Providing the exact transcript improves voice-cloning fidelity; if omitted, the model attempts internal transcription.</td></tr></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Request/Response -->
+  <section id="doc-openbmb-voxcpm2-voice-cloning-example" class="sectionn">
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Example Request</h2>
+        <div class="copy-wrap">
+          <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>{
+  "text": "Hello, this is a test.",
+  "reference_audio_url": "https://your-audio-file.wav",
+  "prompt_text": "transcript of reference audio (optional)"
+}</code></pre>
+        </div>
+      </div>
+      <div id="doc-openbmb-voxcpm2-voice-cloning-response" class="card">
+        <h2>Response</h2>
+        <div class="copy-wrap">
+          <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>{
+  "url": "https://pub-xxx.r2.dev/voxcpm/abc123.wav",
+  "audio_url": "https://pub-xxx.r2.dev/voxcpm/abc123.wav",
+  "sample_rate": 48000,
+  "elapsed_s": 2.3,
+  "status": "done"
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Fields -->
+  <section id="doc-openbmb-voxcpm2-voice-cloning-response-fields" class="sectionn">
+    <div class="card">
+      <h2>Response Fields</h2>
+      <div class="tableOuter">
+        <table>
+          <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>url</td><td>string</td><td>Public URL of the generated <code>.wav</code> audio file (R2 CDN). Equivalent to <code>audio_url</code>.</td></tr>
+            <tr><td>audio_url</td><td>string</td><td>Alias of <code>url</code> kept for compatibility with audio-focused clients.</td></tr>
+            <tr><td>sample_rate</td><td>integer</td><td>Sample rate of the output audio, in Hz (e.g. <code>48000</code>).</td></tr>
+            <tr><td>elapsed_s</td><td>number</td><td>Server-side processing time in seconds.</td></tr>
+            <tr><td>status</td><td>string</td><td>Always <code>"done"</code> on a 200 success. Error cases return non-2xx status codes (see Response Handling).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="doc-openbmb-voxcpm2-voice-cloning-headers" class="sectionn">
+    <div class="card">
+      <h2>Request Headers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Header</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Content-Type</td><td>application/json</td></tr>
+          <tr><td>Cache-Control</td><td>no-cache</td></tr>
+          <tr><td>Ocp-Apim-Subscription-Key</td><td>YOUR_SUBSCRIPTION_KEY</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Response Handling</h2>
+      <p class="muted">Common status codes.</p>
+      <table>
+        <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="ok">200</td><td>Success &mdash; cloned audio generated</td></tr>
+          <tr><td class="wa">400</td><td>Bad Request (missing/invalid <code>text</code> or <code>reference_audio_url</code>, unreachable reference URL)</td></tr>
+          <tr><td class="er">401</td><td>Unauthorized</td></tr>
+          <tr><td class="er">402</td><td>Insufficient Balance</td></tr>
+          <tr><td class="er">403</td><td>Forbidden</td></tr>
+          <tr><td class="wa">429</td><td>Too Many Requests</td></tr>
+          <tr><td class="er">500</td><td>Internal Server Error</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    function showTab(tabName, button) {
+      const navTabs = button.closest('.nav-tabs');
+      const parentCard = button.closest('.card');
+
+      navTabs.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      parentCard.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    }
+  </script>

@@ -10,5 +10,5 @@
   "dependencies": {
     "playwright": "^1.44.0"
   },
-  "type": "commonjs"
+  "type": "module"
 }

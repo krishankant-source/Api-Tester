@@ -4,7 +4,16 @@ import { useState, useRef, useEffect } from 'react'
  * Runs the Pixazo scraper on demand and streams its progress.
  * The scraper NEVER runs automatically — only when the user starts it here.
  */
-export default function ScraperModal({ open, onClose, onComplete }) {
+export default function ScraperModal({
+  open, onClose, onComplete,
+  streamUrl = '/api/scrape/stream',
+  icon = '🕷️',
+  title = 'Run Model Scraper',
+  subtitle = 'Re-scrapes pixazo.ai for models, endpoints & parameters',
+  idleText = 'This launches the scraper to rebuild the model config with the latest models and their tweakable parameters. It visits every model page, so a full run can take several minutes.',
+  startLabel = '▶ Start Scrape',
+  runningLabel = 'Working… (this can take a few minutes)',
+}) {
   const [status, setStatus] = useState('idle') // idle | running | done | error
   const [lines, setLines] = useState([])
   const [msg, setMsg] = useState('')
@@ -24,7 +33,7 @@ export default function ScraperModal({ open, onClose, onComplete }) {
 
   function start() {
     setStatus('running'); setLines([]); setMsg(''); doneRef.current = false
-    const es = new EventSource('/api/scrape/stream')
+    const es = new EventSource(streamUrl)
     esRef.current = es
 
     es.addEventListener('start', e => {
@@ -35,9 +44,9 @@ export default function ScraperModal({ open, onClose, onComplete }) {
     })
     es.addEventListener('done', e => {
       doneRef.current = true
-      let models = '?'
+      let models
       try { models = JSON.parse(e.data).models } catch { /* noop */ }
-      setStatus('done'); setMsg(`Done — config updated with ${models} models.`)
+      setStatus('done'); setMsg(models != null ? `Done — config updated with ${models} models.` : 'Done — finished successfully.')
       es.close()
       if (onComplete) onComplete()
     })
@@ -70,10 +79,10 @@ export default function ScraperModal({ open, onClose, onComplete }) {
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-slate-700">
           <div className="flex items-center gap-3">
-            <span className="text-xl">🕷️</span>
+            <span className="text-xl">{icon}</span>
             <div>
-              <h3 className="text-base font-bold text-white leading-none">Run Model Scraper</h3>
-              <p className="text-xs text-slate-500 mt-1">Re-scrapes pixazo.ai for models, endpoints &amp; parameters</p>
+              <h3 className="text-base font-bold text-white leading-none">{title}</h3>
+              <p className="text-xs text-slate-500 mt-1">{subtitle}</p>
             </div>
           </div>
           <button onClick={handleClose} disabled={running}
@@ -84,8 +93,7 @@ export default function ScraperModal({ open, onClose, onComplete }) {
         <div className="p-5 overflow-y-auto">
           {status === 'idle' && (
             <div className="text-sm text-slate-400 space-y-3">
-              <p>This launches the scraper to rebuild <span className="font-mono text-slate-300">pixazo_config.json</span> with the latest models and their tweakable parameters (resolution, aspect ratio, etc).</p>
-              <p className="text-xs text-slate-500">⚠️ It visits every model page, so a full run can take several minutes. The config is written incrementally and reloads automatically when finished.</p>
+              <p>{idleText}</p>
             </div>
           )}
 
@@ -110,13 +118,13 @@ export default function ScraperModal({ open, onClose, onComplete }) {
           {status === 'idle' && (
             <button onClick={start}
               className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-colors">
-              ▶ Start Scrape
+              {startLabel}
             </button>
           )}
           {running && (
             <span className="flex items-center gap-2 text-sm text-indigo-400">
               <span className="w-4 h-4 border-2 border-indigo-400/30 border-t-indigo-400 rounded-full animate-spin" />
-              Scraping… (this can take a few minutes)
+              {runningLabel}
             </span>
           )}
           {(status === 'done' || status === 'error') && (

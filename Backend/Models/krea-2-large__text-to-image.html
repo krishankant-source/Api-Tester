@@ -1,0 +1,409 @@
+<section id="doc-endpoint-url" class="sectionn border-0">
+  <div class="card">
+    <h2 style="font-weight:700;">Krea 2 Large Text to Image API Documentation</h2>
+    <p class="muted">Generate a high-quality image from a text prompt with Krea 2 Large. This is an asynchronous (queue) API: submit a request, then poll for the result.</p>
+    <div class="copy-wrap">
+      <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+      <pre><code>POST https://gateway.pixazo.ai/krea-2-large/v1/text-to-image</code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="doc-authentication" class="sectionn">
+  <div class="card">
+    <h2 style="font-weight:700;">Authentication</h2>
+    <p class="muted">All requests require an API key passed via header.</p>
+    <div class="tableOuter">
+      <table>
+        <thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>Ocp-Apim-Subscription-Key</code></td><td>string</td><td>Yes</td><td>Your API subscription key</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image" class="sectionn border-0">
+  <h2 class="section-heading">Text to Image - Krea 2 Large</h2>
+
+  <div id="doc-krea-2-large-text-to-image-code" class="grid grid-2">
+    <div class="card">
+      <h2>Request Code</h2>
+      <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showTab('http-doc-krea-2-large-text-to-image', this)">HTTP</button>
+        <button class="nav-tab" onclick="showTab('python-doc-krea-2-large-text-to-image', this)">Python</button>
+        <button class="nav-tab" onclick="showTab('javascript-doc-krea-2-large-text-to-image', this)">JavaScript</button>
+        <button class="nav-tab" onclick="showTab('curl-doc-krea-2-large-text-to-image', this)">cURL</button>
+      </div>
+      <div id="http-doc-krea-2-large-text-to-image" class="tab-content active">
+        <div class="copy-wrap">
+          <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+          <pre><code>POST /krea-2-large/v1/text-to-image HTTP/1.1
+Host: gateway.pixazo.ai
+Ocp-Apim-Subscription-Key: YOUR_API_KEY
+Content-Type: application/json
+
+{
+  "prompt": "a cinematic glass cabin beside a frozen lake at sunrise",
+  "aspect_ratio": "16:9",
+  "resolution": "1K"
+}</code></pre>
+        </div>
+      </div>
+      <div id="python-doc-krea-2-large-text-to-image" class="tab-content">
+        <div class="copy-wrap">
+          <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+          <pre><code>import requests
+
+resp = requests.post(
+    "https://gateway.pixazo.ai/krea-2-large/v1/text-to-image",
+    headers={
+        "Ocp-Apim-Subscription-Key": "YOUR_API_KEY",
+        "Content-Type": "application/json",
+    },
+    json={
+        "prompt": "a cinematic glass cabin beside a frozen lake at sunrise",
+        "aspect_ratio": "16:9",
+        "resolution": "1K",
+    },
+)
+print(resp.json())</code></pre>
+        </div>
+      </div>
+      <div id="javascript-doc-krea-2-large-text-to-image" class="tab-content">
+        <div class="copy-wrap">
+          <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+          <pre><code>const res = await fetch("https://gateway.pixazo.ai/krea-2-large/v1/text-to-image", {
+  method: "POST",
+  headers: {
+    "Ocp-Apim-Subscription-Key": "YOUR_API_KEY",
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    prompt: "a cinematic glass cabin beside a frozen lake at sunrise",
+    aspect_ratio: "16:9",
+    resolution: "1K",
+  }),
+});
+const data = await res.json();
+console.log(data);</code></pre>
+        </div>
+      </div>
+      <div id="curl-doc-krea-2-large-text-to-image" class="tab-content">
+        <div class="copy-wrap">
+          <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+          <pre><code>curl -X POST "https://gateway.pixazo.ai/krea-2-large/v1/text-to-image" \
+  -H "Ocp-Apim-Subscription-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "prompt": "a cinematic glass cabin beside a frozen lake at sunrise",
+    "aspect_ratio": "16:9",
+    "resolution": "1K"
+  }'</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Output</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+        <pre><code>{
+  "request_id": "krea-2-large_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "QUEUED",
+  "polling_url": "https://gateway.pixazo.ai/v2/requests/status/krea-2-large_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="try-now-wrapper">
+    <a href="https://api.pixazo.ai/api-details#api=krea-2-large&operation=text-to-image" target="_blank" class="btn-primary btn-try-now">Try Now</a>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-webhook" class="sectionn">
+  <div class="card">
+    <h2>Webhook (Optional)</h2>
+    <p class="muted">Instead of polling, you can receive an HTTP callback when the request reaches a terminal state. Pass the webhook URL via the <code>X-Webhook-URL</code> header on the submit request.</p>
+    <h3 style="margin-top:20px">Webhook Headers</h3>
+    <div class="tableOuter">
+      <table>
+        <thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>X-Webhook-URL</code></td><td>string</td><td>No</td><td>HTTPS URL that receives a POST callback when the request finishes. Enables webhook delivery.</td></tr>
+          <tr><td><code>X-Webhook-Mode</code></td><td>string</td><td>No</td><td><code>terminal</code> (default) fires once on COMPLETED/ERROR; <code>sync</code> also fires a progress webhook on every poll cycle.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 style="margin-top:20px">Example: enable webhook</h3>
+    <div class="copy-wrap">
+      <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+      <pre><code>curl -X POST "https://gateway.pixazo.ai/krea-2-large/v1/text-to-image" \
+  -H "Ocp-Apim-Subscription-Key: YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -H "X-Webhook-URL: https://your-server.com/webhooks/krea" \
+  -d '{"prompt":"a serene mountain lake","aspect_ratio":"16:9","resolution":"1K"}'</code></pre>
+    </div>
+    <h3 style="margin-top:20px">Callback Payload (Success)</h3>
+    <div class="copy-wrap">
+      <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+      <pre><code>{
+  "request_id": "krea-2-large_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "COMPLETED",
+  "model_id": "krea-2-large",
+  "output": {
+    "media_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/krea-2-large/019dxxxx-result.png",
+    "media_type": "image/png"
+  },
+  "completed_at": "2026-06-23T10:00:18.000Z"
+}</code></pre>
+    </div>
+    <h3 style="margin-top:20px">Callback Payload (Failure)</h3>
+    <div class="copy-wrap">
+      <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+      <pre><code>{
+  "request_id": "krea-2-large_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "ERROR",
+  "model_id": "krea-2-large",
+  "error": "GENERATION_FAILED: <reason>",
+  "output": null
+}</code></pre>
+    </div>
+    <h3 style="margin-top:20px">Delivery semantics</h3>
+    <ul class="muted">
+      <li><strong>terminal</strong> mode (default): one webhook fires when the request reaches COMPLETED or ERROR.</li>
+      <li><strong>sync</strong> mode: a progress webhook fires on every poll cycle (carrying the current status) plus the terminal webhook.</li>
+      <li>Deliveries are idempotent on <code>request_id</code> — de-duplicate on your side.</li>
+      <li>Respond <code>200</code> within a few seconds; non-2xx may be retried.</li>
+      <li>The webhook URL must be HTTPS.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-params" class="sectionn">
+  <div class="card">
+    <h2>Request Parameters - Text to Image</h2>
+    <div class="tableOuter">
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>Required</th><th>Type</th><th>Default</th><th>Allowed values / range</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>prompt</code></td><td>Yes</td><td>string</td><td>&mdash;</td><td>Any descriptive text</td><td>Text prompt describing the image to generate.</td></tr>
+          <tr><td><code>aspect_ratio</code></td><td>Yes</td><td>string</td><td>&mdash;</td><td><code>"1:1"</code>, <code>"4:3"</code>, <code>"3:2"</code>, <code>"16:9"</code>, <code>"2.35:1"</code>, <code>"4:5"</code>, <code>"2:3"</code>, <code>"9:16"</code></td><td>Aspect ratio of the generated image.</td></tr>
+          <tr><td><code>resolution</code></td><td>Yes</td><td>string</td><td>&mdash;</td><td><code>"1K"</code></td><td>Resolution scale.</td></tr>
+          <tr><td><code>creativity</code></td><td>No</td><td>string</td><td><code>"low"</code></td><td><code>"raw"</code>, <code>"low"</code>, <code>"medium"</code>, <code>"high"</code></td><td>Prompt expansion mode. <code>raw</code> disables expansion; <code>low</code>/<code>medium</code>/<code>high</code> control strength.</td></tr>
+          <tr><td><code>complexity</code></td><td>No</td><td>integer</td><td><code>0</code></td><td>-100 &ndash; 100</td><td>K2 Complexity slider. 0 disables the slider LoRA.</td></tr>
+          <tr><td><code>intensity</code></td><td>No</td><td>integer</td><td><code>0</code></td><td>-100 &ndash; 100</td><td>K2 Intensity slider. 0 disables the slider LoRA.</td></tr>
+          <tr><td><code>movement</code></td><td>No</td><td>integer</td><td><code>0</code></td><td>-100 &ndash; 100</td><td>K2 Movement slider. 0 disables the slider LoRA.</td></tr>
+          <tr><td><code>seed</code></td><td>No</td><td>number</td><td>&mdash; (random)</td><td>any integer, or <code>null</code></td><td>Random seed for reproducible generations. Omit or pass <code>null</code> for a random seed.</td></tr>
+          <tr><td><code>image_style_references</code></td><td>No</td><td>array</td><td>&mdash;</td><td>up to 10 items</td><td>Reference images to drive the visual style (not editing — style conditioning only).</td></tr>
+          <tr><td><code>image_style_references[].url</code></td><td>Conditional</td><td>string (uri)</td><td>&mdash;</td><td>max 1024 chars</td><td>URL of the reference image. Required for each item.</td></tr>
+          <tr><td><code>image_style_references[].strength</code></td><td>No</td><td>number</td><td><code>0.5</code></td><td>0 &ndash; 1</td><td>Style influence (0 = none, 1 = maximum).</td></tr>
+          <tr><td><code>moodboards</code></td><td>No</td><td>array</td><td>&mdash;</td><td>exactly 1 item</td><td>Moodboard reference (currently limited to one).</td></tr>
+          <tr><td><code>moodboards[].id</code></td><td>Conditional</td><td>string (uuid)</td><td>&mdash;</td><td>UUID</td><td>Moodboard identifier. Required for each item.</td></tr>
+          <tr><td><code>moodboards[].strength</code></td><td>No</td><td>number</td><td><code>0.23</code></td><td>0 &ndash; 1</td><td>Moodboard influence (0 = none, 1 = maximum).</td></tr>
+          <tr><td><code>styles</code></td><td>No</td><td>array</td><td>&mdash;</td><td>LoRAs / style presets</td><td>Styles (typically LoRAs) to apply to the generation.</td></tr>
+          <tr><td><code>styles[].id</code></td><td>Conditional</td><td>string</td><td>&mdash;</td><td>&mdash;</td><td>Style (LoRA) identifier. Required for each item.</td></tr>
+          <tr><td><code>styles[].strength</code></td><td>Conditional</td><td>number</td><td>&mdash;</td><td>-2 &ndash; 2</td><td>Style strength. Required for each item.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted"><strong>Note:</strong> Krea 2 Large is text-to-image only. The image inputs above (<code>image_style_references</code>, <code>moodboards</code>) are style/conditioning references — there is no image-to-image or editing mode.</p>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-example" class="sectionn">
+  <div class="grid grid-2">
+    <div class="card">
+      <h2>Example Request</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+        <pre><code>{
+  "prompt": "a cinematic glass cabin beside a frozen lake at sunrise",
+  "aspect_ratio": "16:9",
+  "resolution": "1K",
+  "creativity": "medium",
+  "complexity": 0,
+  "intensity": 0,
+  "movement": 0,
+  "seed": 12345,
+  "image_style_references": [
+    { "url": "https://example.com/style.jpg", "strength": 0.5 }
+  ]
+}</code></pre>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Response</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+        <pre><code>{
+  "request_id": "krea-2-large_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "QUEUED",
+  "polling_url": "https://gateway.pixazo.ai/v2/requests/status/krea-2-large_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-headers" class="sectionn">
+  <div class="card">
+    <h2>Request Headers</h2>
+    <div class="tableOuter">
+      <table>
+        <thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>Ocp-Apim-Subscription-Key</code></td><td>string</td><td>Yes</td><td>Your API subscription key</td></tr>
+          <tr><td><code>Content-Type</code></td><td>string</td><td>Yes</td><td><code>application/json</code></td></tr>
+          <tr><td><code>X-Webhook-URL</code></td><td>string</td><td>No</td><td>HTTPS URL to receive a terminal callback</td></tr>
+          <tr><td><code>X-Webhook-Mode</code></td><td>string</td><td>No</td><td><code>terminal</code> (default) or <code>sync</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-handling" class="sectionn">
+  <div class="card">
+    <h2>Response Handling</h2>
+    <div class="tableOuter">
+      <table>
+        <thead><tr><th>Status Code</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><code>202</code></td><td>Accepted — request queued; use <code>polling_url</code> to retrieve the result.</td></tr>
+          <tr><td><code>400</code></td><td>Bad request — invalid or missing parameters.</td></tr>
+          <tr><td><code>401</code></td><td>Unauthorized — missing or invalid subscription key.</td></tr>
+          <tr><td><code>402</code></td><td>Insufficient balance — top up your wallet.</td></tr>
+          <tr><td><code>403</code></td><td>Forbidden — key not authorized for this API.</td></tr>
+          <tr><td><code>429</code></td><td>Too many requests — rate limit exceeded.</td></tr>
+          <tr><td><code>500</code></td><td>Internal server error.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-errors" class="sectionn">
+  <div class="card">
+    <h2>Error Responses</h2>
+    <p class="muted">Submit-time errors are returned synchronously; generation errors are reported on the status response (and webhook) with <code>status: "ERROR"</code>.</p>
+    <div class="copy-wrap">
+      <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+      <pre><code>// 402 Insufficient balance
+{ "error": "Insufficient balance. Required amount: $0.06" }
+
+// 400 Validation error
+{ "success": false, "error": { "message": "aspect_ratio is required and must be one of: 1:1, 4:3, 3:2, 16:9, 2.35:1, 4:5, 2:3, 9:16", "code": "VALIDATION_ERROR" } }
+
+// Generation failure (via status / webhook)
+{ "request_id": "krea-2-large_019dxxxx-...", "status": "ERROR", "model_id": "krea-2-large", "error": "GENERATION_FAILED: <reason>", "output": null }</code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-results" class="sectionn">
+  <div class="card">
+    <h2>Retrieving Results</h2>
+    <p class="muted">Poll the universal status endpoint with the <code>request_id</code> from the submit response until <code>status</code> is terminal (<code>COMPLETED</code> / <code>FAILED</code> / <code>ERROR</code>).</p>
+    <pre><code>GET https://gateway.pixazo.ai/v2/requests/status/{request_id}</code></pre>
+    <h3 style="margin-top:20px">cURL Example</h3>
+    <div class="copy-wrap">
+      <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+      <pre><code>curl "https://gateway.pixazo.ai/v2/requests/status/krea-2-large_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" \
+  -H "Ocp-Apim-Subscription-Key: YOUR_API_KEY"</code></pre>
+    </div>
+    <h3 style="margin-top:20px">Response (Completed)</h3>
+    <div class="copy-wrap">
+      <button class="copy-btn" style="float:right;" onclick="copyCode(this)" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+      <pre><code>{
+  "request_id": "krea-2-large_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "COMPLETED",
+  "model_id": "krea-2-large",
+  "error": null,
+  "output": {
+    "media_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/krea-2-large/019dxxxx-result.png",
+    "media_type": "image/png"
+  },
+  "created_at": "2026-06-23T10:00:00.000Z",
+  "completed_at": "2026-06-23T10:00:18.000Z"
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-fields" class="sectionn">
+  <div class="card">
+    <h2>Response Fields</h2>
+    <div class="tableOuter">
+      <table>
+        <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td><code>request_id</code></td><td>string</td><td>Unique id for the request; use it to poll status.</td></tr>
+          <tr><td><code>status</code></td><td>string</td><td>QUEUED, PROCESSING, COMPLETED, FAILED, or ERROR.</td></tr>
+          <tr><td><code>model_id</code></td><td>string</td><td>Always <code>krea-2-large</code>.</td></tr>
+          <tr><td><code>error</code></td><td>string | null</td><td>Failure reason when status is ERROR/FAILED; otherwise null.</td></tr>
+          <tr><td><code>output.media_url</code></td><td>string</td><td>URL of the generated image (PNG).</td></tr>
+          <tr><td><code>output.media_type</code></td><td>string</td><td><code>image/png</code></td></tr>
+          <tr><td><code>created_at</code></td><td>string</td><td>ISO 8601 submit timestamp.</td></tr>
+          <tr><td><code>completed_at</code></td><td>string</td><td>ISO 8601 completion timestamp.</td></tr>
+          <tr><td><code>polling_url</code></td><td>string</td><td>Full status URL for this request.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="doc-krea-2-large-text-to-image-status" class="sectionn">
+  <div class="card">
+    <h2>Status Values</h2>
+    <div class="tableOuter">
+      <table>
+        <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><code>QUEUED</code></td><td>Request accepted and waiting to be processed.</td></tr>
+          <tr><td><code>PROCESSING</code></td><td>Generation in progress.</td></tr>
+          <tr><td><code>COMPLETED</code></td><td>Done — <code>output.media_url</code> is available.</td></tr>
+          <tr><td><code>FAILED</code> / <code>ERROR</code></td><td>Generation failed — see <code>error</code>. Failed requests are not charged.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 style="margin-top:24px">Status Flow</h2>
+    <p class="muted">QUEUED &rarr; PROCESSING &rarr; COMPLETED (or FAILED / ERROR)</p>
+    <h2 style="margin-top:24px">Typical Workflow</h2>
+    <ol class="muted">
+      <li>POST to <code>/krea-2-large/v1/text-to-image</code> &rarr; receive <code>request_id</code> + <code>polling_url</code>.</li>
+      <li>Poll <code>GET /v2/requests/status/{request_id}</code> every few seconds (or use a webhook).</li>
+      <li>When <code>status</code> is <code>COMPLETED</code>, download <code>output.media_url</code>.</li>
+    </ol>
+  </div>
+</section>
+
+<script>
+    function copyCode(btn) {
+      var wrap = btn.closest('.copy-wrap');
+      var code = wrap ? wrap.querySelector('code') : null;
+      if (!code) return;
+      navigator.clipboard.writeText(code.textContent).then(function() {
+        var toast = document.createElement('div');
+        toast.textContent = 'Copied!';
+        toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#3cd19c;color:#000;padding:10px 24px;border-radius:8px;font-weight:600;font-size:14px;z-index:9999;animation:fadeInOut 2s ease;';
+        document.body.appendChild(toast);
+        setTimeout(function() { toast.remove(); }, 2000);
+        var orig = btn.innerHTML;
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3cd19c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+        setTimeout(function() { btn.innerHTML = orig; }, 2000);
+      });
+    }
+    function showTab(tabName, button) {
+      var navTabs = button.closest('.nav-tabs');
+      var parentCard = button.closest('.card');
+      navTabs.querySelectorAll('.nav-tab').forEach(function(tab) { tab.classList.remove('active'); });
+      parentCard.querySelectorAll('.tab-content').forEach(function(content) { content.classList.remove('active'); });
+      button.classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    }
+  </script>

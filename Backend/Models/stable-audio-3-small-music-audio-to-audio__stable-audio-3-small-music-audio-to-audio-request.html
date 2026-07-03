@@ -1,0 +1,871 @@
+<!-- Base URL -->
+  <section id="doc-base-url" class="sectionn border-0">
+    <div class="card">
+      <h2>Base URL</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>https://gateway.pixazo.ai/stable-audio-3-small-music-audio-to-audio/v1/stable-audio-3-small-music-audio-to-audio-request</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authentication -->
+  <section id="doc-authentication" class="sectionn">
+    <div class="card">
+      <h2>Authentication</h2>
+      <p class="muted">All requests require an API key passed via header.</p>
+      <table>
+        <thead><tr><th>Header</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Ocp-Apim-Subscription-Key</td><td>string</td><td>Yes</td><td>Your API subscription key</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request" class="sectionn border-0">
+    <h2 class="section-heading">Stable Audio 3 Small Music Audio to Audio generate request</h2>
+
+    <div id="doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request-code" class="grid grid-2">
+      <div class="card">
+        <h2>Request Code</h2>
+        <div class="nav-tabs">
+          <button class="nav-tab active" onclick="showTab('http-doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request', this)">HTTP</button>
+          <button class="nav-tab" onclick="showTab('python-doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request', this)">Python</button>
+          <button class="nav-tab" onclick="showTab('javascript-doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request', this)">JavaScript</button>
+          <button class="nav-tab" onclick="showTab('curl-doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request', this)">cURL</button>
+        </div>
+
+        <div id="http-doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request" class="tab-content active">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>POST https://gateway.pixazo.ai/stable-audio-3-small-music-audio-to-audio/v1/stable-audio-3-small-music-audio-to-audio-request
+Content-Type: application/json
+Cache-Control: no-cache
+Ocp-Apim-Subscription-Key: YOUR_API_KEY
+
+{
+  "prompt": "Transform this into a cinematic orchestral arrangement with sweeping strings",
+  "audio_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/Audio.mp3"
+}</code></pre>
+          </div>
+        </div>
+
+        <div id="python-doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>import requests
+
+url = "https://gateway.pixazo.ai/stable-audio-3-small-music-audio-to-audio/v1/stable-audio-3-small-music-audio-to-audio-request"
+headers = {
+    "Content-Type": "application/json",
+    "Cache-Control": "no-cache",
+    "Ocp-Apim-Subscription-Key": "YOUR_API_KEY"
+}
+data = {
+    "prompt": "Transform this into a cinematic orchestral arrangement with sweeping strings",
+    "audio_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/Audio.mp3"
+}
+
+response = requests.post(url, json=data, headers=headers)
+print(response.json())</code></pre>
+          </div>
+        </div>
+
+        <div id="javascript-doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>const url = "https://gateway.pixazo.ai/stable-audio-3-small-music-audio-to-audio/v1/stable-audio-3-small-music-audio-to-audio-request";
+const headers = {
+  "Content-Type": "application/json",
+  "Cache-Control": "no-cache",
+  "Ocp-Apim-Subscription-Key": "YOUR_API_KEY"
+};
+const data = {
+  "prompt": "Transform this into a cinematic orchestral arrangement with sweeping strings",
+  "audio_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/Audio.mp3"
+};
+
+fetch(url, {
+  method: "POST",
+  headers: headers,
+  body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(data => console.log(data));</code></pre>
+          </div>
+        </div>
+
+        <div id="curl-doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request" class="tab-content">
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>curl -X POST "https://gateway.pixazo.ai/stable-audio-3-small-music-audio-to-audio/v1/stable-audio-3-small-music-audio-to-audio-request" \
+  -H "Content-Type: application/json" \
+  -H "Cache-Control: no-cache" \
+  -H "Ocp-Apim-Subscription-Key: YOUR_API_KEY" \
+  --data-raw '{
+    "prompt": "Transform this into a cinematic orchestral arrangement with sweeping strings",
+    "audio_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/Audio.mp3"
+  }'</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Output</h2>
+        <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "request_id": "stable-audio-3-small-music-audio-to-audio_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "QUEUED",
+  "polling_url": "https://gateway.pixazo.ai/v2/requests/status/stable-audio-3-small-music-audio-to-audio_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}</code></pre>
+          </div>
+      </div>
+    </div>
+
+    <div class="try-now-wrapper">
+      <a href="https://api.pixazo.ai/api-details#api=stable-audio-3-small-music-audio-to-audio&operation=stable-audio-3-small-music-audio-to-audio-request" target="_blank" class="btn-primary btn-try-now">Try Now</a>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Webhook (Optional)</h2>
+      <p class="muted">Add the <code>X-Webhook-URL</code> header to your generate request to receive a POST callback instead of polling.</p>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>X-Webhook-URL: https://your-server.com/webhook/callback</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parameters for this operation -->
+  <section id="doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request-params" class="sectionn">
+    <div class="card">
+      <h2>Request Parameters - Stable Audio 3 Small Music Audio to Audio generate request</h2>
+      <div class="tableOuter">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Required</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Allowed values / range</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>prompt</td><td>Yes</td><td>string</td><td>—</td><td>—</td><td>Text description guiding how the source audio should be transformed.</td></tr>
+            <tr><td>audio_url</td><td>Yes</td><td>string</td><td>—</td><td>—</td><td>URL of the source audio to transform. Supported formats: mp3, ogg, wav, m4a, aac.</td></tr>
+            <tr><td>init_noise_level</td><td>No</td><td>float</td><td>0.9</td><td>0–1</td><td>How much noise to add to the source audio (0-1). Lower values keep the output closer to the source; higher values allow more creative deviation.</td></tr>
+            <tr><td>negative_prompt</td><td>No</td><td>string</td><td>""</td><td>—</td><td>Qualities to avoid in the output.</td></tr>
+            <tr><td>duration</td><td>No</td><td>float</td><td>30</td><td>1–120 (seconds)</td><td>Output length in seconds (1-120).</td></tr>
+            <tr><td>num_inference_steps</td><td>No</td><td>integer</td><td>8</td><td>1–100</td><td>Number of denoising steps the model runs while generating. Higher values refine detail and quality but increase processing time; lower values are faster.</td></tr>
+            <tr><td>guidance_scale</td><td>No</td><td>float</td><td>1</td><td>0–25</td><td>Controls how closely the output follows your prompt (prompt adherence). Higher values stick more strictly to the prompt; lower values allow more creative variation.</td></tr>
+            <tr><td>output_format</td><td>No</td><td>enum</td><td>"mp3"</td><td>"mp3", "wav", "flac", "ogg", "opus", "m4a", "aac"</td><td>Audio output format. Allowed: mp3, wav, flac, ogg, opus, m4a, aac.</td></tr>
+            <tr><td>bitrate</td><td>No</td><td>string</td><td>"192k"</td><td>—</td><td>Audio bitrate for compressed formats (e.g., "128k", "192k", "320k").</td></tr>
+            <tr><td>enable_prompt_expansion</td><td>No</td><td>boolean</td><td>false</td><td>—</td><td>Automatically rewrites and enriches your prompt with extra detail before generation to improve results.</td></tr>
+            <tr><td>enable_safety_checker</td><td>No</td><td>boolean</td><td>true</td><td>—</td><td>Turns on automatic filtering of unsafe or explicit (NSFW) content. Leave enabled unless you have a specific reason to disable it.</td></tr>
+            <tr><td>seed</td><td>No</td><td>integer</td><td>—</td><td>—</td><td>Random seed that controls the generation's randomness. Reuse the same seed with identical settings to reproduce the same result; leave it empty for a different output each time.</td></tr>
+            <tr><td>sync_mode</td><td>No</td><td>boolean</td><td>false</td><td>—</td><td>If on, the finished media is returned directly in the response as encoded data (base64) instead of a link. Handy for quick tests; for normal use leave it off to get a downloadable URL.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Request/Response for this operation -->
+  <section id="doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request-example" class="sectionn">
+    <div class="grid grid-2">
+      <div class="card">
+        <h2>Example Request</h2>
+        <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "prompt": "Transform this into a cinematic orchestral arrangement with sweeping strings",
+  "audio_url": "https://pub-582b7213209642b9b995c96c95a30381.r2.dev/Audio.mp3",
+  "init_noise_level": 0.9,
+  "negative_prompt": "",
+  "duration": 30,
+  "num_inference_steps": 8,
+  "guidance_scale": 1,
+  "output_format": "mp3",
+  "bitrate": "192k",
+  "enable_prompt_expansion": false,
+  "enable_safety_checker": true,
+  "sync_mode": false
+}</code></pre>
+          </div>
+      </div>
+      <div id="doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request-response" class="card">
+        <h2>Response</h2>
+        <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "request_id": "stable-audio-3-small-music-audio-to-audio_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "QUEUED",
+  "polling_url": "https://gateway.pixazo.ai/v2/requests/status/stable-audio-3-small-music-audio-to-audio_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}</code></pre>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="doc-stable-audio-3-small-music-audio-to-audio-stable-audio-3-small-music-audio-to-audio-request-headers" class="sectionn">
+    <div class="card">
+      <h2>Request Headers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Header</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Content-Type</td><td>application/json</td></tr>
+          <tr><td>Cache-Control</td><td>no-cache</td></tr>
+          <tr><td>Ocp-Apim-Subscription-Key</td><td>YOUR_API_KEY</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- END OF OPERATION SECTION                     -->
+  <!-- ============================================ -->
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Response Handling</h2>
+      <p class="muted">Common status codes.</p>
+      <table>
+        <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td class="ok">202</td><td>Accepted — Request queued</td></tr>
+          <tr><td class="wa">400</td><td>Bad Request</td></tr>
+          <tr><td class="er">401</td><td>Unauthorized</td></tr>
+          <tr><td class="er">402</td><td>Insufficient Balance</td></tr>
+          <tr><td class="er">403</td><td>Forbidden</td></tr>
+          <tr><td class="wa">429</td><td>Too Many Requests</td></tr>
+          <tr><td class="er">500</td><td>Internal Server Error</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Error Responses</h2>
+      <p class="muted">Queue system errors and model validation errors.</p>
+      <h3 style="margin-top:16px">Queue System Errors</h3>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>// 402 — Insufficient balance
+{
+  "error": "Insufficient Balance",
+  "message": "Your wallet does not have enough balance."
+}</code></pre>
+      </div>
+      <div class="copy-wrap" style="margin-top:16px">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>// 400 — Model not found
+{
+  "error": "Model not found",
+  "message": "Model 'stable-audio-3-small-music-audio-to-audio' not found or is disabled"
+}</code></pre>
+      </div>
+      <h3 style="margin-top:24px">Error via Status/Webhook</h3>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>{
+  "request_id": "stable-audio-3-small-music-audio-to-audio_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "ERROR",
+  "model_id": "stable-audio-3-small-music-audio-to-audio",
+  "error": "Description of the error",
+  "output": null
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Retrieving Results</h2>
+      <p class="muted">Poll the universal status endpoint to check progress and retrieve results.</p>
+      <h3 style="margin-top:20px">Endpoint</h3>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>GET https://gateway.pixazo.ai/v2/requests/status/{request_id}
+Ocp-Apim-Subscription-Key: YOUR_API_KEY</code></pre>
+      </div>
+      <div class="grid grid-2" style="margin-top:20px">
+        <div class="card">
+          <h2>cURL Example</h2>
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>curl -H "Ocp-Apim-Subscription-Key: YOUR_API_KEY" \
+  "https://gateway.pixazo.ai/v2/requests/status/stable-audio-3-small-music-audio-to-audio_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"</code></pre>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Response (Completed)</h2>
+          <div class="copy-wrap">
+            <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+            <pre><code>{
+  "request_id": "stable-audio-3-small-music-audio-to-audio_019dxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "status": "COMPLETED",
+  "model_id": "stable-audio-3-small-music-audio-to-audio",
+  "error": null,
+  "output": {
+    "media_url": ["https://pub-582b7213209642b9b995c96c95a30381.r2.dev/v1/stable-audio-3-small-music-audio-to-audio_019dxxxx/output.mp3"],
+    "media_type": "audio/mpeg"
+  },
+  "created_at": "2026-03-31T10:00:00.000Z",
+  "updated_at": "2026-03-31T10:00:15.000Z",
+  "completed_at": "2026-03-31T10:00:15.000Z"
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Response Fields</h2>
+      <div class="tableOuter">
+        <table>
+          <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+          <tbody>
+            <tr><td>request_id</td><td>string</td><td>Unique request identifier</td></tr>
+            <tr><td>status</td><td>string</td><td>QUEUED, PROCESSING, COMPLETED, FAILED, or ERROR</td></tr>
+            <tr><td>model_id</td><td>string</td><td>Model that processed the request</td></tr>
+            <tr><td>error</td><td>string|null</td><td>Error message if failed</td></tr>
+            <tr><td>output.media_url</td><td>array</td><td>URLs to generated media (R2 CDN)</td></tr>
+            <tr><td>output.media_type</td><td>string</td><td>MIME type of the output</td></tr>
+            <tr><td>created_at</td><td>string</td><td>When request was created</td></tr>
+            <tr><td>completed_at</td><td>string</td><td>When request completed</td></tr>
+            <tr><td>polling_url</td><td>string</td><td>Status URL (initial response only)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionn">
+    <div class="card">
+      <h2>Status Values</h2>
+      <table>
+        <thead><tr><th>Status</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>QUEUED</td><td>Request accepted, waiting to be processed</td></tr>
+          <tr><td>PROCESSING</td><td>Being processed by the model</td></tr>
+          <tr><td>COMPLETED</td><td>Done — output contains the result</td></tr>
+          <tr><td>FAILED</td><td>Failed — check error field</td></tr>
+          <tr><td>ERROR</td><td>System error — not charged</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card" style="margin-top:24px">
+      <h2>Status Flow</h2>
+      <div class="copy-wrap">
+        <button class="copy-btn" style="display:block;float:none;position:static;margin-left:auto;width:fit-content;margin-bottom:8px" onclick="copyCode(this)" title="Copy"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+        <pre><code>QUEUED → PROCESSING → COMPLETED
+                    → FAILED
+                    → ERROR</code></pre>
+      </div>
+    </div>
+    <div class="card" style="margin-top:24px">
+      <h2>Typical Workflow</h2>
+      <ol>
+        <li><strong>Send a generate request</strong> to the API endpoint</li>
+        <li><strong>Save the <code>request_id</code></strong> from the response</li>
+        <li><strong>Poll</strong> every 5-10 seconds: <code>GET /v2/requests/status/{request_id}</code></li>
+        <li><strong>When <code>status</code> is <code>"COMPLETED"</code></strong>, download from <code>output.media_url</code></li>
+      </ol>
+      <p class="muted" style="margin-top:16px"><strong>Tip:</strong> Use <code>X-Webhook-URL</code> header to get a callback instead of polling.</p>
+    </div>
+  </section>
+
+
+<script>
+    function copyCode(btn) {
+      var wrap = btn.closest('.copy-wrap');
+      var code = wrap ? wrap.querySelector('code') : null;
+      if (!code) return;
+      navigator.clipboard.writeText(code.textContent).then(function() {
+        var toast = document.createElement('div');
+        toast.textContent = 'Copied!';
+        toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#3cd19c;color:#000;padding:10px 24px;border-radius:8px;font-weight:600;font-size:14px;z-index:9999;animation:fadeInOut 2s ease;';
+        document.body.appendChild(toast);
+        setTimeout(function() { toast.remove(); }, 2000);
+        var orig = btn.innerHTML;
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3cd19c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+        setTimeout(function() { btn.innerHTML = orig; }, 2000);
+      });
+    }
+    function showTab(tabName, button) {
+      var navTabs = button.closest('.nav-tabs');
+      var parentCard = button.closest('.card');
+      navTabs.querySelectorAll('.nav-tab').forEach(function(tab) { tab.classList.remove('active'); });
+      parentCard.querySelectorAll('.tab-content').forEach(function(content) { content.classList.remove('active'); });
+      button.classList.add('active');
+      document.getElementById(tabName).classList.add('active');
+    }
+  </script>
+
+<style>
+  :root {
+    --bg: #0b0d0f;
+    --panel: #14171a;
+    --panel2: #0f1215;
+    --br: rgba(255,255,255,.08);
+    --tx: #fff;
+    --mut: #a8b3bd;
+    --ac: #1fcfe7;
+    --ok: #3cd19c;
+    --wa: #ffcc66;
+    --er: #ff6b6b;
+  }
+
+  body {
+    color: #fff;
+    background: var(--bg);
+    margin: 0;
+    font: 14px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .doc-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .sectionn {
+    padding: 40px 0;
+    border-top: 1px solid var(--br);
+  }
+
+  .border-0 {
+    border: none !important;
+  }
+
+  .section-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--tx);
+    margin: 0 0 24px;
+    text-align: center;
+  }
+
+  .copy-btn {
+    float: right;
+  }
+
+  .card {
+    background: linear-gradient(180deg, var(--panel), var(--panel2));
+    border: 1px solid var(--br);
+    border-radius: 14px;
+    padding: 24px;
+    color: #fff;
+  }
+
+  .grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 900px) {
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  h1, h2, h3 {
+    line-height: 1.22;
+    margin: 0 0 16px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-top: 8px;
+  }
+
+  h3 {
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .muted {
+    color: var(--mut);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mt-4 {
+    margin-top: 1.5rem !important;
+  }
+
+  .mb-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .pb-2 {
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* Navigation Tabs */
+  .nav-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--br);
+    padding-bottom: 0px;
+    overflow-x: auto;
+  }
+
+  .nav-tab {
+    background: transparent;
+    border: none;
+    color: var(--mut);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .nav-tab:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--tx);
+  }
+
+  .nav-tab.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--tx);
+    border-bottom: 2px solid var(--ac);
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  /* Code blocks */
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 13px;
+  }
+
+  pre {
+    margin: 10px 0;
+    background: #0a0c0f;
+    border: 1px solid var(--br);
+    border-radius: 12px;
+    padding: 16px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+  }
+
+  th {
+    color: #c7d0d9;
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+  }
+
+  td {
+    padding: 12px;
+    border: 1px solid var(--br);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  tr td:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+
+  tr td:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+
+  .tableOuter {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Status colors */
+  .ok {
+    color: var(--ok);
+    font-weight: 600;
+  }
+
+  .wa {
+    color: var(--wa);
+    font-weight: 600;
+  }
+
+  .er {
+    color: var(--er);
+    font-weight: 600;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #c8ff00;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: inherit;
+  }
+
+  .btn-primary:hover {
+    background: #b3e600;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(200, 255, 0, 0.3);
+  }
+
+  /* Try Now Button */
+  .try-now-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .btn-try-now {
+    padding: 12px 32px !important;
+    font-size: 16px !important;
+    background: #ccff00 !important;
+    color: #000 !important;
+    box-shadow: 0 4px 14px rgba(204, 255, 0, 0.2);
+  }
+
+  .btn-try-now:hover {
+    background: #b3e600 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(204, 255, 0, 0.3);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding: 50px 0;
+    background: linear-gradient(180deg, var(--panel), var(--panel2));
+    border-top: 1px solid var(--br);
+    margin-top: 40px;
+  }
+
+  .cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--br);
+    border-radius: 16px;
+    padding: 40px 50px;
+  }
+
+  .cta-text {
+    flex: 1;
+  }
+
+  .cta-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--tx);
+    margin: 0 0 8px;
+  }
+
+  .cta-subtitle {
+    font-size: 16px;
+    color: var(--mut);
+    margin: 0;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+
+  .cta-btn-primary {
+    background: #c8ff00;
+    color: #000;
+  }
+
+  .cta-btn-primary:hover {
+    background: #b3e600;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(200, 255, 0, 0.3);
+  }
+
+  .cta-btn-secondary {
+    background: transparent;
+    color: var(--tx);
+    border: 1px solid var(--br);
+  }
+
+  .cta-btn-secondary:hover {
+    border-color: rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .05);
+  }
+
+  /* Scrollbar styling for nav-tabs */
+  .nav-tabs::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .nav-tabs::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .nav-tabs::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+
+  .nav-tabs::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* RESPONSIVE STYLES */
+  @media (max-width: 1024px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .hero-image {
+      order: -1;
+    }
+
+    .image-frame {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .cta-content {
+      flex-direction: column;
+      gap: 24px;
+      text-align: center;
+      padding: 30px 24px;
+    }
+
+    .cta-buttons {
+      width: 100%;
+      flex-direction: column;
+    }
+
+    .cta-btn-primary,
+    .cta-btn-secondary {
+      width: 100%;
+    }
+
+    .hero-title {
+      font-size: 28px;
+    }
+
+    .pricing-title {
+      font-size: 20px;
+    }
+
+    .cta-title {
+      font-size: 24px;
+    }
+
+    .section-heading {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .doc-content {
+      padding: 16px;
+    }
+
+    .sectionn {
+      padding: 24px 0;
+    }
+
+    .card {
+      padding: 16px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      width: 100%;
+      text-align: center;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    15% { opacity: 1; transform: translateY(0); }
+    85% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+</style>

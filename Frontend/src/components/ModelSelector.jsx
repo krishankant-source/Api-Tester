@@ -6,14 +6,27 @@ export default function ModelSelector({
   onStart, onTestAll, running,
   showEditor, onToggleEditor, hasOverrides,
   validationMode, onToggleValidation,
+  searchIndex = {},
 }) {
   const [query, setQuery] = useState('')
   const [open, setOpen] = useState(false)
   const containerRef = useRef(null)
 
-  const filtered = query.trim()
-    ? models.filter(m => m.toLowerCase().includes(query.toLowerCase()))
-    : models
+  const q = query.trim().toLowerCase()
+  // The first endpoint (or modality name) that matched — shown as a hint so an
+  // endpoint search makes clear WHY a model surfaced.
+  function matchHint(m) {
+    if (!q) return null
+    const idx = searchIndex[m]
+    if (!idx) return null
+    const ep = (idx.endpoints || []).find(e => e.toLowerCase().includes(q))
+    if (ep) return ep
+    const name = (idx.modalities || []).find(n => n.toLowerCase().includes(q))
+    return name || null
+  }
+  const filtered = !q
+    ? models
+    : models.filter(m => m.toLowerCase().includes(q) || matchHint(m))
 
   useEffect(() => {
     function onClickOutside(e) {
@@ -56,16 +69,21 @@ export default function ModelSelector({
                 <p className="px-4 py-3 text-sm text-slate-500">No models match "{query}"</p>
               ) : (
                 <ul className="max-h-60 overflow-y-auto">
-                  {filtered.map(m => (
-                    <li key={m}>
-                      <button
-                        onMouseDown={() => pick(m)}
-                        className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${m === selected ? 'bg-indigo-600 text-white' : 'text-slate-200 hover:bg-slate-700'}`}
-                      >
-                        {query ? highlight(m, query) : m}
-                      </button>
-                    </li>
-                  ))}
+                  {filtered.map(m => {
+                    const nameMatches = m.toLowerCase().includes(q)
+                    const hint = !nameMatches ? matchHint(m) : null
+                    return (
+                      <li key={m}>
+                        <button
+                          onMouseDown={() => pick(m)}
+                          className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${m === selected ? 'bg-indigo-600 text-white' : 'text-slate-200 hover:bg-slate-700'}`}
+                        >
+                          <span className="block">{query ? highlight(m, query) : m}</span>
+                          {hint && <span className="block text-[11px] text-slate-400 font-mono truncate mt-0.5">↳ {hint}</span>}
+                        </button>
+                      </li>
+                    )
+                  })}
                 </ul>
               )}
               <div className="px-3 py-1.5 border-t border-slate-700 text-xs text-slate-600">

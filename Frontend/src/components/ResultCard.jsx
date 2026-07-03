@@ -42,6 +42,9 @@ export default function ResultCard({ result }) {
       {/* Header */}
       <div className="px-4 py-3 flex items-start justify-between gap-3">
         <div className="min-w-0">
+          {result.model && !['__all__', '__selection__'].includes(result.model) && (
+            <span className="inline-block text-[10px] font-semibold text-indigo-300 bg-indigo-950/60 border border-indigo-800/60 px-1.5 py-0.5 rounded mb-1">{result.model}</span>
+          )}
           <p className="text-xs text-slate-500 font-mono truncate">{result.subModelName}</p>
           <p className="text-sm font-semibold text-slate-100 mt-0.5">{result.modalityName}</p>
           {result.modelType && (

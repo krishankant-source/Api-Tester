@@ -1,0 +1,5173 @@
+{
+  "higgsfield": {
+    "title": "Higgsfield AI API",
+    "provider": "Higgsfield",
+    "description": "Advanced AI capabilities for image and video generation.",
+    "image": "higgsfield.png",
+    "models": [
+      {
+        "id": "higgsfield-v1",
+        "name": "Higgsfield 1.0",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "ai-model-api",
+            "operation_id": "image-to-video-request",
+            "priceTag": "ai-model-api-video",
+            "pricing_meta": {
+              "tierCaption": "dop-lite is the cheapest/fastest tier; dop-preview is the standard quality; dop-turbo balances quality and latency at a middle price."
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "genflare": {
+    "title": "Genflare AI API",
+    "provider": "Baidu",
+    "description": "Advanced AI capabilities for image and video generation by Baidu.",
+    "image": "Baidu-GenFlare-2.0-API.png",
+    "models": [
+      {
+        "id": "genflare-v2",
+        "name": "Genflare v2",
+        "version": "2.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "generate-image-to-video",
+            "name": "Image to Video",
+            "api_id": "baidu-genflare-2-0-api",
+            "operation_id": "generate-image-to-video",
+            "pricing_meta": {
+              "tableHeader": "Duration",
+              "tableExample": "5-second 720p clip ≈ $0.50",
+              "displayMode": "table"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "krea": {
+    "title": "Krea API",
+    "provider": "Krea.AI",
+    "description": "Advanced text-to-image generation by Krea.AI featuring reference images, LoRA style presets, and moodboard conditioning.",
+    "image": "krea.png",
+    "models": [
+      {
+        "id": "krea-2-large",
+        "name": "Krea 2 Large",
+        "version": "2",
+        "order": 1,
+        "features": [
+          {
+            "id": "krea-2-large-text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "krea-2-large-text-to-image",
+            "operation_id": "krea-2-large-text-to-image-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "seedance": {
+    "title": "Seedance AI API",
+    "provider": "BytePlus",
+    "description": "Advanced video generation capabilities by ByteDance.",
+    "image": "seedance.png",
+    "capability_map": {
+      "seedance-2-0": {
+        "modelId": "seedance-2-0",
+        "featureId": "text-to-video"
+      },
+      "seedance-2-0-fast": {
+        "modelId": "seedance-2-0-fast",
+        "featureId": "text-to-video"
+      },
+      "video-to-video": {
+        "modelId": "seedance-2-0-fast",
+        "featureId": "video-editing"
+      },
+      "reference-to-video": {
+        "modelId": "seedance-2-0",
+        "featureId": "reference-to-video"
+      }
+    },
+    "models": [
+      {
+        "id": "seedance-2-0-mini",
+        "name": "Seedance 2.0 Mini",
+        "version": "2.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "text-to-video",
+            "name": "Text to Video",
+            "api_id": "seedance-2-0-mini",
+            "operation_id": "text-to-video",
+            "priceTag": "seedance-2-0-text-to-video-mini",
+            "pricing_meta": {
+              "tierCaption": "Seedance 2.0 is the production model. Mini is the cheapest tier; Fast trades quality for speed. 1.0 Pro / 1.0 Lite are legacy variants."
+            }
+          },
+          {
+            "id": "image-to-video-first-and-last-frames",
+            "name": "Image to video",
+            "api_id": "seedance-2-0-mini",
+            "operation_id": "image-to-video-first-and-last-frames",
+            "priceTag": "seedance-2-0-first-last-frame-to-video-mini"
+          },
+          {
+            "id": "reference-to-video",
+            "name": "Reference to Video (Ref Image / Video / Audio)",
+            "api_id": "seedance-2-0-mini",
+            "operation_id": "reference-to-video",
+            "priceTag": "seedance-2-0-reference-to-video-mini"
+          },
+          {
+            "id": "edit-video",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "seedance-2-0-mini",
+            "operation_id": "edit-video",
+            "priceTag": "seedance-2-0-edit-video-mini"
+          }
+        ]
+      },
+      {
+        "id": "seedance-2-0",
+        "name": "Seedance 2.0",
+        "version": "2.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "text-to-video",
+            "name": "Text to Video",
+            "api_id": "seedance-2-0",
+            "operation_id": "text-to-video",
+            "priceTag": "seedance-2-0-text-to-video",
+            "pricing_meta": {
+              "tierCaption": "Seedance 2.0 is the production model. Mini is the cheapest tier; Fast trades quality for speed. 1.0 Pro / 1.0 Lite are legacy variants."
+            }
+          },
+          {
+            "id": "image-to-video-first-and-last-frames",
+            "name": "Image to video",
+            "api_id": "seedance-2-0",
+            "operation_id": "image-to-video-first-and-last-frames",
+            "priceTag": "seedance-2-0-first-last-frame-to-video"
+          },
+          {
+            "id": "reference-to-video",
+            "name": "Reference to Video (Ref Image / Video / Audio)",
+            "api_id": "seedance-2-0",
+            "operation_id": "reference-to-video",
+            "priceTag": "seedance-2-0-reference-to-video"
+          },
+          {
+            "id": "edit-video",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "seedance-2-0",
+            "operation_id": "edit-video",
+            "priceTag": "seedance-2-0-edit-video"
+          }
+        ]
+      },
+      {
+        "id": "seedance-2-0-fast",
+        "name": "Seedance 2.0 Fast",
+        "version": "2.0 fast",
+        "order": 2,
+        "features": [
+          {
+            "id": "text-to-video",
+            "name": "Text to Video",
+            "api_id": "seedance-2-0-fast",
+            "operation_id": "text-to-video",
+            "priceTag": "seedance-2-0-fast",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second",
+              "example": "e.g. $1.20 for a 5s video, $2.40 for a 10s video",
+              "tierCaption": "Seedance 2.0 is the production model. Mini is the cheapest tier; Fast trades quality for speed. 1.0 Pro / 1.0 Lite are legacy variants."
+            }
+          },
+          {
+            "id": "image-to-video-first-and-last-frames",
+            "name": "Image to video",
+            "api_id": "seedance-2-0-fast",
+            "operation_id": "image-to-video-first-and-last-frames",
+            "priceTag": "seedance-2-0-fast",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second",
+              "example": "e.g. $1.20 for a 5s video, $2.40 for a 10s video"
+            }
+          },
+          {
+            "id": "multimodal-reference-image-video-audio",
+            "name": "Reference to Video (Ref Image / Video / Audio)",
+            "api_id": "seedance-2-0-fast",
+            "operation_id": "multimodal-reference-image-video-audio",
+            "priceTag": "seedance-2-0-fast",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second",
+              "example": "e.g. $1.20 for a 5s video, $2.40 for a 10s video"
+            }
+          },
+          {
+            "id": "video-editing",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "seedance-2-0-fast",
+            "operation_id": "video-editing",
+            "priceTag": "seedance-2-0-fast",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second",
+              "example": "e.g. $1.20 for a 5s video, $2.40 for a 10s video"
+            }
+          }
+        ]
+      },
+      {
+        "id": "seedance-1-0-lite",
+        "name": "Seedance 1.0 Lite",
+        "version": "1.0 lite",
+        "order": 4,
+        "features": [
+          {
+            "id": "frame-to-video",
+            "name": "Image to Video (First/Last Frame to Video)",
+            "api_id": "bytedance-text-to-image",
+            "operation_id": "frame-to-video",
+            "priceTag": "bytedance-api"
+          }
+        ]
+      },
+      {
+        "id": "seedance-1-0-pro",
+        "name": "Seedance 1.0 Pro",
+        "version": "1.0 pro",
+        "order": 3,
+        "features": [
+          {
+            "id": "image-to-video-task",
+            "name": "Image to Video",
+            "api_id": "bytedance-text-to-image",
+            "operation_id": "image-to-video-task",
+            "priceTag": "bytedance-api"
+          },
+          {
+            "id": "generate-video-task",
+            "name": "Text to Video",
+            "api_id": "bytedance-text-to-image",
+            "operation_id": "generate-video-task",
+            "priceTag": "bytedance-api"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "omnihuman": {
+    "title": "OmniHuman API",
+    "provider": "BytePlus",
+    "description": "Advanced AI lipsync and talking video generation by ByteDance.",
+    "image": "omnihuman.png",
+    "capability_map": {
+      "audio-to-video": {
+        "modelId": "omnihuman-v1-5",
+        "featureId": "bytedance-omnihuman-v1-5-request"
+      }
+    },
+    "models": [
+      {
+        "id": "omnihuman-v1-5",
+        "name": "OmniHuman v1.5",
+        "version": "1.5",
+        "order": 1,
+        "features": [
+          {
+            "id": "bytedance-omnihuman-v1-5-request",
+            "name": "Audio to Video (Ref Image + Ref Audio to Video — Lipsync)",
+            "api_id": "bytedance-omnihuman-v1-5-290",
+            "operation_id": "bytedance-omnihuman-v1-5-request",
+            "priceTag": "bytedance-omnihuman-v1-5-290",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second avatar ≈ $0.80"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "seedream": {
+    "title": "Seedream AI API",
+    "provider": "BytePlus",
+    "description": "Advanced image generation and editing by ByteDance.",
+    "image": "seedream.png",
+    "models": [
+      {
+        "id": "seedream-v5",
+        "name": "Seedream 5",
+        "version": "5.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "edit-image",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "seedream-5-0-lite-edit",
+            "operation_id": "seedream-5-0-lite-edit-request",
+            "priceTag": "seedream-5-0-lite-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "text-to-image",
+            "name": "Text to Image",
+            "api_id": "seedream-5-0-lite-text-to-image",
+            "operation_id": "seedream-5-0-lite-text-to-image-request",
+            "priceTag": "seedream-5-0-lite-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "seedream-v4-5",
+        "name": "Seedream 4.5",
+        "version": "4.5",
+        "order": 1,
+        "features": [
+          {
+            "id": "edit-image",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "bytedance-text-to-image",
+            "operation_id": "edit-image",
+            "priceTag": "bytedance-api"
+          },
+          {
+            "id": "text-to-image",
+            "name": "Text to Image",
+            "api_id": "bytedance-text-to-image",
+            "operation_id": "text-to-image",
+            "priceTag": "bytedance-api"
+          }
+        ]
+      },
+      {
+        "id": "seedream-v4",
+        "name": "Seedream 4",
+        "version": "4.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "edit-multi-image",
+            "name": "Image to Image (Image Editing — Multi-Ref)",
+            "api_id": "bytedance-text-to-image",
+            "operation_id": "edit-multi-image",
+            "priceTag": "bytedance-api"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "chatterbox": {
+    "title": "Chatterbox TTS API",
+    "provider": "Resemble-ai",
+    "description": "Advanced text-to-speech generation.",
+    "image": "resemble-ai-chatterbox.png",
+    "capability_map": {
+      "voice-cloning": {
+        "modelId": "chatterbox-v1",
+        "featureId": "chatterbox-text-to-speech-request"
+      }
+    },
+    "models": [
+      {
+        "id": "chatterbox-v1",
+        "name": "Chatterbox v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "chatterbox-text-to-speech-request",
+            "name": "Text to Speech (Voice Cloning)",
+            "api_id": "chatterbox-text-to-speech",
+            "operation_id": "chatterbox-text-to-speech-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "crystal-upscaler": {
+    "title": "Crystal Upscaler API",
+    "provider": "Clarityai",
+    "description": "High-quality image upscaling capabilities.",
+    "image": "crystal-upscaler.png",
+    "models": [
+      {
+        "id": "crystal-upscaler-v1",
+        "name": "Crystal Upscaler v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "image-request",
+            "name": "Image to Image (Image Upscaler)",
+            "api_id": "crystal-upscaler",
+            "operation_id": "image-request",
+            "priceTag": "crystal-upscalar"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "lucy-edit": {
+    "title": "Lucy Edit Video API",
+    "provider": "Decart",
+    "description": "Fast video editing capabilities.",
+    "image": "Lucy-Edit-Fast-API.png",
+    "models": [
+      {
+        "id": "lucy-edit-fast",
+        "name": "Lucy Edit Fast",
+        "version": "fast",
+        "order": 1,
+        "features": [
+          {
+            "id": "decart-lucy-edit-video-fast-request",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "decart-lucy-edit-video-fast-142",
+            "operation_id": "decart-lucy-edit-video-fast-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of edited video",
+              "example": "10-second edit ≈ $2.00"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "distilbert": {
+    "title": "DistilBERT API",
+    "provider": "HuggingFace",
+    "description": "Text classification capabilities.",
+    "image": "Distilbert.png",
+    "models": [
+      {
+        "id": "distilbert-default",
+        "name": "DistilBERT",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "classification",
+            "name": "Text to Text (Classification)",
+            "api_id": "huggingface-distilbert-sst-2-int8",
+            "operation_id": "classification"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "dreamshaper": {
+    "title": "DreamShaper API",
+    "provider": "Lykon",
+    "description": "High-quality image generation model.",
+    "image": "Dreamshaper-8-LCM.png",
+    "models": [
+      {
+        "id": "dreamshaper-v1",
+        "name": "DreamShaper v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Text to Image",
+            "api_id": "dreamshaper-8-lcm",
+            "operation_id": "get-image"
+          },
+          {
+            "id": "get-image-stream",
+            "name": "Text to Image (Stream)",
+            "api_id": "dreamshaper-8-lcm",
+            "operation_id": "get-image-stream"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "fashn-vton": {
+    "title": "Fashn Virtual Try-On API",
+    "provider": "Fashn",
+    "description": "Fashn VTON provides state-of-the-art AI virtual try-on technology that realistically renders clothing items on human subjects. Through Pixazo's API, e-commerce platforms and fashion retailers can enable customers to visualize how garments will look on them before purchasing.",
+    "image": "FASHN-Virtual-Try-On-V1.6-API-1.png",
+    "models": [
+      {
+        "id": "fashn-v1-6",
+        "name": "Fashn v1.6",
+        "version": "1.6",
+        "order": 1,
+        "features": [
+          {
+            "id": "fashn-virtual-try-on-request",
+            "name": "Image to Image (Virtual Try On)",
+            "api_id": "fashn-virtual-try-on",
+            "operation_id": "fashn-virtual-try-on-request"
+          }
+        ]
+      },
+      {
+        "id": "glass-v1",
+        "name": "Glass v1",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "generate",
+            "name": "Text to Image",
+            "api_id": "glass-virtual-try-on",
+            "operation_id": "generate"
+          },
+          {
+            "id": "glass-virtual-try-on",
+            "name": "Image to Image (Virtual Try On)",
+            "api_id": "glass-virtual-try-on",
+            "operation_id": "glass-virtual-try-on"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "flawless-api": {
+    "title": "Flawless API",
+    "provider": "flawless",
+    "description": "Text to image generation.",
+    "image": "Flawless-API.png",
+    "models": [
+      {
+        "id": "flawless-v1-0",
+        "name": "Flawless v1.0",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "text2image",
+            "name": "Text to Image",
+            "api_id": "flawless-api",
+            "operation_id": "text2image"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "flux": {
+    "title": "Flux API",
+    "provider": "Black Forest Labs",
+    "description": "Flux is a state-of-the-art text-to-image model that generates high-quality images from text descriptions.",
+    "image": "Flux-2-API.png",
+    "capability_map": {
+      "tools": {
+        "modelId": "flux-pro2",
+        "featureId": "flux-2-pro-image-to-image-trainer-request"
+      },
+      "lora": {
+        "modelId": "flux-pro2",
+        "featureId": "flux-2-pro-image-to-image-trainer-request"
+      },
+      "image-to-image": {
+        "modelId": "flux-dev",
+        "featureId": "image-to-image"
+      },
+      "text-to-image": {
+        "modelId": "flux-dev",
+        "featureId": "text-to-image"
+      },
+      "free": {
+        "modelId": "flux-1-schnell",
+        "featureId": "get-image"
+      }
+    },
+    "models": [
+      {
+        "id": "flux-2-max",
+        "name": "FLUX 2 Max",
+        "version": "2 max",
+        "order": 0,
+        "features": [
+          {
+            "id": "flux-2-max-request",
+            "name": "Text to Image",
+            "api_id": "flux-2-max",
+            "operation_id": "flux-2-max-request",
+            "priceTag": "flux-2-max",
+            "pricing_meta": {
+              "tableHeader": "Usage"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-pro-vto",
+        "name": "Flux Pro VTO",
+        "version": "1",
+        "order": 1,
+        "features": [
+          {
+            "id": "flux-pro-v1-virtual-try-on-request",
+            "name": "Image to Image (Virtual Try On)",
+            "api_id": "flux-pro-v1-virtual-try-on",
+            "operation_id": "flux-pro-v1-virtual-try-on-request",
+            "priceTag": "flux-pro-v1-virtual-try-on",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per generation"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-pro2",
+        "name": "Flux 2 Pro",
+        "version": "2 pro",
+        "order": 2,
+        "features": [
+          {
+            "id": "flux-2-pro-image-to-image-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "flux-2-pro-image-to-image-866",
+            "operation_id": "flux-2-pro-image-to-image-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "flux-2-pro-image-to-image-trainer-request",
+            "name": "Image to Image (LoRA Trainer)",
+            "api_id": "flux-2-pro-image-to-image-trainer-831",
+            "operation_id": "flux-2-pro-image-to-image-trainer-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per LoRA training job"
+            }
+          },
+          {
+            "id": "flux-2-pro-text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "flux-2-pro-text-to-image-799",
+            "operation_id": "flux-2-pro-text-to-image-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "flux-2-pro-text-to-image-trainer-request",
+            "name": "Image to Image (LoRA Trainer)",
+            "api_id": "flux-2-pro-text-to-image-trainer-712",
+            "operation_id": "flux-2-pro-text-to-image-trainer-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per LoRA training job"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-kontext-restore-image",
+        "name": "Flux Kontext",
+        "version": "1",
+        "order": 2,
+        "features": [
+          {
+            "id": "image-restore-request",
+            "name": "Image Restoration",
+            "api_id": "flux-kontext-restore-image",
+            "operation_id": "image-restore-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-2-klein",
+        "name": "Flux 2 Klein",
+        "version": "2 klein",
+        "order": 2,
+        "features": [
+          {
+            "id": "text-to-image",
+            "name": "Text to Image",
+            "api_id": "flux-2-klein-4b",
+            "operation_id": "text-to-image"
+          }
+        ]
+      },
+      {
+        "id": "flux-dev2",
+        "name": "Flux 2 Dev",
+        "version": "2 dev",
+        "order": 3,
+        "features": [
+          {
+            "id": "generatet2i",
+            "name": "Text to Image",
+            "api_id": "flux-2-dev",
+            "operation_id": "generatet2i",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-pro1-1",
+        "name": "Flux Pro 1.1",
+        "version": "1.1 pro",
+        "order": 4,
+        "features": [
+          {
+            "id": "pro1-1-ultra-generaterequest",
+            "name": "Text to Image",
+            "api_id": "flux-pro-1-1",
+            "operation_id": "pro1-1-ultra-generaterequest",
+            "priceTag": "flux1-1-ultra-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-1-schnell",
+        "name": "Flux 1 Schnell",
+        "version": "1.0",
+        "order": 5,
+        "free": true,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Text to Image",
+            "api_id": "flux-1-schnell",
+            "operation_id": "get-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "No usage charge"
+            }
+          },
+          {
+            "id": "get-image-batch",
+            "name": "Text to Image (Batch)",
+            "api_id": "flux-1-schnell",
+            "operation_id": "get-image-batch",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "No usage charge"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-pro",
+        "name": "Flux Pro",
+        "version": "pro",
+        "order": 6,
+        "features": [
+          {
+            "id": "text-to-image",
+            "name": "Text to Image",
+            "api_id": "flux-pro",
+            "operation_id": "text-to-image",
+            "priceTag": "flux-pro-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-dev",
+        "name": "Flux Dev",
+        "version": "dev",
+        "order": 7,
+        "features": [
+          {
+            "id": "image-to-image",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "flux-dev",
+            "operation_id": "image-to-image",
+            "priceTag": "flux-dev-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "text-to-image",
+            "name": "Text to Image",
+            "api_id": "flux-dev",
+            "operation_id": "text-to-image",
+            "priceTag": "flux-dev-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "flux-fill-dev",
+        "name": "Flux Fill Dev",
+        "version": "fill dev",
+        "order": 8,
+        "features": [
+          {
+            "id": "inpainting",
+            "name": "Image to Image (Image Editing — Inpainting)",
+            "api_id": "flux-fill-dev",
+            "operation_id": "image-generation-request",
+            "priceTag": "flux-fill-dev",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "gpt-image": {
+    "title": "GPT Image API",
+    "provider": "OpenAI",
+    "description": "Advanced image generation by OpenAI.",
+    "image": "GPT-Image-1.5-API.jpg",
+    "models": [
+      {
+        "id": "gpt-image-v1-5",
+        "name": "GPT Image v1.5",
+        "version": "1.5",
+        "order": 2,
+        "features": [
+          {
+            "id": "gpt-image-1-5-api-request",
+            "name": "Text to Image",
+            "api_id": "gpt-image-1-5-api-923",
+            "operation_id": "gpt-image-1-5-api-request"
+          }
+        ]
+      },
+      {
+        "id": "gpt-image-2",
+        "name": "GPT Image 2",
+        "version": "2.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "gpt-image-2-text-to-image",
+            "name": "Text to Image",
+            "api_id": "gpt-image-2",
+            "operation_id": "text-to-image"
+          },
+          {
+            "id": "gpt-image-2-image-to-image-edit-image",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "gpt-image-2",
+            "operation_id": "image-to-image-edit-image"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "hunyuan": {
+    "title": "Hunyuan AI API",
+    "provider": "Tencent",
+    "description": "Advanced AI capabilities by Tencent including image and 3D generation.",
+    "image": "Hunyuan3D-2.jpg",
+    "capability_map": {
+      "3d-models": {
+        "modelId": "hunyuan-v3-0",
+        "featureId": "hunyuan3d-3-0-api-request"
+      },
+      "image-to-image": {
+        "modelId": "hunyuan-v3-0",
+        "featureId": "generate-image-request"
+      },
+      "text-to-image": {
+        "modelId": "hunyuan-image-3-0-instruct",
+        "featureId": "hunyuan-image-3-0-instruct-request"
+      }
+    },
+    "models": [
+      {
+        "id": "hunyuan-v3-1",
+        "name": "Hunyuan3D 3.1 Pro",
+        "version": "3.1",
+        "order": 1,
+        "features": [
+          {
+            "id": "hunyuan-3d-request",
+            "name": "Text to Image (3D Models — Text to 3D)",
+            "api_id": "hunyuan-3d",
+            "operation_id": "hunyuan-3d-request"
+          },
+          {
+            "id": "hunyuan-3d-v3-1-pro-image-to-3d-request",
+            "name": "Image to Image (3D Models — Image to 3D)",
+            "api_id": "hunyuan-3d-v3-1-pro-image-to-3d",
+            "operation_id": "hunyuan-3d-v3-1-pro-image-to-3d-request"
+          }
+        ]
+      },
+      {
+        "id": "hunyuan-v3-0-sketch-to-3d",
+        "name": "Hunyuan3D 3.0",
+        "version": "3.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "hunyuan3d-3-0-api-request",
+            "name": "Image to Image (3D Models — Image to 3D)",
+            "api_id": "hunyuan3d-3-0-api-294",
+            "operation_id": "hunyuan3d-3-0-api-request"
+          }
+        ]
+      },
+      {
+        "id": "hunyuan-v3-0",
+        "name": "Hunyuan Image 3.0",
+        "version": "3.0",
+        "order": 3,
+        "features": [
+          {
+            "id": "generate-image-request",
+            "name": "Text to Image",
+            "api_id": "hunyuan-image",
+            "operation_id": "generate-image-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "hunyuan-image-3-0-instruct",
+        "name": "Hunyuan Image 3.0 Instruct",
+        "version": "3.0 Instruct",
+        "order": 3,
+        "features": [
+          {
+            "id": "hunyuan-image-3-0-instruct-request",
+            "name": "Text to Image",
+            "api_id": "hunyuan-image-3-0-instruct",
+            "operation_id": "hunyuan-image-3-0-instruct-request",
+            "priceTag": "hunyuan-image-3-0-instruct",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "ideogram": {
+    "title": "Ideogram AI API",
+    "provider": "Ideogram",
+    "description": "Advanced image generation with text rendering capabilities.",
+    "image": "Ideogram-API.jpg",
+    "models": [
+      {
+        "id": "ideogram-v4",
+        "name": "Ideogram v4",
+        "version": "4.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "ideogram-v4-request",
+            "name": "Text to Image",
+            "api_id": "ideogram-v4",
+            "operation_id": "ideogram-v4-request",
+            "priceTag": "ideogram-v4",
+            "pricing_meta": {
+              "tierCaption": "Higher tier = more detail and better prompt adherence at higher cost and latency. Use Turbo for speed, Balanced for everyday work, Quality for final assets."
+            }
+          },
+          {
+            "id": "ideogram-v4-image-to-image-request",
+            "name": "Image to Image",
+            "api_id": "ideogram-v4-image-to-image",
+            "operation_id": "ideogram-v4-image-to-image-request",
+            "priceTag": "ideogram-v4"
+          }
+        ]
+      },
+      {
+        "id": "ideogram-remove-background",
+        "name": "Ideogram Remove Background",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "ideogram-remove-background-request",
+            "name": "Image to Image (Image Background Removal)",
+            "api_id": "ideogram-remove-background",
+            "operation_id": "ideogram-remove-background-request",
+            "priceTag": "ideogram-remove-background",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ideogram-v2",
+        "name": "Ideogram v2",
+        "version": "2.0",
+        "order": 3,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Text to Image",
+            "api_id": "ideogram-generate",
+            "operation_id": "get-image",
+            "priceTag": "ideogram-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "describe-image",
+            "name": "Utility (Image to Text — Captioning)",
+            "api_id": "ideogram-generate",
+            "operation_id": "describe-image",
+            "priceTag": "ideogram-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "edit-image",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "ideogram-generate",
+            "operation_id": "edit-image",
+            "priceTag": "ideogram-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "remix-image",
+            "name": "Image to Image (Image Editing — Remix)",
+            "api_id": "ideogram-generate",
+            "operation_id": "remix-image",
+            "priceTag": "ideogram-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ideogram-turbo",
+        "name": "Ideogram Turbo",
+        "version": "turbo",
+        "order": 4,
+        "features": [
+          {
+            "id": "create-image",
+            "name": "Text to Image",
+            "api_id": "ideogram-image-turbo",
+            "operation_id": "create-image",
+            "priceTag": "ideogram-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "describe-image-turbo",
+            "name": "Utility (Image to Text — Captioning)",
+            "api_id": "ideogram-image-turbo",
+            "operation_id": "describe-image",
+            "priceTag": "ideogram-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "edit-image-turbo",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "ideogram-image-turbo",
+            "operation_id": "edit-image",
+            "priceTag": "ideogram-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "remix-image-turbo",
+            "name": "Image to Image (Image Editing — Remix)",
+            "api_id": "ideogram-image-turbo",
+            "operation_id": "remix-image",
+            "priceTag": "ideogram-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "idm-vton": {
+    "title": "IDM VTON API",
+    "provider": "IDM-VTON",
+    "description": "Virtual try-on capabilities.",
+    "image": "IDM-VTON-API.jpg",
+    "models": [
+      {
+        "id": "idm-vton-v1",
+        "name": "IDM VTON v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "idm-vton",
+            "name": "Image to Image (Virtual Try On)",
+            "api_id": "idm-vton-api",
+            "operation_id": "idm-vton"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "kling": {
+    "title": "Kling AI API",
+    "provider": "Kuaishou",
+    "description": "Advanced video generation and AI avatar capabilities.",
+    "image": "Kling-Video-v2.6-Motion-Control-API.png",
+    "capability_map": {
+      "virtual-try-on": {
+        "modelId": "kling-v1",
+        "featureId": "generate-image-request"
+      },
+      "image-to-video": {
+        "modelId": "kling-v3-standard",
+        "featureId": "kling-3-0-image-to-video-standard"
+      },
+      "text-to-video": {
+        "modelId": "kling-v3-standard",
+        "featureId": "kling-3-0-text-to-video-standard"
+      },
+      "image-to-image": {
+        "modelId": "kling-o1",
+        "featureId": "kling-o1-image-request"
+      },
+      "text-to-image": {
+        "modelId": "kling-image-o3",
+        "featureId": "kling-image-request"
+      },
+      "reference-to-video": {
+        "modelId": "kling-o1",
+        "featureId": "kling-o1-reference-image-to-video-request"
+      },
+      "audio-to-video": {
+        "modelId": "kling-v2-pro",
+        "featureId": "kling-ai-avatar-v2-pro-request"
+      }
+    },
+    "models": [
+      {
+        "id": "kling-video-v3-turbo-pro",
+        "name": "Kling Video 3 Turbo Pro",
+        "version": "V3 Turbo Pro",
+        "order": 0,
+        "features": [
+          {
+            "id": "kling-video-v3-turbo-pro-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "kling-video-v3-turbo-pro-text-to-video",
+            "operation_id": "kling-video-v3-turbo-pro-text-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second clip ≈ $0.70"
+            }
+          },
+          {
+            "id": "kling-video-v3-turbo-pro-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "kling-video-v3-turbo-pro-image-to-video",
+            "operation_id": "kling-video-v3-turbo-pro-image-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second clip ≈ $0.70"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-video-o3-4k",
+        "name": "Kling Video O3 4K",
+        "version": "O3 4K",
+        "order": 1,
+        "features": [
+          {
+            "id": "kling-video-o3-4k-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "kling-video-o3-4k-text-to-video",
+            "operation_id": "kling-video-o3-4k-text-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second 4K clip ≈ $2.10"
+            }
+          },
+          {
+            "id": "kling-video-o3-4k-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "kling-video-o3-4k-image-to-video",
+            "operation_id": "kling-video-o3-4k-image-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second 4K clip ≈ $2.10"
+            }
+          },
+          {
+            "id": "kling-video-o3-4k-reference-to-video-request",
+            "name": "Reference to Video (Ref Images to Video)",
+            "api_id": "kling-video-o3-4k-reference-to-video",
+            "operation_id": "kling-video-o3-4k-reference-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second 4K clip ≈ $2.10"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-image-o3",
+        "name": "Kling Image O3",
+        "version": "O3",
+        "order": 1,
+        "features": [
+          {
+            "id": "kling-image-request",
+            "name": "Text to Image",
+            "api_id": "kling-image",
+            "operation_id": "kling-image-request",
+            "priceTag": "kling-image-o3",
+            "pricing_meta": {
+              "tableExample": "5 images at 2K ≈ $0.14, or 5 images at 4K ≈ $0.28",
+              "displayMode": "table"
+            }
+          },
+          {
+            "id": "kling-image-o3-i2i-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "kling-image-o3-i2i",
+            "operation_id": "kling-image-o3-i2i-request",
+            "priceTag": "kling-image-o3",
+            "pricing_meta": {
+              "tableExample": "5 images at 2K ≈ $0.14, or 5 images at 4K ≈ $0.28",
+              "displayMode": "table"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-v3-standard",
+        "name": "Kling 3.0",
+        "version": "3.0 standard",
+        "order": 2,
+        "features": [
+          {
+            "id": "kling-3-0-text-to-video-standard",
+            "name": "Text to Video",
+            "api_id": "kling-3-0-text-to-video-standard",
+            "operation_id": "kling-3-0-text-to-video-standard-request",
+            "pricing_meta": {
+              "tableHeader": "Usage",
+              "tableExample": "5-second clip ≈ $0.84 (Audio off) or $1.26 (Audio on)",
+              "displayMode": "table"
+            }
+          },
+          {
+            "id": "kling-3-0-image-to-video-standard",
+            "name": "Image to Video",
+            "api_id": "kling-3-0-image-to-video-standard",
+            "operation_id": "kling-3-0-image-to-video-standard-request",
+            "pricing_meta": {
+              "tableHeader": "Usage",
+              "tableExample": "5-second clip ≈ $0.84 (Audio off) or $1.26 (Audio on)",
+              "displayMode": "table"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-image-v3-t2i",
+        "name": "Kling Image 3 t2i",
+        "version": "V3 T2I",
+        "order": 3,
+        "features": [
+          {
+            "id": "kling-image-t2i-request",
+            "name": "Text to Image",
+            "api_id": "kling-image-t2i",
+            "operation_id": "kling-image-t2i-request",
+            "priceTag": "kling-image-t2i",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-v2-pro",
+        "name": "Kling Avatar 2 Pro",
+        "version": "2.0 pro",
+        "order": 2,
+        "features": [
+          {
+            "id": "kling-ai-avatar-v2-pro-request",
+            "name": "Audio to Video (Ref Image + Ref Audio to Video — Avatar)",
+            "api_id": "kling-ai-avatar-v2-pro-789",
+            "operation_id": "kling-ai-avatar-v2-pro-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of avatar video",
+              "example": "5-second avatar ≈ $0.58"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-o1",
+        "name": "Kling O1",
+        "version": "o1",
+        "order": 4,
+        "features": [
+          {
+            "id": "kling-o1-edit-video-video-to-video-request",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "kling-o1-edit-video-video-to-video-634",
+            "operation_id": "kling-o1-edit-video-video-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of edited video",
+              "example": "5-second edit ≈ $0.84"
+            }
+          },
+          {
+            "id": "kling-o1-first-frame-last-frame-to-video-request",
+            "name": "Image to Video (First/Last Frame to Video)",
+            "api_id": "kling-o1-first-frame-last-frame-to-video-857",
+            "operation_id": "kling-o1-first-frame-last-frame-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second clip ≈ $0.56"
+            }
+          },
+          {
+            "id": "kling-o1-image-request",
+            "name": "Image to Image",
+            "api_id": "kling-o1-image-208",
+            "operation_id": "kling-o1-image-request",
+            "priceTag": "kling-o1-image-208",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "kling-o1-reference-image-to-video-request",
+            "name": "Reference to Video (Ref Images to Video)",
+            "api_id": "kling-o1-reference-image-to-video-382",
+            "operation_id": "kling-o1-reference-image-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second clip ≈ $4.50"
+            }
+          },
+          {
+            "id": "kling-o1-reference-video-to-video-request",
+            "name": "Reference to Video (Ref Video to Video)",
+            "api_id": "kling-o1-reference-video-to-video-315",
+            "operation_id": "kling-o1-reference-video-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second edit ≈ $0.84"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-v2-6-standard",
+        "name": "Kling 2.6 Standard",
+        "version": "2.6 standard",
+        "order": 1,
+        "features": [
+          {
+            "id": "kling-video-v2-6-standard-motion-control-request",
+            "name": "Video to Video (Video Editing — Motion Control)",
+            "api_id": "kling-video-v2-6-standard-motion-control",
+            "operation_id": "kling-video-v2-6-standard-motion-control-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "5-second clip ≈ $0.35"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-v1",
+        "name": "Kling Virtual Try-on",
+        "version": "1.0",
+        "order": 5,
+        "features": [
+          {
+            "id": "generate-image-request",
+            "name": "Image to Image (Virtual Try On)",
+            "api_id": "kling-virtual-try-on",
+            "operation_id": "generate-image-request",
+            "priceTag": "virtual-try-on",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per try-on"
+            }
+          }
+        ]
+      },
+      {
+        "id": "kling-v1-6",
+        "name": "Kling 1.6",
+        "version": "1.6",
+        "order": 3,
+        "features": [
+          {
+            "id": "image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "klingai-video",
+            "operation_id": "image-to-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second"
+            }
+          },
+          {
+            "id": "video-request",
+            "name": "Text to Video",
+            "api_id": "klingai-video",
+            "operation_id": "video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "longcat-image": {
+    "title": "LongCat Image API",
+    "provider": "LongCat",
+    "description": "Image generation capabilities.",
+    "image": "LongCat-Image-API.png",
+    "models": [
+      {
+        "id": "longcat-v1",
+        "name": "LongCat v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "longcat-image-request",
+            "name": "Text to Image",
+            "api_id": "longcat-image-498",
+            "operation_id": "longcat-image-request",
+            "priceTag": "longcat-image-498",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "luma": {
+    "title": "Luma AI API",
+    "provider": "Luma AI",
+    "description": "Advanced video generation capabilities.",
+    "image": "Luma-Dream-Machine-API-1.png",
+    "models": [
+      {
+        "id": "luma-uni-1",
+        "name": "Luma Uni 1.1",
+        "version": "Uni 1.1",
+        "order": 0,
+        "features": [
+          {
+            "id": "luma-agent-uni-1-text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "luma-agent-uni-1-text-to-image",
+            "operation_id": "luma-agent-uni-1-text-to-image-request",
+            "priceTag": "luma-agent-uni-1-text-to-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "luma-agent-uni-1-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "luma-agent-uni-1-edit",
+            "operation_id": "luma-agent-uni-1-edit-request",
+            "priceTag": "luma-agent-uni-1-edit",
+            "pricing_meta": {
+              "tableHeader": "Usage"
+            }
+          }
+        ]
+      },
+      {
+        "id": "luma-dream-machine-ray-2-flash-image-to-video",
+        "name": "Luma Dream Machine Ray 2 Flash",
+        "version": "Ray 2 Flash",
+        "order": 1,
+        "features": [
+          {
+            "id": "luma-dream-machine-ray-2-flash-image-to-video",
+            "name": "Image to Video",
+            "api_id": "luma-dream-machine-ray-2-flash-image-to-video",
+            "operation_id": "luma-dream-machine-ray-2-flash-image-to-video-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "hailuo": {
+    "title": "Hailuo AI API",
+    "provider": "MiniMax",
+    "description": "Advanced video, audio, and image generation by MiniMax.",
+    "image": "MiniMax-Hailuo-AI.jpg",
+    "capability_map": {
+      "image-to-video": {
+        "modelId": "hailuo-v2-3",
+        "featureId": "generate-image-to-video-request"
+      },
+      "text-to-video": {
+        "modelId": "hailuo-v2-3",
+        "featureId": "generate-video-request"
+      },
+      "image-to-image": {
+        "modelId": "hailuo-image-01",
+        "featureId": "image-to-image"
+      },
+      "text-to-image": {
+        "modelId": "hailuo-image-01",
+        "featureId": "text-to-image"
+      },
+      "text-to-speech": {
+        "modelId": "hailuo-speech-2-6-hd",
+        "featureId": "music"
+      }
+    },
+    "models": [
+      {
+        "id": "hailuo-v2-3",
+        "name": "Hailuo v2.3",
+        "version": "2.3",
+        "order": 2,
+        "features": [
+          {
+            "id": "generate-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "minimax-hailuo-ai",
+            "operation_id": "generate-image-to-video-request",
+            "priceTag": "minimax-hailuo-ai"
+          },
+          {
+            "id": "generate-video-request",
+            "name": "Text to Video",
+            "api_id": "minimax-hailuo-ai",
+            "operation_id": "generate-video-request",
+            "priceTag": "minimax-hailuo-ai"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "minimax": {
+    "title": "MiniMax AI API",
+    "provider": "MiniMax",
+    "description": "Comprehensive multimodal AI generation for video, image, and audio by MiniMax.",
+    "image": "minimax.png",
+    "capability_map": {
+      "image-to-image": {
+        "modelId": "minimax-image-01",
+        "featureId": "image-to-image"
+      },
+      "text-to-image": {
+        "modelId": "minimax-image-01",
+        "featureId": "text-to-image"
+      },
+      "voice-cloning": {
+        "modelId": "minimax-voice-v1",
+        "featureId": "minimax-voice-design-api-request"
+      },
+      "text-to-music": {
+        "modelId": "minimax-music-generation-2-6",
+        "featureId": "music"
+      },
+      "text-to-song": {
+        "modelId": "minimax-music-generation-2-6",
+        "featureId": "music"
+      }
+    },
+    "models": [
+      {
+        "id": "minimax-music-generation-2-6",
+        "name": "MiniMax Music 2.6",
+        "version": "2.6",
+        "order": 1,
+        "features": [
+          {
+            "id": "music",
+            "name": "Text to Music",
+            "api_id": "minimax-music-generation-2-6",
+            "operation_id": "get-music",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per song generation"
+            }
+          }
+        ]
+      },
+      {
+        "id": "minimax-audio-speech-2-6-hd",
+        "name": "MiniMax Speech 2.6 HD",
+        "version": "2.6-hd",
+        "order": 1,
+        "features": [
+          {
+            "id": "get-audio-result",
+            "name": "Utility (Get Audio Result)",
+            "api_id": "minimax-hailuo-audio",
+            "operation_id": "get-audio-result",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per 1,000 characters"
+            }
+          }
+        ]
+      },
+      {
+        "id": "minimax-voice-v1",
+        "name": "MiniMax Voice Design v1",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "minimax-voice-design-api-request",
+            "name": "Text to Speech",
+            "api_id": "minimax-voice-design-api-363",
+            "operation_id": "minimax-voice-design-api-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per 1,000 characters"
+            }
+          }
+        ]
+      },
+      {
+        "id": "minimax-image-01",
+        "name": "MiniMax Image 01",
+        "version": "image-01",
+        "order": 3,
+        "features": [
+          {
+            "id": "image-to-image",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "minimax-image-generation",
+            "operation_id": "image-to-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "text-to-image",
+            "name": "Text to Image",
+            "api_id": "minimax-image-generation",
+            "operation_id": "text-to-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "mochi": {
+    "title": "Mochi Video API",
+    "provider": "Mochi",
+    "description": "Video generation capabilities.",
+    "image": "Mochi-V1-API.png",
+    "models": [
+      {
+        "id": "mochi-v1",
+        "name": "Mochi v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "submit-video-request",
+            "name": "Text to Video",
+            "api_id": "68a5784c0828c041ba519ca6",
+            "operation_id": "submit-video-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "nano-banana": {
+    "title": "Nano Banana API",
+    "provider": "Google",
+    "description": "Advanced image generation and editing by Google.",
+    "image": "Nano-Banana-Pro-Async-API.png",
+    "models": [
+      {
+        "id": "nano-banana-2",
+        "name": "Nano Banana 2",
+        "version": "2",
+        "order": 1,
+        "features": [
+          {
+            "id": "nano-banana-2-request",
+            "name": "Text to Image",
+            "api_id": "nano-banana-2",
+            "operation_id": "nano-banana-2-text-to-image-fast-request",
+            "priceTag": "nano-banana-2",
+            "pricing_meta": {
+              "tierCaption": "Fast returns within seconds; Batch variants are async (1–2 min SLA) and cost ~40% less. Use Batch for non-interactive jobs."
+            }
+          },
+          {
+            "id": "nano-banana-2-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "nano-banana-2",
+            "operation_id": "nano-banana-2-image-to-image-fast-request",
+            "priceTag": "nano-banana-2"
+          },
+          {
+            "id": "nano-banana-2-text-to-image-batch-request",
+            "name": "Text to Image (Batch)",
+            "api_id": "nano-banana-2",
+            "operation_id": "nano-banana-2-text-to-image-batch-request",
+            "priceTag": "nano-banana-2-text-to-image-batch"
+          },
+          {
+            "id": "nano-banana-2-image-to-image-batch-request",
+            "name": "Image to Image (Image Editing - Batch)",
+            "api_id": "nano-banana-2",
+            "operation_id": "nano-banana-2-image-to-image-batch-request",
+            "priceTag": "nano-banana-2-image-to-image-batch"
+          }
+        ]
+      },
+      {
+        "id": "nano-banana-standard",
+        "name": "Nano Banana Standard",
+        "version": "standard",
+        "order": 3,
+        "features": [
+          {
+            "id": "edit-image-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "nano-banana",
+            "operation_id": "edit-image-request",
+            "pricing_meta": {
+              "tierCaption": "Fast returns within seconds; Batch variants are async (1–2 min SLA) and cost ~40% less. Use Batch for non-interactive jobs."
+            }
+          },
+          {
+            "id": "text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "nano-banana",
+            "operation_id": "text-to-image-request"
+          },
+          {
+            "id": "image-to-image-edit-image",
+            "name": "Image to Image (Image Editing — Batch)",
+            "api_id": "nano-banana-async-api",
+            "operation_id": "image-to-image-edit-image"
+          }
+        ]
+      },
+      {
+        "id": "nano-banana-pro",
+        "name": "Nano Banana Pro",
+        "version": "pro",
+        "order": 2,
+        "features": [
+          {
+            "id": "image-edit-image-to-image",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "nano-banana-pro",
+            "operation_id": "image-edit-image-to-image"
+          },
+          {
+            "id": "text-to-image",
+            "name": "Text to Image",
+            "api_id": "nano-banana-pro",
+            "operation_id": "text-to-image",
+            "pricing_meta": {
+              "tierCaption": "Fast returns within seconds; Batch variants are async (1–2 min SLA) and cost ~40% less. Use Batch for non-interactive jobs."
+            }
+          },
+          {
+            "id": "image-to-image",
+            "name": "Image to Image (Image Editing — Batch)",
+            "api_id": "nano-banana-pro-async-api",
+            "operation_id": "image-to-image"
+          },
+          {
+            "id": "text-to-image-batch",
+            "name": "Text to Image (Batch)",
+            "api_id": "nano-banana-pro-async-api",
+            "operation_id": "text-to-image"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "ppt-maker": {
+    "title": "PPT Maker API",
+    "provider": "Pixazo",
+    "description": "AI-powered presentation generation.",
+    "image": "Pixazo-API.png",
+    "models": [
+      {
+        "id": "ppt-maker-v1",
+        "name": "PPT Maker v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "ppt-maker",
+            "name": "Utility (PPT Creation)",
+            "api_id": "pixazo-ppt-maker",
+            "operation_id": "ppt-maker"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "pixelforge": {
+    "title": "PixelForge API",
+    "provider": "Pixazo",
+    "description": "Image generation and relighting capabilities.",
+    "image": "Pixelforge-Relighting-–-1.jpg",
+    "models": [
+      {
+        "id": "pixelforge-v1",
+        "name": "PixelForge v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "generate-image",
+            "name": "Text to Image",
+            "api_id": "pixelforge-image",
+            "operation_id": "generate-image",
+            "priceTag": "pixelforge-relighting",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "image-edit-request",
+            "name": "Image to Image (Image Editing — Relighting)",
+            "api_id": "pixelforge-relighting-api",
+            "operation_id": "image-edit-request",
+            "priceTag": "pixelforge-relighting",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "qwen-image": {
+    "title": "Qwen AI API",
+    "provider": "Alibaba",
+    "description": "Comprehensive AI suite including image, text, and audio capabilities by Alibaba.",
+    "image": "Qwen-Image-Layered-API.jpg",
+    "capability_map": {
+      "image-editing": {
+        "modelId": "qwen-image-max-edit",
+        "featureId": "qwen-image-max-edit"
+      },
+      "text-to-image": {
+        "modelId": "qwen-image-max",
+        "featureId": "qwen-image-max"
+      },
+      "image-to-image": {
+        "modelId": "qwen-image-edit",
+        "featureId": "image-edit"
+      }
+    },
+    "models": [
+      {
+        "id": "qwen-image-max-edit",
+        "name": "Qwen Image Max Edit",
+        "version": "Max Edit",
+        "order": 1,
+        "features": [
+          {
+            "id": "qwen-image-max-edit",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "qwen-image-max-edit",
+            "operation_id": "qwen-image-max-edit-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "qwen-image-max",
+        "name": "Qwen Image Max t2i",
+        "version": "Max T2I",
+        "order": 1,
+        "features": [
+          {
+            "id": "qwen-image-max",
+            "name": "Text to Image",
+            "api_id": "qwen-image-max",
+            "operation_id": "qwen-image-max-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "qwen-image-edit",
+        "name": "Qwen Image Edit",
+        "version": "Edit",
+        "order": 1,
+        "features": [
+          {
+            "id": "image-edit",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "qwen-image",
+            "operation_id": "image-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "qwen-image",
+        "name": "Qwen Image",
+        "version": "",
+        "order": 2,
+        "features": [
+          {
+            "id": "text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "qwen-image",
+            "operation_id": "text-to-image-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "qwen-v1",
+        "name": "Qwen LoRA v1",
+        "version": "LoRA",
+        "order": 3,
+        "features": [
+          {
+            "id": "generate-request",
+            "name": "Text to Image (LoRA)",
+            "api_id": "qwen-image-edit-plus-lora",
+            "operation_id": "generate-request",
+            "priceTag": "qwen-image-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "training-request",
+            "name": "Image to Image (LoRA Trainer)",
+            "api_id": "qwen-image-edit-plus-trainer",
+            "operation_id": "training-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per LoRA training job"
+            }
+          },
+          {
+            "id": "qwen-image-layered-request",
+            "name": "Image to Image (Image Editing — Layered)",
+            "api_id": "qwen-image-layered",
+            "operation_id": "qwen-image-layered-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "qwen-tts": {
+    "title": "Qwen TTS API",
+    "provider": "Alibaba",
+    "description": "Text-to-speech generation by Alibaba's Qwen.",
+    "image": "Qwen3-TTS-1.7B-API.png",
+    "models": [
+      {
+        "id": "qwen-v3",
+        "name": "Qwen TTS v3",
+        "version": "3",
+        "order": 1,
+        "features": [
+          {
+            "id": "qwen3-tts-1-7b-api-request-result",
+            "name": "Text to Speech",
+            "api_id": "qwen3-tts-1-7b-api-401",
+            "operation_id": "qwen3-tts-1-7b-api-request-result",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per 1,000 characters",
+              "example": "about $0.11 for a typical 200-word paragraph",
+              "perMillion": "$90 per 1M characters"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "seedvr": {
+    "title": "SeedVR Upscale API",
+    "provider": "Seed VR",
+    "description": "Image and video upscaling capabilities.",
+    "image": "seedvr-upscale-video-–-1.jpg",
+    "models": [
+      {
+        "id": "seedvr-default",
+        "name": "SeedVR2 3B",
+        "version": "2.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "upscale-image-request",
+            "name": "Image to Image (Image Upscaler)",
+            "api_id": "seedvr-upscale",
+            "operation_id": "upscale-image-request",
+            "priceTag": "seedvr-upscale-image"
+          },
+          {
+            "id": "upscale-video",
+            "name": "Video to Video (Video Upscaler)",
+            "api_id": "seedvr-upscale",
+            "operation_id": "upscale-video",
+            "priceTag": "seedvr-upscale",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per processed video clip",
+              "example": "Price scales with output video size: $0.0011 × width × height × frames ÷ 1,000,000. Example shown: 1080p × 10s @ 30fps."
+            }
+          }
+        ]
+      },
+      {
+        "id": "seedvr2-7b-upscale",
+        "name": "SeedVR2 7B",
+        "version": "7B",
+        "order": 1,
+        "features": [
+          {
+            "id": "ai-upscaler",
+            "name": "Image to Image (Image Upscaler)",
+            "api_id": "seedvr2-7b-upscale",
+            "operation_id": "image-upscale-request",
+            "priceTag": "seedvr2-7b-upscale"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "sora": {
+    "title": "Sora Video API",
+    "provider": "OpenAI",
+    "description": "Advanced video generation by OpenAI.",
+    "image": "Sora-2-Pro-API.png",
+    "models": [
+      {
+        "id": "sora-2-pro",
+        "name": "Sora 2 Pro",
+        "version": "2 Pro",
+        "order": 1,
+        "features": [
+          {
+            "id": "generate-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "sora-video",
+            "operation_id": "generate-image-to-video-request"
+          },
+          {
+            "id": "generate-video-request",
+            "name": "Text to Video",
+            "api_id": "sora-video",
+            "operation_id": "generate-video-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "stable-diffusion": {
+    "title": "Stable Diffusion API",
+    "provider": "Stability AI",
+    "description": "Industry-leading open image generation by Stability AI",
+    "image": "SDXL.png",
+    "capability_map": {
+      "image-to-video": {
+        "modelId": "stable-diffusion-video-v1",
+        "featureId": "image2video"
+      },
+      "text-to-image": {
+        "modelId": "stable-diffusion-v3",
+        "featureId": "get-data"
+      },
+      "image-to-image": {
+        "modelId": "stable-diffusion-inpainting",
+        "featureId": "get-image"
+      },
+      "free": {
+        "modelId": "stable-diffusion-xl-v1-0",
+        "featureId": "get-image"
+      }
+    },
+    "models": [
+      {
+        "id": "stable-diffusion-v3",
+        "name": "Stable Diffusion v3",
+        "version": "3.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "get-data",
+            "name": "Text to Image",
+            "api_id": "stable-diffusion-3",
+            "operation_id": "get-data",
+            "priceTag": "sd3-5",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "stable-diffusion-v3-5",
+        "name": "Stable Diffusion v3.5",
+        "version": "3.5",
+        "order": 1,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Text to Image",
+            "api_id": "stable-diffusion-3-5-large",
+            "operation_id": "get-image",
+            "priceTag": "sd3-5",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          }
+        ]
+      },
+      {
+        "id": "stable-diffusion-xl-v1-0",
+        "name": "Stable Diffusion XL v1.0",
+        "version": "1.0",
+        "order": 6,
+        "free": true,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Text to Image",
+            "api_id": "stable-diffusion-xl-base-10",
+            "operation_id": "get-image",
+            "priceTag": "sdxl-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          }
+        ]
+      },
+      {
+        "id": "stable-diffusion-xl-lightning",
+        "name": "Stable Diffusion XL Lightning",
+        "version": "1.0 lightning",
+        "order": 7,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Text to Image",
+            "api_id": "stable-diffusion-xl-lightning",
+            "operation_id": "get-image",
+            "priceTag": "sdxl-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          },
+          {
+            "id": "get-image-stream",
+            "name": "Text to Image (Stream)",
+            "api_id": "stable-diffusion-xl-lightning",
+            "operation_id": "get-image-stream",
+            "priceTag": "sdxl-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          }
+        ]
+      },
+      {
+        "id": "stable-diffusion-inpainting",
+        "name": "Stable Diffusion Inpainting",
+        "version": "1.0 inpainting",
+        "order": 8,
+        "free": true,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Image to Image (Inpainting — Ref Image + Ref Mask to Image)",
+            "api_id": "stable-diffusion-v1-5-inpainting",
+            "operation_id": "get-image",
+            "priceTag": "stable-diffusion-inpainting",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          },
+          {
+            "id": "get-image-stream",
+            "name": "Text to Image (Stream)",
+            "api_id": "stable-diffusion-v1-5-inpainting",
+            "operation_id": "get-image-stream",
+            "priceTag": "stable-diffusion-inpainting",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "studio-ghibli": {
+    "title": "Studio Ghibli API",
+    "provider": "Ghibli",
+    "description": "Ghibli-style image generation.",
+    "image": "Imag-1.jpg",
+    "models": [
+      {
+        "id": "studio-ghibli-v1",
+        "name": "Studio Ghibli v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "generate-image-request",
+            "name": "Text to Image",
+            "api_id": "studio-ghibli",
+            "operation_id": "generate-image-request",
+            "priceTag": "pixazo-ghibli"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "veed": {
+    "title": "Veed AI API",
+    "provider": "Veed",
+    "description": "Video editing and processing capabilities.",
+    "image": "VEED-Fabric-1.0-API.jpg",
+    "capability_map": {
+      "background-remover": {
+        "modelId": "veed-v1",
+        "featureId": "veed-video-background-remover-request"
+      }
+    },
+    "models": [
+      {
+        "id": "veed-v1-0",
+        "name": "Veed Fabric v1.0",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "veed-fabric-1-0-api-request",
+            "name": "Audio to Video (Ref Image + Ref Audio to Video — Talking Avatar)",
+            "api_id": "veed-fabric-1-0-api-130",
+            "operation_id": "veed-fabric-1-0-api-request",
+            "pricing_meta": {
+              "tableExample": "10-second 720p avatar ≈ $1.50",
+              "displayMode": "table"
+            }
+          }
+        ]
+      },
+      {
+        "id": "veed-v1",
+        "name": "Veed v1",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "veed-video-background-remover-request",
+            "name": "Video to Video (Video Background Remover)",
+            "api_id": "veed-video-background-remover-541",
+            "operation_id": "veed-video-background-remover-request",
+            "pricing_meta": {
+              "tableHeader": "Mode"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "veo": {
+    "title": "Veo Video API",
+    "provider": "Google",
+    "description": "Advanced video generation by Google DeepMind.",
+    "image": "VEO3.1-FAST-TEXT-TO-VIDEO.jpg",
+    "models": [
+      {
+        "id": "veo-3-1-fast",
+        "name": "Veo v3.1 Fast",
+        "version": "3.1 Fast",
+        "order": 1,
+        "features": [
+          {
+            "id": "veo-3-1-fast",
+            "name": "Text to Video",
+            "api_id": "veo-3-1-fast",
+            "operation_id": "video-generation-request",
+            "pricing_meta": {
+              "tableHeader": "Mode"
+            }
+          },
+          {
+            "id": "veo-3-1-fast-reference-to-video-request",
+            "name": "Reference to Video (Reference Images to Video)",
+            "api_id": "veo-3-1-fast-reference-to-video",
+            "operation_id": "veo-3-1-fast-reference-to-video-request",
+            "pricing_meta": {
+              "tableHeader": "Mode"
+            }
+          }
+        ]
+      },
+      {
+        "id": "veo-v3-1",
+        "name": "Veo v3.1",
+        "version": "3.1",
+        "order": 2,
+        "features": [
+          {
+            "id": "video-generation-request",
+            "name": "Text to Video",
+            "api_id": "veo-3-1",
+            "operation_id": "video-generation-request",
+            "pricing_meta": {
+              "tierCaption": "Standard prices shown include audio output. Use the Veo v3.1 Fast variant above for explicit audio-off pricing (~50% cheaper) or audio-on toggling.",
+              "displayMode": "table"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "vibevoice": {
+    "title": "VibeVoice TTS API",
+    "provider": "Microsoft",
+    "description": "Text to speech capabilities by Microsoft.",
+    "image": "VibeVoice-Realtime-0.5B-API.png",
+    "capability_map": {
+      "voice-cloning": {
+        "modelId": "vibevoice-v1",
+        "featureId": "text-to-speech"
+      }
+    },
+    "models": [
+      {
+        "id": "vibevoice-v1",
+        "name": "VibeVoice v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "text-to-speech",
+            "name": "Text to Speech (Voice Cloning)",
+            "api_id": "vibevoice",
+            "operation_id": "text-to-speech",
+            "priceTag": "vibevoice-realtime-0-5b-135",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per generated minute",
+              "example": "5-minute podcast ≈ $0.20"
+            }
+          },
+          {
+            "id": "vibevoice-realtime-0-5b-request",
+            "name": "Text to Speech (Realtime)",
+            "api_id": "vibevoice-realtime-0-5b-135",
+            "operation_id": "vibevoice-realtime-0-5b-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per generated minute",
+              "example": "5-minute podcast ≈ $0.20"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "wan": {
+    "title": "Wan AI API",
+    "provider": "Alibaba",
+    "description": "Comprehensive video and image generation by Alibaba.",
+    "image": "Wan-2.2-image-to-video-–-2.png",
+    "capability_map": {
+      "image-to-image": {
+        "modelId": "wan-v2-5",
+        "featureId": "generate-image-to-image"
+      },
+      "text-to-image": {
+        "modelId": "wan-v2-5",
+        "featureId": "generate-text-to-image"
+      },
+      "image-to-video": {
+        "modelId": "wan-v2-5",
+        "featureId": "generate-image-to-video"
+      },
+      "text-to-video": {
+        "modelId": "wan-v2-5",
+        "featureId": "generate-text-to-viedo-request-2-5"
+      },
+      "audio-to-video": {
+        "modelId": "wan-v2-2",
+        "featureId": "speech-to-video-request"
+      }
+    },
+    "models": [
+      {
+        "id": "wan-v2-2",
+        "name": "Wan 2.2",
+        "version": "2.2",
+        "order": 6,
+        "features": [
+          {
+            "id": "speech-to-video-request",
+            "name": "Audio to Video (Ref Audio to Video)",
+            "api_id": "wan-2-2-14b-speech-to-video",
+            "operation_id": "speech-to-video-request"
+          },
+          {
+            "id": "wan-2-2-animate-api-request",
+            "name": "Audio to Video (Ref Image + Ref Audio to Video — Animate)",
+            "api_id": "wan-2-2-animate-api-524",
+            "operation_id": "wan-2-2-animate-api-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second"
+            }
+          },
+          {
+            "id": "wan-image-to-video-first-frame",
+            "name": "Image to Video (First Frame to Video)",
+            "api_id": "wan-image-to-video",
+            "operation_id": "wan-image-to-video-first-frame",
+            "priceTag": "wan2.2-api"
+          },
+          {
+            "id": "wan-keyframe-to-video",
+            "name": "Image to Video (Keyframe to Video)",
+            "api_id": "wan-image-to-video",
+            "operation_id": "wan-keyframe-to-video",
+            "priceTag": "wan2.2-api"
+          },
+          {
+            "id": "edit-image-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "wan-text-to-image",
+            "operation_id": "edit-image-request",
+            "priceTag": "wan2.2-t2v-api"
+          },
+          {
+            "id": "text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "wan-text-to-image",
+            "operation_id": "text-to-image-request",
+            "priceTag": "wan2.2-t2v-api"
+          },
+          {
+            "id": "generate-text-to-viedo-request",
+            "name": "Text to Video",
+            "api_id": "wan-text-to-video",
+            "operation_id": "generate-text-to-viedo-request",
+            "priceTag": "wan2.2-t2v-api"
+          }
+        ]
+      },
+      {
+        "id": "wan-v2-5",
+        "name": "Wan 2.5",
+        "version": "2.5",
+        "order": 5,
+        "features": [
+          {
+            "id": "generate-image-to-image",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "wan-2-5-image-generation",
+            "operation_id": "generate-image-to-image",
+            "priceTag": "wan-2-5-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image generation"
+            }
+          },
+          {
+            "id": "generate-text-to-image",
+            "name": "Text to Image",
+            "api_id": "wan-2-5-image-generation",
+            "operation_id": "generate-text-to-image",
+            "priceTag": "wan-2-5-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image generation"
+            }
+          },
+          {
+            "id": "generate-image-to-video",
+            "name": "Image to Video",
+            "api_id": "wan-image-to-video-2-5",
+            "operation_id": "generate-image-to-video",
+            "priceTag": "wan-2-5-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second"
+            }
+          },
+          {
+            "id": "generate-text-to-viedo-request-2-5",
+            "name": "Text to Video",
+            "api_id": "wan-image-to-video-2-5",
+            "operation_id": "generate-text-to-viedo-request",
+            "priceTag": "wan-2-5-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second"
+            }
+          },
+          {
+            "id": "pixazo-wan-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "pixazo-wan-image-to-video-1763709522",
+            "operation_id": "pixazo-wan-image-to-video-request",
+            "priceTag": "wan-2-5-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wan-v2-6",
+        "name": "Wan 2.6",
+        "version": "2.6",
+        "order": 4,
+        "features": [
+          {
+            "id": "wan-2-6-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "wan-2-6-image-to-video-477",
+            "operation_id": "wan-2-6-image-to-video-request",
+            "priceTag": "wan2.6-api"
+          },
+          {
+            "id": "wan-2-6-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "wan-2-6-text-to-video-569",
+            "operation_id": "wan-2-6-text-to-video-request",
+            "priceTag": "wan2.6-api"
+          },
+          {
+            "id": "wan-2-6-image-to-video-flash-api-request",
+            "name": "Image to Video (Flash)",
+            "api_id": "wan-2-6-image-to-video-flash-api-353",
+            "operation_id": "wan-2-6-image-to-video-flash-api-request",
+            "priceTag": "wan2.6-api"
+          }
+        ]
+      },
+      {
+        "id": "wan-2-7-pro-api",
+        "name": "Wan 2.7 Pro",
+        "version": "2.7 pro",
+        "order": 3,
+        "features": [
+          {
+            "id": "wan-2-7-pro-text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "wan-2-7-pro-api",
+            "operation_id": "text-to-image-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "wan-2-7-pro-edit-image-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "wan-2-7-pro-api",
+            "operation_id": "edit-image-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "wan-2-7-api",
+        "name": "Wan 2.7",
+        "version": "2.7",
+        "order": 2,
+        "features": [
+          {
+            "id": "wan-2-7-text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "wan-2-7-api",
+            "operation_id": "text-to-image-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "wan-2-7-edit-image-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "wan-2-7-api",
+            "operation_id": "edit-image-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "wan-2-7-video-edit-video-video-to-video",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "wan-2-7-video-api",
+            "operation_id": "edit-video-video-to-video",
+            "priceTag": "wan-2-7-video-api"
+          },
+          {
+            "id": "wan-2-7-video-edit-video-video-to-video-by-reference",
+            "name": "Reference to Video (Ref Image + Ref Video to Video)",
+            "api_id": "wan-2-7-video-api",
+            "operation_id": "edit-video-video-to-video-by-reference",
+            "priceTag": "wan-2-7-video-api"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "z-image": {
+    "title": "Z-Image API",
+    "provider": "Z-Image",
+    "description": "Fast image generation.",
+    "image": "Z-Image-Turbo-API.png",
+    "models": [
+      {
+        "id": "z-image-turbo",
+        "name": "Z-Image Turbo",
+        "version": "turbo",
+        "order": 1,
+        "features": [
+          {
+            "id": "z-image-turbo-request",
+            "name": "Text to Image",
+            "api_id": "z-image-turbo-834",
+            "operation_id": "z-image-turbo-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "z-image-base",
+        "name": "Z-Image Base",
+        "version": "base",
+        "order": 2,
+        "features": [
+          {
+            "id": "z-image-base-request",
+            "name": "Text to Image",
+            "api_id": "z-image-base",
+            "operation_id": "z-image-base-request",
+            "priceTag": "z-image-base",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "sticker-maker": {
+    "title": "Sticker Maker API",
+    "provider": "Sticker Maker",
+    "description": "AI-powered sticker generation.",
+    "image": "AI-Sticker-Maker-API.png",
+    "models": [
+      {
+        "id": "sticker-maker-v1",
+        "name": "Sticker Maker v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "sticker-request",
+            "name": "Text to Image (Sticker)",
+            "api_id": "sticker-maker",
+            "operation_id": "sticker-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "face-sticker": {
+    "title": "Face Sticker API",
+    "provider": "Fofr",
+    "description": "Face-based sticker generation.",
+    "image": "Face-to-Sticker-API.png",
+    "models": [
+      {
+        "id": "face-sticker-v1",
+        "name": "Face Sticker v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "sticker-request",
+            "name": "Image to Image (Face Sticker)",
+            "api_id": "face-sticker",
+            "operation_id": "sticker-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "ltx": {
+    "title": "LTX Video API",
+    "provider": "Lightricks",
+    "description": "Advanced video generation by Lightricks. The LTX 2.3 family adds audio-conditioned video synthesis and retake (video-to-video) editing on top of the existing T2V / I2V pipeline.",
+    "image": "LTXV-2.0-Text-To-Video-–-1.png",
+    "models": [
+      {
+        "id": "ltx-v2-3-quality",
+        "name": "LTX 2.3 Quality",
+        "version": "2.3 quality",
+        "order": 0,
+        "features": [
+          {
+            "id": "ltx-2-3-quality-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "ltx-2-3-quality-text-to-video",
+            "operation_id": "ltx-2-3-quality-text-to-video-request",
+            "priceTag": "ltx-2-3-quality-text-to-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per megapixel of output",
+              "example": "1080p × 5s @ 24fps (~250 MP-frames) ≈ $0.60"
+            }
+          },
+          {
+            "id": "ltx-2-3-quality-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "ltx-2-3-quality-image-to-video",
+            "operation_id": "ltx-2-3-quality-image-to-video-request",
+            "priceTag": "ltx-2-3-quality-image-to-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per megapixel of output",
+              "example": "1080p × 5s @ 24fps (~250 MP-frames) ≈ $0.60"
+            }
+          },
+          {
+            "id": "ltx-2-3-quality-audio-to-video-request",
+            "name": "Audio to Video",
+            "api_id": "ltx-2-3-quality-audio-to-video",
+            "operation_id": "ltx-2-3-quality-audio-to-video-request",
+            "priceTag": "ltx-2-3-quality-audio-to-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per megapixel of output",
+              "example": "1080p × 5s @ 24fps (~250 MP-frames) ≈ $0.60"
+            }
+          },
+          {
+            "id": "ltx-2-3-quality-reference-video-to-video-request",
+            "name": "Video to Video (Reference Video to Video)",
+            "api_id": "ltx-2-3-quality-reference-video-to-video",
+            "operation_id": "ltx-2-3-quality-reference-video-to-video-request",
+            "priceTag": "ltx-2-3-quality-reference-video-to-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per megapixel of output",
+              "example": "1080p × 5s @ 24fps (~250 MP-frames) ≈ $0.68"
+            }
+          },
+          {
+            "id": "ltx-2-3-quality-hdr-request",
+            "name": "Video to Video (Video Upscale)",
+            "api_id": "ltx-2-3-quality-hdr",
+            "operation_id": "ltx-2-3-quality-hdr-request",
+            "priceTag": "ltx-2-3-quality-hdr",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per megapixel of output",
+              "example": "1080p × 5s @ 24fps (~250 MP-frames) ≈ $0.68"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ltx-v2-3-free",
+        "name": "LTX 2.3",
+        "version": "2.3 free",
+        "order": 1,
+        "free": true,
+        "features": [
+          {
+            "id": "text-to-video",
+            "name": "Text to Video",
+            "api_id": "ltx-video",
+            "operation_id": "text-to-video",
+            "priceTag": "ltx-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "LTX 2.3 base — free during preview, fair-use rate limit applies."
+            }
+          },
+          {
+            "id": "image-to-video",
+            "name": "Image to Video",
+            "api_id": "ltx-video",
+            "operation_id": "image-to-video",
+            "priceTag": "ltx-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "LTX 2.3 base — free during preview, fair-use rate limit applies."
+            }
+          },
+          {
+            "id": "video-to-video",
+            "name": "Video to Video",
+            "api_id": "ltx-video",
+            "operation_id": "video-to-video",
+            "priceTag": "ltx-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "LTX 2.3 base — free during preview, fair-use rate limit applies."
+            }
+          }
+        ]
+      },
+      {
+        "id": "ltx-v2-3",
+        "name": "LTX v2.3",
+        "version": "2.3",
+        "order": 2,
+        "features": [
+          {
+            "id": "ltx-2-3-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "ltx-2-3-text-to-video",
+            "operation_id": "ltx-2-3-text-to-video-request",
+            "priceTag": "ltx-2-3-text-to-video",
+            "pricing_meta": {
+              "tableExample": "5-second 1080p clip ≈ $0.30",
+              "displayMode": "table"
+            }
+          },
+          {
+            "id": "ltx-2-3-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "ltx-2-3-image-to-video",
+            "operation_id": "ltx-2-3-image-to-video-request",
+            "priceTag": "ltx-2-3-image-to-video",
+            "pricing_meta": {
+              "tableExample": "5-second 1080p clip ≈ $0.30",
+              "displayMode": "table"
+            }
+          },
+          {
+            "id": "ltx-2-3-audio-to-video-request",
+            "name": "Audio to Video",
+            "api_id": "ltx-2-3-audio-to-video",
+            "operation_id": "ltx-2-3-audio-to-video-request",
+            "priceTag": "ltx-2-3-audio-to-video"
+          },
+          {
+            "id": "ltx-2-3-retake-video-request",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "ltx-2-3-retake-video",
+            "operation_id": "ltx-2-3-retake-video-request",
+            "priceTag": "ltx-2-3-retake-video"
+          }
+        ]
+      },
+      {
+        "id": "ltx-v2-pro",
+        "name": "LTX v2 Pro",
+        "version": "2 pro",
+        "order": 3,
+        "features": [
+          {
+            "id": "ltx-v2-video-generate",
+            "name": "Text to Video",
+            "api_id": "lightricks-video",
+            "operation_id": "ltx-v2-video-generate",
+            "pricing_meta": {
+              "durations": [
+                6,
+                8,
+                10
+              ],
+              "tableExample": "5-second 1080p clip ≈ $0.30",
+              "displayMode": "table"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ltx-v2-19B",
+        "name": "LTX v2 19B",
+        "version": "2.0 19B",
+        "order": 4,
+        "features": [
+          {
+            "id": "ltx-2-19b-api-request",
+            "name": "Image to Video",
+            "api_id": "ltx-2-19b-api-513",
+            "operation_id": "ltx-2-19b-api-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second",
+              "example": "5-second clip ≈ $0.45"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ltx-v2",
+        "name": "LTX v2",
+        "version": "2.0",
+        "order": 5,
+        "features": [
+          {
+            "id": "ltx-2-video-api-request",
+            "name": "Image to Video",
+            "api_id": "ltx-2-video-api-581",
+            "operation_id": "ltx-2-video-api-request",
+            "priceTag": "ltx-2-video-api-request",
+            "pricing_meta": {
+              "tableExample": "5-second 1080p clip ≈ $0.30",
+              "displayMode": "table"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "elevenlabs": {
+    "title": "ElevenLabs Audio API",
+    "provider": "ElevenLabs",
+    "description": "Advanced audio and music generation.",
+    "image": "ElevenLabs-Music-API.png",
+    "capability_map": {
+      "voice-cloning": {
+        "modelId": "elevenlabs-v3",
+        "featureId": "eleven-v3-alpha-request"
+      },
+      "text-to-song": {
+        "modelId": "elevenlabs-v1",
+        "featureId": "elevenlabs-music-api-request"
+      }
+    },
+    "models": [
+      {
+        "id": "elevenlabs-eleven-v3-tts",
+        "name": "ElevenLabs Eleven v3 TTS",
+        "version": "3.0 tts",
+        "order": 1,
+        "features": [
+          {
+            "id": "elevenlabs-eleven-v3-tts-request",
+            "name": "Text to Speech (Voice Cloning)",
+            "api_id": "elevenlabs-eleven-v3-tts",
+            "operation_id": "elevenlabs-eleven-v3-tts-request",
+            "priceTag": "elevenlabs-eleven-v3-tts"
+          }
+        ]
+      },
+      {
+        "id": "elevenlabs-music",
+        "name": "ElevenLabs Music",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "elevenlabs-music-request",
+            "name": "Text to Music",
+            "api_id": "elevenlabs-music",
+            "operation_id": "elevenlabs-music-request",
+            "priceTag": "elevenlabs-music",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per minute of generated music",
+              "example": "billed in 1-minute increments, rounded up"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "recraft": {
+    "title": "Recraft API",
+    "provider": "Recraft",
+    "description": "Advanced image generation.",
+    "image": "Recraft-V3-API.png",
+    "models": [
+      {
+        "id": "recraft-v3",
+        "name": "Recraft v3",
+        "version": "3.0",
+        "order": 4,
+        "features": [
+          {
+            "id": "image-to-image-v3",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "recraft",
+            "operation_id": "image-to-image-v3"
+          },
+          {
+            "id": "text-to-image-v3",
+            "name": "Text to Image",
+            "api_id": "recraft",
+            "operation_id": "text-to-image-v3"
+          }
+        ]
+      },
+      {
+        "id": "recraft-v4",
+        "name": "Recraft V4 Pro",
+        "version": "4.0 Normal",
+        "order": 3,
+        "features": [
+          {
+            "id": "text-to-image-v4-normal",
+            "name": "Text to Image",
+            "api_id": "recraft",
+            "operation_id": "text-to-image-v4-normal",
+            "priceTag": "recraft"
+          }
+        ]
+      },
+      {
+        "id": "recraft-v4",
+        "name": "Recraft V4 Pro",
+        "version": "4.0 Pro",
+        "order": 2,
+        "features": [
+          {
+            "id": "text-to-image-v4-pro",
+            "name": "Text To Image",
+            "api_id": "recraft",
+            "operation_id": "text-to-image-v4-pro",
+            "priceTag": "recraft"
+          }
+        ]
+      },
+      {
+        "id": "recraft-v4-1",
+        "name": "Recraft V4.1 Pro",
+        "version": "4.1",
+        "order": 1,
+        "features": [
+          {
+            "id": "text-to-image-v4-1-pro",
+            "name": "Text To Image",
+            "api_id": "recraft-v4-1-pro",
+            "operation_id": "text-to-image",
+            "priceTag": "recraft-v4-1-pro",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "hyper3d": {
+    "title": "Hyper3D API",
+    "provider": "Hyper3D",
+    "description": "3D generation capabilities.",
+    "image": "Hyper3D-Rodin-API.png",
+    "models": [
+      {
+        "id": "hyper3d-rodin-v2-5",
+        "name": "Hyper3D Rodin v2.5",
+        "version": "2.5",
+        "order": 0,
+        "features": [
+          {
+            "id": "hyper3d-rodin-v2-5-text-to-3d-request",
+            "name": "Text to 3D",
+            "api_id": "hyper3d-rodin-v2-5-text-to-3d",
+            "operation_id": "hyper3d-rodin-v2-5-text-to-3d-request",
+            "priceTag": "hyper3d-rodin-v2-5-text-to-3d",
+            "pricing_meta": {
+              "tableHeader": "Usage",
+              "tableExample": "Stacking example: Text-to-3D standard + Extreme-High + HighPack add-on = $0.40 + $0.80 + $0.80 = $2.00 per generation.",
+              "displayMode": "table"
+            }
+          },
+          {
+            "id": "hyper3d-rodin-v2-5-image-to-3d-request",
+            "name": "Image to 3D",
+            "api_id": "hyper3d-rodin-v2-5-image-to-3d",
+            "operation_id": "hyper3d-rodin-v2-5-image-to-3d-request",
+            "priceTag": "hyper3d-rodin-v2-5-image-to-3d",
+            "pricing_meta": {
+              "tableHeader": "Usage",
+              "tableExample": "Stacking example: Image-to-3D standard + Extreme-High + HighPack add-on = $0.40 + $0.80 + $0.80 = $2.00 per generation.",
+              "displayMode": "table"
+            }
+          }
+        ]
+      },
+      {
+        "id": "hyper3d-v1",
+        "name": "Hyper3D Rodin v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "hyper3d-rodin-request",
+            "name": "Image to Image (3D Models — Text & Image to 3D)",
+            "api_id": "hyper3d-rodin-259",
+            "operation_id": "hyper3d-rodin-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "auraflow": {
+    "title": "Auraflow API",
+    "provider": "Auraflow",
+    "description": "Image generation capabilities.",
+    "image": "AuraFlow-v0.3-API.png",
+    "models": [
+      {
+        "id": "auraflow-default",
+        "name": "Auraflow v0.3",
+        "version": "0.3",
+        "order": 1,
+        "features": [
+          {
+            "id": "auraflow-v0-3-request",
+            "name": "Text to Image",
+            "api_id": "auraflow-v0-3-512",
+            "operation_id": "auraflow-v0-3-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "vidu": {
+    "title": "Vidu Video API",
+    "provider": "Vidu",
+    "description": "Advanced video generation.",
+    "image": "Vidu-Q2-Reference-to-Video-Pro-API.png",
+    "capability_map": {
+      "text-to-video": {
+        "modelId": "vidu-q3",
+        "featureId": "vidu-request"
+      },
+      "reference-to-video": {
+        "modelId": "vidu-v1",
+        "featureId": "vidu-q2-reference-to-video-pro-api-request"
+      }
+    },
+    "models": [
+      {
+        "id": "vidu-q3",
+        "name": "Vidu Q3",
+        "version": "Q3",
+        "order": 1,
+        "features": [
+          {
+            "id": "vidu-request",
+            "name": "Text to Video",
+            "api_id": "vidu",
+            "operation_id": "vidu-request",
+            "priceTag": "vidu"
+          }
+        ]
+      },
+      {
+        "id": "vidu-q2",
+        "name": "Vidu Q2",
+        "version": "Q2",
+        "order": 2,
+        "features": [
+          {
+            "id": "vidu-q2-reference-to-video-pro-api-request",
+            "name": "Reference to Video (Ref Image / Video / Audio)",
+            "api_id": "vidu-q2-reference-to-video-pro-api-454",
+            "operation_id": "vidu-q2-reference-to-video-pro-api-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "grok-imagine-image": {
+    "title": "Grok Imagine Image API",
+    "provider": "xAI",
+    "description": "Image generation and editing by xAI.",
+    "image": "Grok-Imagine-API.png",
+    "capability_map": {
+      "text-to-image": {
+        "modelId": "grok-imagine-image-pro-quality",
+        "featureId": "grok-imagine-pro-text-to-image-quality-request"
+      },
+      "image-to-image": {
+        "modelId": "grok-imagine-image-pro-quality",
+        "featureId": "grok-imagine-pro-edit-quality-request"
+      }
+    },
+    "models": [
+      {
+        "id": "grok-imagine-image-pro-quality",
+        "name": "Grok Imagine Image",
+        "version": "Pro Quality",
+        "order": 1,
+        "features": [
+          {
+            "id": "grok-imagine-pro-text-to-image-quality-request",
+            "name": "Text to Image",
+            "api_id": "grok-imagine-pro-text-to-image-quality",
+            "operation_id": "grok-imagine-pro-text-to-image-quality-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "grok-imagine-pro-edit-quality-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "grok-imagine-pro-edit-quality",
+            "operation_id": "grok-imagine-pro-edit-quality-request",
+            "pricing_meta": {
+              "tableHeader": "Usage"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "bria": {
+    "title": "Bria API",
+    "provider": "Bria",
+    "description": "Bria API by Bria.",
+    "image": "bria.png",
+    "capability_map": {
+      "background-remover": {
+        "modelId": "bria-rmbg-2-0-682",
+        "featureId": "bria-rmbg-2-0-request"
+      }
+    },
+    "models": [
+      {
+        "id": "bria-fibo-1-0",
+        "name": "BRIA FIBO",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "bria-fibo-bbq-preview-request",
+            "name": "Text to Image",
+            "api_id": "bria-fibo-bbq-preview",
+            "operation_id": "bria-fibo-bbq-preview-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "bria-rmbg-2-0-682",
+        "name": "Bria RMBG 2.0",
+        "version": "2.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "bria-rmbg-2-0-request",
+            "name": "Image to Image (Image Background Removal)",
+            "api_id": "bria-rmbg-2-0-682",
+            "operation_id": "bria-rmbg-2-0-request",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "bria-vrmbg-3-0",
+        "name": "Bria VRMBG 3.0",
+        "version": "3.0",
+        "order": 3,
+        "features": [
+          {
+            "id": "bria-video-background-removal-v3-request",
+            "name": "Video to Video (Background Removal)",
+            "api_id": "bria-video-background-removal-v3",
+            "operation_id": "bria-video-background-removal-v3-request",
+            "priceTag": "bria-video-background-removal-v3",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of video",
+              "example": "about $0.03 for a 6-second clip",
+              "perMillion": "$0.25 per minute of video"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "dalle": {
+    "title": "DALL-E API",
+    "provider": "OpenAI",
+    "description": "DALL-E API by OpenAI.",
+    "image": "dalle.png",
+    "models": [],
+    "endpoints": {}
+  },
+  "pika": {
+    "title": "Pika Video API",
+    "provider": "Pika Labs",
+    "description": "Pika 2.2 — text-to-video, image-to-video, and Pika Scenes (multi-image reference) video generation by Pika Labs.",
+    "image": "pika.png",
+    "models": [
+      {
+        "id": "pika-v2-2",
+        "name": "Pika 2.2",
+        "version": "2.2",
+        "order": 1,
+        "features": [
+          {
+            "id": "pika-2-2-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "pika-2-2-text-to-video",
+            "operation_id": "pika-2-2-text-to-video-request",
+            "priceTag": "pika-2-2-text-to-video"
+          },
+          {
+            "id": "pika-2-2-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "pika-2-2-image-to-video",
+            "operation_id": "pika-2-2-image-to-video-request",
+            "priceTag": "pika-2-2-image-to-video"
+          },
+          {
+            "id": "pika-scenes-2-2-request",
+            "name": "Reference to Video (Ref Images to Video)",
+            "api_id": "pika-scenes-2-2",
+            "operation_id": "pika-scenes-2-2-request",
+            "priceTag": "pika-scenes-2-2"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "pixverse": {
+    "title": "Pixverse Video API",
+    "provider": "Pixverse",
+    "description": "Pixverse Video API by Pixverse.",
+    "image": "pixverse.png",
+    "capability_map": {
+      "text-to-video": {
+        "modelId": "pixverse-v5-6",
+        "featureId": "pixverse-request"
+      },
+      "image-to-video": {
+        "modelId": "pixverse-v6",
+        "featureId": "pixverse-v6-image-to-video-request"
+      }
+    },
+    "models": [
+      {
+        "id": "pixverse-v6",
+        "name": "Pixverse v6",
+        "version": "6.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "pixverse-v6-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "pixverse-v6-text-to-video",
+            "operation_id": "pixverse-v6-text-to-video-request",
+            "priceTag": "pixverse-v6-image-to-video"
+          },
+          {
+            "id": "pixverse-v6-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "pixverse-v6-image-to-video",
+            "operation_id": "pixverse-v6-image-to-video-request",
+            "priceTag": "pixverse-v6-image-to-video"
+          }
+        ]
+      },
+      {
+        "id": "pixverse-c1",
+        "name": "Pixverse c1",
+        "version": "c1",
+        "order": 2,
+        "features": [
+          {
+            "id": "pixverse-c1-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "pixverse-c1-text-to-video",
+            "operation_id": "pixverse-c1-text-to-video-request"
+          },
+          {
+            "id": "pixverse-c1-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "pixverse-c1-image-to-video",
+            "operation_id": "pixverse-c1-image-to-video-request"
+          }
+        ]
+      },
+      {
+        "id": "pixverse-v5-6",
+        "name": "Pixverse v5.6",
+        "version": "5.6",
+        "order": 3,
+        "features": [
+          {
+            "id": "pixverse-request",
+            "name": "Text to Video",
+            "api_id": "pixverse",
+            "operation_id": "pixverse-request",
+            "priceTag": "pixverse"
+          },
+          {
+            "id": "pixverse-i2v-request",
+            "name": "Image to Video",
+            "api_id": "pixverse-i2v",
+            "operation_id": "pixverse-i2v-request",
+            "priceTag": "pixverse-i2v"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "runway": {
+    "title": "Runway Gen-4.5 API",
+    "provider": "Runway",
+    "description": "Runway Gen-4.5 API for professional AI video generation by Runway.",
+    "image": "runway.png",
+    "models": [
+      {
+        "id": "runway-gen-4-5",
+        "name": "Runway Gen-4.5",
+        "version": "Gen 4.5",
+        "order": 1,
+        "features": [
+          {
+            "id": "image-to-video-generation-request",
+            "name": "Image to Video",
+            "api_id": "runway-gen-4-5",
+            "operation_id": "video-generation-request",
+            "priceTag": "runway-gen-4-5",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "10-second clip ≈ $1.20"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "sdxl": {
+    "title": "SDXL API",
+    "provider": "Stability AI",
+    "description": "SDXL API by Stability AI.",
+    "image": "sdxl.png",
+    "capability_map": {
+      "text-to-image": {
+        "modelId": "stable-diffusion-xl-base-10",
+        "featureId": "get-image"
+      },
+      "image-to-image": {
+        "modelId": "stable-diffusion-xl-base-10",
+        "featureId": "get-image"
+      },
+      "free": {
+        "modelId": "stable-diffusion-xl-base-10",
+        "featureId": "get-image"
+      }
+    },
+    "models": [
+      {
+        "id": "stable-diffusion-xl-base-10",
+        "name": "SDXL Base 1.0",
+        "version": "1.0",
+        "order": 2,
+        "free": true,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Text to Image",
+            "api_id": "stable-diffusion-xl-base-10",
+            "operation_id": "get-image",
+            "priceTag": "sdxl-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          }
+        ]
+      },
+      {
+        "id": "stable-diffusion-xl-lightning",
+        "name": "SDXL Lightning",
+        "version": "1.0 lightning",
+        "order": 3,
+        "features": [
+          {
+            "id": "get-image",
+            "name": "Text to Image",
+            "api_id": "stable-diffusion-xl-lightning",
+            "operation_id": "get-image",
+            "priceTag": "sdxl-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          }
+        ]
+      },
+      {
+        "id": "stable-diffusion-xl-turbo-v2",
+        "name": "SDXL Turbo",
+        "version": "1.0 turbo",
+        "order": 1,
+        "features": [
+          {
+            "id": "sdxl-turbo-get-image",
+            "name": "Text to Image",
+            "api_id": "stable-diffusion-xl-turbo-v2",
+            "operation_id": "sdxl-turbo-get-image",
+            "priceTag": "sdxl-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "Free during preview — fair-use rate limit of 60 requests/minute applies. See terms."
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "trellis3d": {
+    "title": "Trellis 3D API",
+    "provider": "Trellis",
+    "description": "Image to 3D generation capabilities.",
+    "image": "trellis3d.png",
+    "models": [
+      {
+        "id": "trellis-v2",
+        "name": "Trellis v2",
+        "version": "2.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "trellis-2-image-to-3d-request",
+            "name": "Image to Image (3D Models — Image to 3D)",
+            "api_id": "trellis-2-image-to-3d",
+            "operation_id": "trellis-2-image-to-3d-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "reve-image": {
+    "title": "Reve Image API",
+    "provider": "Reve",
+    "description": "Reve Image API by Reve.",
+    "image": "fal-ai-reve-remix-–-1.png",
+    "models": [
+      {
+        "id": "reve-image-generation",
+        "name": "Reve Image Generation",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "image-edit",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "reve-image-generation",
+            "operation_id": "image-edit",
+            "priceTag": "reve-remix-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "image-remix",
+            "name": "Image to Image (Image Editing — Remix)",
+            "api_id": "reve-image-generation",
+            "operation_id": "image-remix",
+            "priceTag": "reve-remix-api",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "xtts": {
+    "title": "XTTS v2 API",
+    "provider": "Xtts",
+    "description": "XTTS v2 API by Xtts.",
+    "image": "XTTS-v2-API.png",
+    "capability_map": {
+      "voice-cloning": {
+        "modelId": "xtts-v2-api",
+        "featureId": "text-to-speech-request"
+      }
+    },
+    "models": [
+      {
+        "id": "xtts-v2-api",
+        "name": "XTTS 2",
+        "version": "2.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "text-to-speech-request",
+            "name": "Text to Speech (Voice Cloning)",
+            "api_id": "xtts-v2-api",
+            "operation_id": "text-to-speech-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "tripo3d": {
+    "title": "Tripo3D API",
+    "provider": "Tripo",
+    "description": "Tripo3D API by Tripo.",
+    "image": "Tripo3D-v2.5-API.png",
+    "models": [
+      {
+        "id": "tripo3d-v2-5-413",
+        "name": "Tripo3D v2.5",
+        "version": "2.5",
+        "order": 1,
+        "features": [
+          {
+            "id": "tripo3d-v2-5-request",
+            "name": "Image to Image (3D Models — Image to 3D)",
+            "api_id": "tripo3d-v2-5-413",
+            "operation_id": "tripo3d-v2-5-request"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "topaz": {
+    "title": "Topaz Video Upscaler API",
+    "provider": "Topaz",
+    "description": "AI video upscaling by Topaz.",
+    "image": "Topaz-Video-Upscaler-API.png",
+    "models": [
+      {
+        "id": "topaz-upscale-video-753",
+        "name": "Topaz Video Upscaler",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "topaz-upscale-video-request",
+            "name": "Video to Video (Video Upscaler)",
+            "api_id": "topaz-upscale-video-753",
+            "operation_id": "topaz-upscale-video-request",
+            "pricing_meta": {
+              "tableExample": "1-minute 1080p upscale ≈ $1.20",
+              "displayMode": "table"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "ace-step": {
+    "title": "Ace Step Music API",
+    "provider": "ACE Studio",
+    "description": "Advanced music generation capabilities by ACE Studio. Leverage cutting-edge AI to compose original music across diverse genres and styles, enabling creators to produce custom soundtracks, background music, and audio content with ease.",
+    "image": "ace-step.png",
+    "capability_map": {
+      "text-to-song": {
+        "modelId": "ace-step-xl",
+        "featureId": "getGenerationResult"
+      }
+    },
+    "models": [
+      {
+        "id": "ace-step-v1-0",
+        "name": "Ace Step 1.5",
+        "version": "1.5",
+        "order": 2,
+        "features": [
+          {
+            "id": "generate-music",
+            "name": "Text to Song",
+            "api_id": "ace-step",
+            "operation_id": "generate-music"
+          }
+        ]
+      },
+      {
+        "id": "ace-step-xl",
+        "name": "Ace Step 1.5 XL",
+        "version": "1.5 xl",
+        "order": 1,
+        "features": [
+          {
+            "id": "getGenerationResult",
+            "name": "Text to Song",
+            "api_id": "ace-step-xl",
+            "operation_id": "getGenerationResult",
+            "priceTag": "ace-step-xl"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "tracks": {
+    "title": "Track Music API",
+    "provider": "Pixazo",
+    "description": "AI-powered music generation and audio synthesis by Pixazo. Create high-quality original music tracks with advanced AI models that transform creative ideas into professional-sounding compositions for content creators, filmmakers, and musicians.",
+    "image": "tracks.png",
+    "capability_map": {
+      "text-to-song": {
+        "modelId": "tracks-v1-0",
+        "featureId": "generate-music"
+      }
+    },
+    "models": [
+      {
+        "id": "tracks-v1-0",
+        "name": "Track v1.0",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "generate-music",
+            "name": "Text to Song",
+            "api_id": "tracks",
+            "operation_id": "generate-music",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "No per-generation charge"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "firered-image-edit": {
+    "title": "FireRed Image Edit API",
+    "provider": "FireRed Image Edit",
+    "description": "Advanced AI image editing capabilities by FireRed Image Edit.",
+    "image": "fireRed1.png",
+    "models": [
+      {
+        "id": "firered-image-edit-v1",
+        "name": "FireRed Image Edit 1",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "image-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "firered-image-edit",
+            "operation_id": "image-edit-request",
+            "priceTag": "firered-image-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "firered-image-edit-v1-1",
+        "name": "FireRed Image Edit 1.1",
+        "version": "1.1",
+        "order": 1,
+        "features": [
+          {
+            "id": "firered-image-edit-v1-1-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "firered-image-edit-v1-1",
+            "operation_id": "firered-image-edit-v1-1-request",
+            "priceTag": "firered-image-edit-v1-1"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "lyria": {
+    "title": "Lyria API",
+    "provider": "Google",
+    "description": "Google's advanced AI music generation model for creating high-quality audio content.",
+    "image": "lyria.png",
+    "capability_map": {
+      "text-to-music": {
+        "modelId": "lyria-3-pro",
+        "featureId": "lyria-3-pro"
+      }
+    },
+    "models": [
+      {
+        "id": "lyria-2-v2",
+        "name": "Lyria 2",
+        "version": "2.0",
+        "order": 3,
+        "features": [
+          {
+            "id": "music-request",
+            "name": "Text to Music",
+            "api_id": "lyria-2",
+            "operation_id": "music-request",
+            "priceTag": "lyria-2"
+          }
+        ]
+      },
+      {
+        "id": "lyria-3",
+        "name": "Lyria 3",
+        "version": "3.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "lyria-3",
+            "name": "Text to Music",
+            "api_id": "lyria-3",
+            "operation_id": "music-request",
+            "priceTag": "lyria-3"
+          }
+        ]
+      },
+      {
+        "id": "lyria-3-pro",
+        "name": "Lyria 3 Pro",
+        "version": "3.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "lyria-3-pro",
+            "name": "Text to Music",
+            "api_id": "lyria-3-pro",
+            "operation_id": "music-request",
+            "priceTag": "lyria-3-pro"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "p-video": {
+    "title": "P Video API",
+    "provider": "Pruna AI",
+    "description": "AI-powered video generation model supporting text-to-video, image-to-video, audio-conditioned, and image+audio generation modes.",
+    "image": "pvideo.png",
+    "models": [
+      {
+        "id": "p-video-avatar",
+        "name": "P Video Avatar",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "video-request",
+            "name": "Image to Video",
+            "api_id": "p-video-avatar",
+            "operation_id": "video-request",
+            "priceTag": "p-video-avatar"
+          }
+        ]
+      },
+      {
+        "id": "p-video-v1",
+        "name": "P Video v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "video-request",
+            "name": "Text to Video",
+            "api_id": "p-video",
+            "operation_id": "video-request",
+            "priceTag": "p-video"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "kandinsky": {
+    "title": "Kandinsky API",
+    "provider": "Kandinsky",
+    "description": "AI-powered image-to-video generation by Kandinsky.",
+    "image": "kandinsky5Pro.png",
+    "models": [
+      {
+        "id": "kandinsky-v5-pro",
+        "name": "Kandinsky v5 Pro",
+        "version": "v5 Pro",
+        "order": 1,
+        "features": [
+          {
+            "id": "kandinsky-5-0-pro-request",
+            "name": "Image to Video",
+            "api_id": "kandinsky-5-0-pro-953",
+            "operation_id": "kandinsky-5-0-pro-request",
+            "priceTag": "kandinsky-5-0-pro-953"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "p-image": {
+    "title": "P Image API",
+    "provider": "Pruna AI",
+    "description": "AI-powered image editing and transformation model by Pruna AI.",
+    "image": "p-image.png",
+    "capability_map": {
+      "image-to-image": {
+        "modelId": "p-image-upscale",
+        "featureId": "p-image-upscale-image-request"
+      },
+      "ai-image-upscaler": {
+        "modelId": "p-image-upscale",
+        "featureId": "p-image-upscale-image-request"
+      }
+    },
+    "models": [
+      {
+        "id": "p-image-v1",
+        "name": "P Image v1",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "image-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "p-image",
+            "operation_id": "image-request",
+            "priceTag": "p-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "p-image-upscale",
+        "name": "P Image Upscale",
+        "version": "Image Upscale",
+        "order": 1,
+        "features": [
+          {
+            "id": "p-image-upscale-image-request",
+            "name": "Image to Image (Image Upscaler)",
+            "api_id": "p-image-upscale",
+            "operation_id": "image-request",
+            "priceTag": "p-image-upscale"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "gemini": {
+    "title": "Gemini API",
+    "provider": "Google",
+    "description": "Google Gemini Flash text-to-speech generation.",
+    "image": "gemini.png",
+    "models": [
+      {
+        "id": "gemini-flash-tts-v1",
+        "name": "Gemini 3.1 Flash TTS",
+        "version": "3.1",
+        "order": 1,
+        "features": [
+          {
+            "id": "getTtsPrediction",
+            "name": "Text to Speech",
+            "api_id": "gemini-flash-tts",
+            "operation_id": "getTtsPrediction",
+            "priceTag": "gemini-flash-tts",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of generated speech",
+              "example": "60-second narration ≈ $2.40"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "happy-horse": {
+    "title": "Happy Horse API",
+    "provider": "Alibaba",
+    "description": "HappyHorse text-to-video generates physically realistic, motion-smooth video from text prompts.",
+    "image": "happy_horse1-0.png",
+    "models": [
+      {
+        "id": "happy-horse-v1-0",
+        "name": "Happy Horse 1.0",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "text-to-video",
+            "name": "Text to Video",
+            "api_id": "happy-horse-1-0",
+            "operation_id": "text-to-video",
+            "priceTag": "happy-horse-1-0"
+          },
+          {
+            "id": "image-to-video",
+            "name": "Image to Video",
+            "api_id": "happy-horse-1-0",
+            "operation_id": "image-to-video",
+            "priceTag": "happy-horse-1-0"
+          },
+          {
+            "id": "reference-to-video",
+            "name": "Reference to Video (Ref Images to Video)",
+            "api_id": "happy-horse-1-0",
+            "operation_id": "reference-to-video",
+            "priceTag": "happy-horse-1-0"
+          },
+          {
+            "id": "video-to-video",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "happy-horse-1-0",
+            "operation_id": "video-to-video",
+            "priceTag": "happy-horse-1-0-video-to-video"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "codeformer": {
+    "title": "Codeformer API",
+    "provider": "Sczhou",
+    "description": "Robust face restoration algorithm for old photos and AI-generated images.",
+    "image": "codeformer.png",
+    "models": [
+      {
+        "id": "codeformer-image-restoration-v1",
+        "name": "Codeformer",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "image-restore-request",
+            "name": "Image Restoration",
+            "api_id": "codeformer-image-restoration",
+            "operation_id": "image-restore-request",
+            "priceTag": "codeformer-image-restoration",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per megapixel of output",
+              "example": "1080p image (~2.1 MP) ≈ $0.0044"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "gfpgan": {
+    "title": "GFPGAN API",
+    "provider": "TencentARC",
+    "description": "Practical face restoration algorithm leveraging generative facial priors for old and degraded photos.",
+    "image": "gfpgan.png",
+    "models": [
+      {
+        "id": "gfpgan-v1",
+        "name": "GFPGAN",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "image-restore-request",
+            "name": "Image Restore",
+            "api_id": "gfpgan",
+            "operation_id": "image-restore-request",
+            "priceTag": "gfpgan"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "smart-resize": {
+    "title": "Smart Resize API",
+    "provider": "Smart Resize",
+    "description": "Intelligently resize images while preserving important content and visual quality.",
+    "image": "QRE7DDxvKhSp4xXQ0zhk_017779792051167.jpg",
+    "models": [
+      {
+        "id": "smart-resize-1.0",
+        "name": "Smart Resize 1.0",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "smart-resize-request",
+            "name": "Image to Image",
+            "api_id": "smart-resize",
+            "operation_id": "smart-resize-request",
+            "priceTag": "smart-resize",
+            "pricing_meta": {
+              "tableHeader": "Usage"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "nucleus": {
+    "title": "Nucleus Image API",
+    "provider": "Nucleus",
+    "description": "Sparse mixture-of-experts (MoE) diffusion transformer for high-fidelity text-to-image generation.",
+    "image": "nucleus-image.webp",
+    "models": [
+      {
+        "id": "nucleus-image-v1",
+        "name": "Nucleus Image",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "nucleus-image",
+            "name": "Text to Image",
+            "api_id": "nucleus-image",
+            "operation_id": "nucleus-image-request",
+            "priceTag": "nucleus-image"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "glm-image": {
+    "title": "GLM Image API",
+    "provider": "Z.ai",
+    "description": "Text-to-image and image-editing model from Z.ai with accurate text rendering, style transfer, and consistent character generation across multiple reference images.",
+    "image": "glm-image.png",
+    "models": [
+      {
+        "id": "glm-image-v1",
+        "name": "GLM Image v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "glm-image-request",
+            "name": "Text to Image",
+            "api_id": "glm-image",
+            "operation_id": "glm-image-request",
+            "priceTag": "glm-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "glm-image-image-to-image-request",
+            "name": "Image to Image",
+            "api_id": "glm-image-image-to-image",
+            "operation_id": "glm-image-image-to-image-request",
+            "priceTag": "glm-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "hidream": {
+    "title": "HiDream API",
+    "provider": "HiDream",
+    "description": "Open-source image generative foundation model family from HiDream-ai. The I1 Full (17B) and O1 / O1 Dev variants deliver state-of-the-art text-to-image and image-to-image (edit) generation.",
+    "image": "hidream.jpg",
+    "models": [
+      {
+        "id": "hidream-o1",
+        "name": "HiDream O1",
+        "version": "O1",
+        "order": 1,
+        "features": [
+          {
+            "id": "hidream-o1-image-request",
+            "name": "Text to Image",
+            "api_id": "hidream-o1-image",
+            "operation_id": "hidream-o1-image-request",
+            "priceTag": "hidream-o1-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image",
+              "tierCaption": "O1 is the production model. O1 Dev is a faster lower-cost preview tier with lower-quality outputs."
+            }
+          },
+          {
+            "id": "hidream-o1-image-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "hidream-o1-image-edit",
+            "operation_id": "hidream-o1-image-edit-request",
+            "priceTag": "hidream-o1-image-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image",
+              "tierCaption": "O1 is the production model. O1 Dev is a faster lower-cost preview tier with lower-quality outputs."
+            }
+          }
+        ]
+      },
+      {
+        "id": "hidream-o1-dev",
+        "name": "HiDream O1 Dev",
+        "version": "O1 Dev",
+        "order": 2,
+        "features": [
+          {
+            "id": "hidream-o1-image-dev-request",
+            "name": "Text to Image",
+            "api_id": "hidream-o1-image-dev",
+            "operation_id": "hidream-o1-image-dev-request",
+            "priceTag": "hidream-o1-image-dev",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "hidream-o1-image-dev-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "hidream-o1-image-dev-edit",
+            "operation_id": "hidream-o1-image-dev-edit-request",
+            "priceTag": "hidream-o1-image-dev-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      },
+      {
+        "id": "hidream-i1-full",
+        "name": "HiDream I1 Full",
+        "version": "I1 Full",
+        "order": 3,
+        "features": [
+          {
+            "id": "hidream-o1-image-request",
+            "name": "Text to Image",
+            "api_id": "hidream-o1-image",
+            "operation_id": "hidream-o1-image-request",
+            "priceTag": "hidream-o1-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image",
+              "tierCaption": "O1 is the production model. O1 Dev is a faster lower-cost preview tier with lower-quality outputs."
+            }
+          },
+          {
+            "id": "hidream-o1-image-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "hidream-o1-image-edit",
+            "operation_id": "hidream-o1-image-edit-request",
+            "priceTag": "hidream-o1-image-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image",
+              "tierCaption": "O1 is the production model. O1 Dev is a faster lower-cost preview tier with lower-quality outputs."
+            }
+          }
+        ]
+      },
+      {
+        "id": "hidream-o1-dev",
+        "name": "HiDream O1 Dev",
+        "version": "O1 Dev",
+        "order": 2,
+        "features": [
+          {
+            "id": "hidream-o1-image-dev-request",
+            "name": "Text to Image",
+            "api_id": "hidream-o1-image-dev",
+            "operation_id": "hidream-o1-image-dev-request",
+            "priceTag": "hidream-o1-image-dev",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "hidream-o1-image-dev-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "hidream-o1-image-dev-edit",
+            "operation_id": "hidream-o1-image-dev-edit-request",
+            "priceTag": "hidream-o1-image-dev-edit",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "ernie-image": {
+    "title": "Ernie Image API",
+    "provider": "Baidu",
+    "description": "Baidu's Ernie Image generates high-quality images from text prompts using the ERNIE multimodal foundation model.",
+    "image": "ernie-image-api.png",
+    "models": [
+      {
+        "id": "ernie-image-turbo",
+        "name": "Ernie Image Turbo",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "ernie-image-turbo",
+            "name": "Text to Image",
+            "api_id": "ernie-image-turbo",
+            "operation_id": "ernie-image-turbo-request",
+            "priceTag": "ernie-image-turbo"
+          }
+        ]
+      },
+      {
+        "id": "ernie-image-1.0",
+        "name": "Ernie Image 1.0",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "ernie-image-request",
+            "name": "Text to Image",
+            "api_id": "ernie-image",
+            "operation_id": "ernie-image-request",
+            "priceTag": "ernie-image",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "meshy-3d": {
+    "title": "Meshy 6 API",
+    "provider": "Meshy",
+    "description": "Meshy 6 — production-ready 3D model generation from text prompts or reference images.",
+    "image": "meshy-3d.webp",
+    "models": [
+      {
+        "id": "meshy-6",
+        "name": "Meshy 6",
+        "version": "6.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "meshy-6-text-to-3d-request",
+            "name": "Text to Image (3D Models — Text to 3D)",
+            "api_id": "meshy-6-text-to-3d",
+            "operation_id": "meshy-6-text-to-3d-request",
+            "priceTag": "meshy-6-text-to-3d"
+          },
+          {
+            "id": "meshy-6-i2-3d-request",
+            "name": "Image to Image (3D Models — Image to 3D)",
+            "api_id": "meshy-6-i2-3d",
+            "operation_id": "meshy-6-i2-3d-request",
+            "priceTag": "meshy-6-i2-3d"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "hunyuan-video": {
+    "title": "Hunyuan Video API",
+    "provider": "Tencent",
+    "description": "Tencent's Hunyuan Video — high-quality text-to-video, image-to-video, and video-to-video generation.",
+    "image": "hunyuan-video.jpeg",
+    "models": [
+      {
+        "id": "hunyuan-video-v1",
+        "name": "Hunyuan Video v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "hunyuan-video-request",
+            "name": "Text to Video",
+            "api_id": "hunyuan-video",
+            "operation_id": "hunyuan-video-request",
+            "priceTag": "hunyuan-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per video"
+            }
+          },
+          {
+            "id": "hunyuan-video-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "hunyuan-video-image-to-video",
+            "operation_id": "hunyuan-video-image-to-video-request",
+            "priceTag": "hunyuan-video-image-to-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per video"
+            }
+          },
+          {
+            "id": "hunyuan-video-video-to-video-request",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "hunyuan-video-video-to-video",
+            "operation_id": "hunyuan-video-video-to-video-request",
+            "priceTag": "hunyuan-video-video-to-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per compute second"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "heygen": {
+    "title": "Heygen Video Agent API",
+    "provider": "HeyGen",
+    "description": "HeyGen Video Agent generates lifelike avatar-driven videos from text prompts with natural lip-sync and expressive delivery.",
+    "image": "heygen-video-agent.png",
+    "models": [
+      {
+        "id": "heygen-video-agent-3.0",
+        "name": "Heygen Video Agent 3.0",
+        "version": "3.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "heygen-video-agent-request",
+            "name": "Text to Video",
+            "api_id": "heygen-video-agent",
+            "operation_id": "heygen-video-agent-request",
+            "priceTag": "heygen-video-agent",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of output video",
+              "example": "30-second video ≈ $1.02"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "mmaudio": {
+    "title": "MMAudio v2 API",
+    "provider": "Sony AI",
+    "description": "MMAudio v2 is Sony AI's text-to-audio generation model that synthesizes high-quality sound effects, ambient audio, and music from natural-language prompts.",
+    "image": "mmaudio.png",
+    "models": [
+      {
+        "id": "mmaudio-v2",
+        "name": "MMAudio v2",
+        "version": "v2",
+        "order": 1,
+        "features": [
+          {
+            "id": "mmaudio-v2-text-to-audio-request",
+            "name": "Text to Audio",
+            "api_id": "mmaudio-v2-text-to-audio",
+            "operation_id": "mmaudio-v2-text-to-audio-request",
+            "priceTag": "mmaudio-v2-text-to-audio",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second of generated audio",
+              "example": "30-second clip ≈ $0.03"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "mirelo": {
+    "title": "Mirelo SFX API",
+    "provider": "Mirelo AI",
+    "description": "Mirelo SFX generates ambient audio and sound effects from video input, producing synchronized soundscapes that match visual content.",
+    "image": "mirelo-sfx-api.png",
+    "models": [
+      {
+        "id": "mirelo-sfx-1.6",
+        "name": "Mirelo SFX 1.6",
+        "version": "1.6",
+        "order": 1,
+        "features": [
+          {
+            "id": "mirelo-sfx-1-6-text-to-audio-request",
+            "name": "Text to Audio",
+            "api_id": "mirelo-sfx-1-6-text-to-audio",
+            "operation_id": "mirelo-sfx-1-6-text-to-audio-request",
+            "priceTag": "mirelo-sfx-1-6-text-to-audio",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second",
+              "example": "about $0.10 for a 10-second sound effect"
+            }
+          },
+          {
+            "id": "mirelo-sfx-1-6-video-to-video-request",
+            "name": "Video to Video",
+            "api_id": "mirelo-sfx-1-6-video-to-video",
+            "operation_id": "mirelo-sfx-1-6-video-to-video-request",
+            "priceTag": "mirelo-sfx-1-6-video-to-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second",
+              "example": "about $0.10 for a 10-second clip"
+            }
+          }
+        ]
+      },
+      {
+        "id": "mirelo-sfx-1.0",
+        "name": "Mirelo SFX 1.0",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "mirelo-sfx-video-to-audio-request",
+            "name": "Video to Audio",
+            "api_id": "mirelo-sfx-video-to-audio",
+            "operation_id": "mirelo-sfx-video-to-audio-request",
+            "priceTag": "mirelo-sfx-video-to-audio",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second / per sample",
+              "example": "about $0.07 per sample for a 10-second clip"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "real-esrgan": {
+    "title": "Real-ESRGAN API",
+    "provider": "NightmareAI",
+    "description": "Real-ESRGAN image upscaler / super-resolution. Hosted on Replicate by NightmareAI.",
+    "image": "nightmareai.png",
+    "models": [
+      {
+        "id": "real-esrgan-v1",
+        "name": "Real-ESRGAN",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "real-esrgan-request",
+            "name": "Image Restore",
+            "api_id": "real-esrgan",
+            "operation_id": "real-esrgan-request",
+            "priceTag": "real-esrgan"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "pixal3d": {
+    "title": "Pixal3D API",
+    "provider": "Pixal3D",
+    "description": "Pixal3D — generate a single GLB 3D model from a reference image. Backed by fal.ai's pixal3d endpoint.",
+    "image": "PIXAL-3D.jpg",
+    "models": [
+      {
+        "id": "pixal3d-v1",
+        "name": "Pixal3D",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "pixal3d-request",
+            "name": "Image to Image (3D Models — Image to 3D)",
+            "api_id": "pixal3d",
+            "operation_id": "pixal3d-request",
+            "priceTag": "pixal3d"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "grok-imagine-video": {
+    "title": "Grok Imagine Video API",
+    "provider": "xAI",
+    "description": "Video generation and editing by xAI. Grok Imagine Video supports text-to-video, image-to-video, video-to-video editing, and reference-driven multi-image video synthesis (uses @Image1..@ImageN syntax to position reference images in the prompt).",
+    "image": "grok-imagine-video",
+    "models": [
+      {
+        "id": "grok-imagine-video-v1-5",
+        "name": "Grok Imagine Video 1.5",
+        "version": "1.5",
+        "order": 1,
+        "features": [
+          {
+            "id": "grok-imagine-video-v1-5-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "grok-imagine-video-v1-5-image-to-video",
+            "operation_id": "grok-imagine-video-v1-5-image-to-video-request",
+            "priceTag": "grok-imagine-video-v1-5-image-to-video"
+          }
+        ]
+      },
+      {
+        "id": "grok-imagine-video-v1",
+        "name": "Grok Imagine Video 1.0",
+        "version": "1.0",
+        "order": 2,
+        "features": [
+          {
+            "id": "grok-imagine-video-text-to-video-request",
+            "name": "Text to Video",
+            "api_id": "grok-imagine-video-text-to-video",
+            "operation_id": "grok-imagine-video-text-to-video-request",
+            "priceTag": "grok-imagine-video-text-to-video"
+          },
+          {
+            "id": "grok-imagine-video-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "grok-imagine-video-image-to-video",
+            "operation_id": "grok-imagine-video-image-to-video-request",
+            "priceTag": "grok-imagine-video-image-to-video"
+          },
+          {
+            "id": "grok-imagine-video-edit-video-request",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "grok-imagine-video-edit-video",
+            "operation_id": "grok-imagine-video-edit-video-request",
+            "priceTag": "grok-imagine-video-edit-video"
+          },
+          {
+            "id": "grok-imagine-video-reference-to-video-request",
+            "name": "Reference to Video (Ref Images to Video)",
+            "api_id": "grok-imagine-video-reference-to-video",
+            "operation_id": "grok-imagine-video-reference-to-video-request",
+            "priceTag": "grok-imagine-video-reference-to-video"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "gemini-omni": {
+    "title": "Gemini Omni API",
+    "provider": "Google",
+    "description": "Google's Gemini Omni is a multimodal video model that handles image-to-video, reference-to-video, video-to-video, and AI video editing through a single API.",
+    "image": "gemini-omni.jpg",
+    "models": [
+      {
+        "id": "gemini-omni-v1",
+        "name": "Gemini Omni v1",
+        "version": "v1",
+        "order": 1,
+        "features": [
+          {
+            "id": "gemini-omni-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "gemini-omni",
+            "operation_id": "image-to-video-request",
+            "priceTag": "gemini-omni"
+          },
+          {
+            "id": "gemini-omni-reference-to-video-request",
+            "name": "Reference to Video (Ref Images to Video)",
+            "api_id": "gemini-omni",
+            "operation_id": "reference-to-video-request",
+            "priceTag": "gemini-omni"
+          },
+          {
+            "id": "gemini-omni-video-to-video-request",
+            "name": "Video to Video",
+            "api_id": "gemini-omni",
+            "operation_id": "video-to-video-request",
+            "priceTag": "gemini-omni"
+          },
+          {
+            "id": "gemini-omni-video-editor-request",
+            "name": "Video to Video (Video Editing)",
+            "api_id": "gemini-omni",
+            "operation_id": "video-editor-request",
+            "priceTag": "gemini-omni"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "voxcpm": {
+    "title": "Openbmb VoxCPM2 API",
+    "provider": "Openbmb",
+    "description": "Openbmb VoxCPM2 delivers natural-sounding text-to-speech synthesis with voice-design and voice-cloning capabilities for custom voice generation.",
+    "image": "openbmb-voxcpm2.png",
+    "models": [
+      {
+        "id": "voxcpm-v1",
+        "name": "Openbmb VoxCPM 2.0",
+        "version": "2.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "text-to-speech",
+            "name": "Text to Speech",
+            "api_id": "openbmb-voxcpm2",
+            "operation_id": "text-to-speech",
+            "priceTag": "openbmb-voxcpm2",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "No usage charge"
+            }
+          },
+          {
+            "id": "voice-cloning",
+            "name": "Voice Cloning",
+            "api_id": "openbmb-voxcpm2",
+            "operation_id": "voice-cloning",
+            "priceTag": "openbmb-voxcpm2",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "example": "No usage charge"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "mai-image": {
+    "title": "MAI Image API",
+    "provider": "Microsoft",
+    "description": "MAI Image 2.5 API is Microsoft's proprietary, internally developed text-to-image foundation model interface that allows developers to programmatically generate and edit high-fidelity visuals directly through Microsoft Azure AI Foundry. This diffusion-based cloud programmatic gateway enables enterprise workflows to transition natural language prompts into photorealistic assets, featuring visual reasoning capabilities across scale, complex studio lighting, and spatial relationships. Built specifically to support production-level graphic pipelines, the application interface provides fine-grained, localized edit controls, precise text rendering within layouts, and strict facial identity consistency across consecutive iterations.",
+    "image": "mai-image-2.5.png",
+    "models": [
+      {
+        "id": "mai-image-2-5",
+        "name": "MAI Image 2.5",
+        "version": "2.5",
+        "order": 1,
+        "features": [
+          {
+            "id": "microsoft-mai-image-2-5-request",
+            "name": "Text to Image",
+            "api_id": "microsoft-mai-image-2-5",
+            "operation_id": "microsoft-mai-image-2-5-request",
+            "priceTag": "microsoft-mai-image-2-5",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          },
+          {
+            "id": "microsoft-mai-image-2-5-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "microsoft-mai-image-2-5-edit",
+            "operation_id": "microsoft-mai-image-2-5-edit-request",
+            "priceTag": "microsoft-mai-image-2-5",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per image"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "cosmos": {
+    "title": "Cosmos API",
+    "provider": "NVIDIA",
+    "description": "Cosmos 3 Super API delivers a unified, high-performance integration layer designed to streamline complex data workflows and accelerate digital transformation across enterprise ecosystems. This robust solution offers developers seamless connectivity, exceptional uptime, and low-latency processing to handle demanding workloads without compromising on speed or reliability. With its intuitive architecture and advanced security protocols, the platform simplifies API management, automates routine tasks, and scales effortlessly to meet growing business demands. By eliminating operational bottlenecks and ensuring data consistency across various internal endpoints, it empowers organizations to optimize their software architecture and unlock maximum technical efficiency.",
+    "image": "cosmos-3-super.png",
+    "models": [
+      {
+        "id": "cosmos-3-super",
+        "name": "Cosmos 3 Super",
+        "version": "3 Super",
+        "order": 1,
+        "features": [
+          {
+            "id": "cosmos-3-super-text-to-image-request",
+            "name": "Text to Image",
+            "api_id": "cosmos-3-super-text-to-image",
+            "operation_id": "cosmos-3-super-text-to-image-request",
+            "priceTag": "cosmos-3-super-text-to-image",
+            "pricing_meta": {
+              "tableHeader": "Usage"
+            }
+          },
+          {
+            "id": "cosmos-3-super-image-to-video-request",
+            "name": "Image to Video",
+            "api_id": "cosmos-3-super-image-to-video",
+            "operation_id": "cosmos-3-super-image-to-video-request",
+            "priceTag": "cosmos-3-super-image-to-video",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per second"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "stable-audio": {
+    "title": "Stable Audio 3 API",
+    "provider": "Stability AI",
+    "description": "High-quality AI music and audio generation from text prompts.",
+    "image": "stable-audio-3.png",
+    "models": [
+      {
+        "id": "stable-audio-3-small",
+        "name": "Stable Audio 3",
+        "version": "3",
+        "order": 1,
+        "features": [
+          {
+            "id": "stable-audio-3-small-music-text-to-audio-request",
+            "name": "Text to Music",
+            "api_id": "stable-audio-3-small-music-text-to-audio",
+            "operation_id": "stable-audio-3-small-music-text-to-audio-request",
+            "priceTag": "stable-audio-3-small-music-text-to-audio",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per audio"
+            }
+          },
+          {
+            "id": "stable-audio-3-small-music-audio-to-audio-request",
+            "name": "Audio to Audio",
+            "api_id": "stable-audio-3-small-music-audio-to-audio",
+            "operation_id": "stable-audio-3-small-music-audio-to-audio-request",
+            "priceTag": "stable-audio-3-small-music-audio-to-audio",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per audio"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "pixelcut": {
+    "title": "Pixelcut API",
+    "provider": "Pixelcut",
+    "description": "AI-powered video background removal for clean, professional results.",
+    "image": "pixelcut-video-background-removal.png",
+    "capability_map": {
+      "video-background-remover": {
+        "modelId": "pixelcut-v1",
+        "featureId": "pixelcut-video-background-removal-request"
+      }
+    },
+    "models": [
+      {
+        "id": "pixelcut-v1",
+        "name": "Pixelcut v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "pixelcut-video-background-removal-request",
+            "name": "Video to Video (Video Background Remover)",
+            "api_id": "pixelcut-video-background-removal",
+            "operation_id": "pixelcut-video-background-removal-request",
+            "priceTag": "pixelcut-video-background-removal",
+            "pricing_meta": {
+              "displayMode": "callout",
+              "unitLabel": "per 30 frames"
+            }
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "boogu-image": {
+    "title": "Boogu Image API",
+    "provider": "Boogu",
+    "description": "AI-powered text-to-image generation by Boogu.",
+    "image": "boogu-image.png",
+    "capability_map": {
+      "text-to-image": {
+        "modelId": "boogu-image-v1",
+        "featureId": "boogu-image-request"
+      },
+      "image-to-image": {
+        "modelId": "boogu-image-v1",
+        "featureId": "boogu-image-edit-request"
+      },
+      "image-editing": {
+        "modelId": "boogu-image-v1",
+        "featureId": "boogu-image-edit-request"
+      }
+    },
+    "models": [
+      {
+        "id": "boogu-image-v1",
+        "name": "Boogu Image v1",
+        "version": "1.0",
+        "order": 1,
+        "features": [
+          {
+            "id": "boogu-image-request",
+            "name": "Text to Image",
+            "api_id": "boogu-image",
+            "operation_id": "boogu-image-request",
+            "priceTag": "boogu-image"
+          },
+          {
+            "id": "boogu-image-edit-request",
+            "name": "Image to Image (Image Editing)",
+            "api_id": "boogu-image-edit",
+            "operation_id": "boogu-image-edit-request",
+            "priceTag": "boogu-image-edit"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  },
+  "zonos": {
+    "title": "Zonos API",
+    "provider": "Zyphra",
+    "description": "AI-powered text-to-speech and voice cloning by Zonos.",
+    "image": "zonos2.png",
+    "capability_map": {
+      "text-to-speech": {
+        "modelId": "zonos-v2",
+        "featureId": "zonos-2-request"
+      },
+      "voice-cloning": {
+        "modelId": "zonos-v2",
+        "featureId": "zonos-2-request"
+      }
+    },
+    "models": [
+      {
+        "id": "zonos-v2",
+        "name": "Zonos 2",
+        "version": "2",
+        "order": 1,
+        "features": [
+          {
+            "id": "zonos-2-request",
+            "name": "Text to Speech (Voice Cloning)",
+            "api_id": "zonos-2",
+            "operation_id": "zonos-2-request",
+            "priceTag": "zonos-2"
+          }
+        ]
+      }
+    ],
+    "endpoints": {}
+  }
+}

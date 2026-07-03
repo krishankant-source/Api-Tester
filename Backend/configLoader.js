@@ -9,25 +9,69 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import cfg from './config.js';
+import { buildModelsConfig } from './modelsLoader.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 let _data = null;
 
+// Three config sources the tester can run against:
+//   scraped → pixazo_config.json        (from the HTML scraper — full example bodies + params)
+//   spec    → pixazo_config.spec.json   (built from OpenAPI specs — endpoints + curl, thinner bodies)
+//   models  → Backend/Models/*.html     (parsed on the fly from hand-dropped model doc files)
+const SOURCES = {
+    scraped: cfg.configFile,            // './pixazo_config.json'
+    spec: './pixazo_config.spec.json',
+    models: './Models',                 // a directory, parsed by modelsLoader (not a single file)
+};
+let _source = 'scraped';
+
 function load() {
     if (_data) return _data;
-    const filePath = path.resolve(__dirname, cfg.configFile);
+    // The "models" source isn't a single JSON file — it's parsed from the HTML
+    // doc files in Backend/Models/ at access time (offline, no network).
+    if (_source === 'models') {
+        _data = buildModelsConfig();
+        return _data;
+    }
+    const filePath = path.resolve(__dirname, SOURCES[_source]);
     if (!fs.existsSync(filePath)) {
-        throw new Error(`Config file not found: ${filePath}\nRun the scraper first.`);
+        throw new Error(`Config file not found: ${filePath}\n${_source === 'spec' ? 'Run "Build from Specs" first.' : 'Run the scraper first.'}`);
     }
     _data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     return _data;
 }
 
+/** Which source is active ('scraped' | 'spec' | 'models'). */
+export function getSource() { return _source; }
+
+/** All selectable config sources (for the UI's source switch). */
+export function listSources() { return Object.keys(SOURCES); }
+
+// Re-exported so the server can report which Models/*.html files were parsed
+// (and which were skipped) without importing the loader separately.
+export { getModelsReport } from './modelsLoader.js';
+
+/** Switch the active config source and reload from disk (transactional). */
+export function setSource(src) {
+    if (!SOURCES[src]) throw new Error(`Unknown config source "${src}". Use: ${Object.keys(SOURCES).join(', ')}`);
+    const prev = _source;
+    _source = src;
+    _data = null;
+    try {
+        return load();
+    } catch (e) {
+        // Roll back to the last-known-good source so the tester isn't bricked.
+        _source = prev;
+        _data = null;
+        throw e;
+    }
+}
+
 /**
- * Clears the in-memory cache so the next access re-reads pixazo_config.json
- * from disk. Called after the scraper regenerates the config.
+ * Clears the in-memory cache so the next access re-reads the active config file
+ * from disk. Called after the scraper / spec-builder regenerates the config.
  */
 export function reloadConfig() {
     _data = null;
@@ -77,6 +121,8 @@ export function getModalities(slug) {
                 headers: mod.headers || {},
                 exampleRequest: mod.exampleRequest || {},
                 parameters: mod.parameters || [],
+                curl: mod.curl || null,
+                hasExample: mod.hasExample,
             });
         }
     }

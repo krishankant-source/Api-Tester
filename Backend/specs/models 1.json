@@ -1,0 +1,2490 @@
+{
+  "meta": {
+    "title": "Explore AI Image, Video and Audio Generation APIs - Pixazo API",
+    "description": "Explore Pixazo API's unified platform for AI image, video, and audio generation APIs, enabling seamless integration of next-generation media creation capabilities."
+  },
+  "seoContent": {
+    "h1": "Pixazo API Models",
+    "h2": "Explore Top AI Models",
+    "description": "Discover and access a wide range of state-of-the-art APIs for image generation, video creation, audio synthesis, and more. Filter by category or capability to find the perfect model for your needs.",
+    "breadcrumbs": [
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "Models",
+        "href": "/models"
+      }
+    ]
+  },
+  "defaultCategoryId": "trends",
+  "categories": [
+    {
+      "id": "trending-apis",
+      "label": "Trending APIs",
+      "children": [
+        {
+          "id": "trends",
+          "label": "Trends",
+          "pinnedModelIds": [
+            "seedance",
+            "nano-banana",
+            "gpt-image",
+            "happy-horse",
+            "kling",
+            "flux",
+            "veo",
+            "seedream"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "image-ai",
+      "label": "Image AI",
+      "aggregateSlug": "image-generation",
+      "pinnedModelIds": [
+        "nano-banana",
+        "gpt-image",
+        "flux",
+        "seedream",
+        "grok-imagine-image",
+        "kling"
+      ],
+      "children": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image API",
+          "pinnedModelIds": [
+            "nano-banana",
+            "gpt-image",
+            "flux",
+            "seedream",
+            "grok-imagine-image",
+            "kling",
+            "qwen-image",
+            "z-image"
+          ]
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image API",
+          "pinnedModelIds": [
+            "nano-banana",
+            "gpt-image",
+            "flux",
+            "seedream",
+            "grok-imagine-image",
+            "kling"
+          ]
+        },
+        {
+          "id": "image-editing",
+          "label": "AI Image Editing API",
+          "pinnedModelIds": [
+            "nano-banana",
+            "gpt-image",
+            "flux",
+            "seedream",
+            "grok-imagine-image",
+            "kling"
+          ]
+        },
+        {
+          "id": "image-restoration",
+          "label": "AI Image Restoration API"
+        },
+        {
+          "id": "ai-image-upscaler",
+          "label": "AI Image Upscaler API"
+        },
+        {
+          "id": "reference-to-image",
+          "label": "Reference to Image API"
+        },
+        {
+          "id": "image-background-remover",
+          "label": "AI Image Background Remover API"
+        }
+      ]
+    },
+    {
+      "id": "video-ai",
+      "label": "Video AI",
+      "aggregateSlug": "video-generation",
+      "pinnedModelIds": [
+        "seedance",
+        "kling",
+        "happy-horse",
+        "veo",
+        "pika",
+        "grok-imagine-video"
+      ],
+      "children": [
+        {
+          "id": "text-to-video",
+          "label": "Text to Video API"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video API"
+        },
+        {
+          "id": "speech-to-video",
+          "label": "Speech to Video API"
+        },
+        {
+          "id": "video-editor",
+          "label": "AI Video Editor API"
+        },
+        {
+          "id": "ai-video-upscaler",
+          "label": "AI Video Upscaler API"
+        },
+        {
+          "id": "lipsync",
+          "label": "AI Lipsync API"
+        },
+        {
+          "id": "text-to-animation",
+          "label": "AI Animation Generation API"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video API",
+          "pinnedModelIds": [
+            "seedance",
+            "kling",
+            "happy-horse",
+            "pika",
+            "veo"
+          ]
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video API"
+        },
+        {
+          "id": "video-background-remover",
+          "label": "AI Video Background Remover API"
+        },
+        {
+          "id": "audio-to-video",
+          "label": "Audio to Video API"
+        }
+      ]
+    },
+    {
+      "id": "audio-music-ai",
+      "label": "Audio & Music AI",
+      "aggregateSlug": "audio-generation",
+      "pinnedModelIds": [
+        "elevenlabs",
+        "minimax",
+        "chatterbox",
+        "tracks",
+        "vibevoice",
+        "lyria",
+        "gemini",
+        "ace-step",
+        "mmaudio",
+        "qwen-tts",
+        "xtts",
+        "mirelo"
+      ],
+      "children": [
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech API"
+        },
+        {
+          "id": "audio-generation",
+          "label": "AI Music & Audio Generation API"
+        },
+        {
+          "id": "voice-cloning",
+          "label": "AI Voice Cloning API"
+        },
+        {
+          "id": "text-to-music",
+          "label": "Text to Music API"
+        },
+        {
+          "id": "text-to-song",
+          "label": "Text to Song API"
+        },
+        {
+          "id": "video-to-audio",
+          "label": "Video to Audio API"
+        }
+      ]
+    },
+    {
+      "id": "3d-models",
+      "label": "3D Models",
+      "children": [
+        {
+          "id": "3d-models",
+          "label": "3D Models"
+        }
+      ]
+    },
+    {
+      "id": "virtual-try-on",
+      "label": "Virtual Try On",
+      "children": [
+        {
+          "id": "virtual-try-on",
+          "label": "Virtual Try On"
+        }
+      ]
+    },
+    {
+      "id": "lora-trainers",
+      "label": "LoRA Trainers",
+      "children": [
+        {
+          "id": "lora",
+          "label": "LoRA"
+        },
+        {
+          "id": "lora-i2i",
+          "label": "LoRA (Image to Image)"
+        }
+      ]
+    },
+    {
+      "id": "free-models",
+      "label": "Free APIs",
+      "children": [
+        {
+          "id": "free",
+          "label": "Free"
+        }
+      ]
+    },
+    {
+      "id": "consistent-character",
+      "label": "Consistent Character",
+      "children": [
+        {
+          "id": "consistent-character",
+          "label": "Consistent Character"
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "id": "happy-horse",
+      "title": "Happy Horse",
+      "image": "happy_horse1-0.png",
+      "link": "/models/happy-horse",
+      "version": "v1.0",
+      "provider": "Alibaba",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Images to Video)"
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        }
+      ]
+    },
+    {
+      "id": "p-video",
+      "title": "P Video",
+      "image": "pvideo.png",
+      "link": "/models/p-video",
+      "version": "1.0",
+      "provider": "Pruna AI",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        }
+      ]
+    },
+    {
+      "id": "seedance",
+      "title": "Seedance 2",
+      "image": "seedance.png",
+      "link": "/models/seedance",
+      "version": "1-0-pro",
+      "provider": "BytePlus",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Image + Ref Video + Ref Audio to Video)"
+        }
+      ]
+    },
+    {
+      "id": "sora",
+      "title": "Sora",
+      "image": "Sora-2-Pro-API.png",
+      "link": "/models/sora",
+      "version": "sora-2-pro",
+      "provider": "OpenAI",
+      "popular": true,
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        }
+      ]
+    },
+    {
+      "id": "veo",
+      "title": "Veo 3.1",
+      "image": "VEO3.1-FAST-TEXT-TO-VIDEO.jpg",
+      "link": "/models/veo",
+      "version": "v3.1",
+      "provider": "Google",
+      "popular": true,
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Images to Video)"
+        }
+      ]
+    },
+    {
+      "id": "runway",
+      "title": "Runway",
+      "image": "runway.png",
+      "link": "/models/runway",
+      "version": "v4.5",
+      "provider": "Runway",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        }
+      ]
+    },
+    {
+      "id": "kling",
+      "title": "Kling",
+      "image": "Kling-Video-v2.6-Motion-Control-API.png",
+      "link": "/models/kling",
+      "version": "v2.6",
+      "provider": "Kuaishou",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "virtual-try-on",
+          "label": "Image to Image (Virtual Try On)"
+        },
+        {
+          "id": "lipsync",
+          "label": "AI Lipsync"
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Images to Video)"
+        },
+        {
+          "id": "audio-to-video",
+          "label": "Audio to Video (Ref Image + Ref Audio to Video — Avatar)"
+        }
+      ]
+    },
+    {
+      "id": "pika",
+      "title": "Pika",
+      "image": "pika.png",
+      "link": "/models/pika",
+      "version": "v2.2",
+      "provider": "Pika Labs",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Images to Video)"
+        }
+      ]
+    },
+    {
+      "id": "higgsfield",
+      "title": "Higgsfield",
+      "image": "higgsfield.png",
+      "link": "/models/higgsfield",
+      "version": "v1",
+      "provider": "Higgsfield",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        }
+      ]
+    },
+    {
+      "id": "genflare",
+      "title": "GenFlare",
+      "image": "Baidu-GenFlare-2.0-API.png",
+      "link": "/models/genflare",
+      "version": "2.0",
+      "provider": "Baidu",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        }
+      ]
+    },
+    {
+      "id": "omnihuman",
+      "title": "OmniHuman",
+      "image": "omnihuman.png",
+      "link": "/models/omnihuman",
+      "version": "v1.5",
+      "provider": "BytePlus",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "lipsync",
+          "label": "AI Lipsync"
+        },
+        {
+          "id": "audio-to-video",
+          "label": "Audio to Video (Ref Image + Ref Audio to Video — Lipsync)"
+        }
+      ]
+    },
+    {
+      "id": "seedream",
+      "title": "Seedream",
+      "image": "seedream.png",
+      "link": "/models/seedream",
+      "version": "5.0",
+      "provider": "BytePlus",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "chatterbox",
+      "title": "Chatterbox",
+      "image": "resemble-ai-chatterbox.png",
+      "link": "/models/chatterbox",
+      "version": "v1",
+      "provider": "Resemble-ai",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        },
+        {
+          "id": "voice-cloning",
+          "label": "Voice Cloning"
+        }
+      ]
+    },
+    {
+      "id": "crystal-upscaler",
+      "title": "Crystal Upscaler",
+      "image": "crystal-upscaler.png",
+      "link": "/models/crystal-upscaler",
+      "version": "v1",
+      "provider": "Clarityai",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "ai-image-upscaler",
+          "label": "Image to Image (Image Upscaler)"
+        }
+      ]
+    },
+    {
+      "id": "lucy-edit",
+      "title": "Lucy Edit",
+      "image": "Lucy-Edit-Fast-API.png",
+      "link": "/models/lucy-edit",
+      "version": "fast",
+      "provider": "Decart",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "video-to-video",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        }
+      ]
+    },
+    {
+      "id": "distilbert",
+      "title": "Distilbert",
+      "image": "Distilbert.png",
+      "link": "/models/distilbert",
+      "version": "",
+      "provider": "HuggingFace",
+      "trending": true,
+      "status": 0,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        }
+      ]
+    },
+    {
+      "id": "dreamshaper",
+      "title": "Dreamshaper",
+      "image": "Dreamshaper-8-LCM.png",
+      "link": "/models/dreamshaper",
+      "version": "v1",
+      "provider": "Lykon",
+      "status": 0,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "flawless-api",
+      "title": "Flawless",
+      "image": "Flawless-API.png",
+      "link": "/models/flawless-api",
+      "version": "v1.0",
+      "provider": "flawless",
+      "status": 0,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "sticker-maker",
+      "title": "Sticker Maker",
+      "image": "AI-Sticker-Maker-API.png",
+      "link": "/models/sticker-maker",
+      "version": "v1",
+      "provider": "Sticker Maker",
+      "status": 0,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image (Sticker)"
+        }
+      ]
+    },
+    {
+      "id": "face-sticker",
+      "title": "Face Sticker",
+      "image": "Face-to-Sticker-API.png",
+      "link": "/models/face-sticker",
+      "version": "v1",
+      "provider": "Fofr",
+      "status": 0,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "fashn-vton",
+      "title": "Fashn Virtual Try On",
+      "image": "FASHN-Virtual-Try-On-V1.6-API-1.png",
+      "link": "/models/fashn-vton",
+      "version": "v3",
+      "provider": "Fashn",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "virtual-try-on",
+          "label": "Image to Image (Virtual Try On)"
+        }
+      ]
+    },
+    {
+      "id": "flux",
+      "title": "Flux",
+      "image": "Flux-2-API.png",
+      "link": "/models/flux",
+      "version": "v2",
+      "provider": "Black Forest Labs",
+      "popular": true,
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "lora",
+          "label": "Image to Image (LoRA Trainer)"
+        },
+        {
+          "id": "image-restoration",
+          "label": "Image Restoration"
+        },
+        {
+          "id": "free",
+          "label": "Free"
+        },
+        {
+          "id": "virtual-try-on",
+          "label": "Image to Image (Virtual Try On)"
+        }
+      ]
+    },
+    {
+      "id": "gpt-image",
+      "title": "GPT Image 2",
+      "image": "GPT-Image-1.5-API.jpg",
+      "link": "/models/gpt-image",
+      "version": "v1.5",
+      "provider": "OpenAI",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "grok-imagine-image",
+      "title": "Grok Imagine Image",
+      "image": "Grok-Imagine-API.png",
+      "link": "/models/grok-imagine-image",
+      "version": "Pro Quality",
+      "provider": "xAI",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "hunyuan",
+      "title": "Hunyuan",
+      "image": "Hunyuan3D-2.jpg",
+      "link": "/models/hunyuan",
+      "version": "v3.0",
+      "provider": "Tencent",
+      "popular": true,
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "3d-models",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image (3D Models — Text to 3D)"
+        }
+      ]
+    },
+    {
+      "id": "hyper3d",
+      "title": "Hyper3D",
+      "image": "Hyper3D-Rodin-API.png",
+      "link": "/models/hyper3d",
+      "version": "v1",
+      "provider": "Hyper3D",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (3D Models — Text & Image to 3D)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (3D Models — Text & Image to 3D)"
+        },
+        {
+          "id": "3d-models",
+          "label": "Image to Image (3D Models — Text & Image to 3D)"
+        }
+      ]
+    },
+    {
+      "id": "ideogram",
+      "title": "Ideogram",
+      "image": "Ideogram-API.jpg",
+      "link": "/models/ideogram",
+      "version": "turbo",
+      "provider": "Ideogram",
+      "popular": true,
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-background-remover",
+          "label": "Image to Image (Image Background Removal)"
+        }
+      ]
+    },
+    {
+      "id": "idm-vton",
+      "title": "IDM VTON",
+      "image": "IDM-VTON-API.jpg",
+      "link": "/models/idm-vton",
+      "version": "v1",
+      "provider": "IDM-VTON",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "virtual-try-on",
+          "label": "Image to Image (Virtual Try On)"
+        }
+      ]
+    },
+    {
+      "id": "ltx",
+      "title": "LTX",
+      "image": "LTXV-2.0-Text-To-Video-–-1.png",
+      "link": "/models/ltx",
+      "version": "v2.3",
+      "provider": "Lightricks",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "audio-to-video",
+          "label": "Audio to Video"
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        }
+      ]
+    },
+    {
+      "id": "longcat-image",
+      "title": "LongCat Image",
+      "image": "LongCat-Image-API.png",
+      "link": "/models/longcat-image",
+      "version": "v1",
+      "provider": "LongCat",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "luma",
+      "title": "Luma Dream Machine",
+      "image": "Luma-Dream-Machine-API-1.png",
+      "link": "/models/luma",
+      "version": "v1.5",
+      "provider": "Luma AI",
+      "popular": true,
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        }
+      ]
+    },
+    {
+      "id": "hailuo",
+      "title": "Hailuo",
+      "image": "MiniMax-Hailuo-AI.jpg",
+      "link": "/models/hailuo",
+      "version": "v2.3",
+      "provider": "MiniMax",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        }
+      ]
+    },
+    {
+      "id": "mochi",
+      "title": "Mochi",
+      "image": "Mochi-V1-API.png",
+      "link": "/models/mochi",
+      "version": "v1",
+      "provider": "Mochi",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        }
+      ]
+    },
+    {
+      "id": "nano-banana",
+      "title": "Nano Banana 2",
+      "image": "Nano-Banana-Pro-Async-API.png",
+      "link": "/models/nano-banana",
+      "version": "pro",
+      "provider": "Google",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "pixelforge",
+      "title": "Pixelforge",
+      "image": "Pixelforge-Relighting-–-1.jpg",
+      "link": "/models/pixelforge",
+      "version": "v1",
+      "provider": "Pixazo",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing — Relighting)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing — Relighting)"
+        }
+      ]
+    },
+    {
+      "id": "qwen-image",
+      "title": "Qwen Image",
+      "image": "Qwen-Image-Layered-API.jpg",
+      "link": "/models/qwen-image",
+      "version": "v3",
+      "provider": "Alibaba",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "lora",
+          "label": "Text to Image (LoRA Trainer)"
+        },
+        {
+          "id": "lora-i2i",
+          "label": "Image to Image (LoRA Trainer)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "recraft",
+      "title": "Recraft",
+      "image": "Recraft-V3-API.png",
+      "link": "/models/recraft",
+      "version": "v4",
+      "provider": "Recraft",
+      "popular": true,
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "reve-image",
+      "title": "Reve Image",
+      "image": "fal-ai-reve-remix-–-1.png",
+      "link": "/models/reve-image",
+      "version": "v1",
+      "provider": "Reve",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "seedvr",
+      "title": "Seed VR",
+      "image": "seedvr-upscale-video-–-1.jpg",
+      "link": "/models/seedvr",
+      "version": "v1",
+      "provider": "Seed VR",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "ai-image-upscaler",
+          "label": "Image to Image (Image Upscaler)"
+        },
+        {
+          "id": "ai-video-upscaler",
+          "label": "Video to Video (Video Upscaler)"
+        }
+      ]
+    },
+    {
+      "id": "stable-diffusion",
+      "title": "Stable Diffusion",
+      "image": "SDXL.png",
+      "link": "/models/stable-diffusion",
+      "version": "v3.5",
+      "provider": "Stability AI",
+      "popular": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Inpainting — Ref Image + Ref Mask to Image)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Inpainting — Ref Image + Ref Mask to Image)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "free",
+          "label": "Free"
+        }
+      ]
+    },
+    {
+      "id": "studio-ghibli",
+      "title": "Studio Ghibli",
+      "image": "Imag-1.jpg",
+      "link": "/models/studio-ghibli",
+      "version": "v1",
+      "provider": "Ghibli",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "topaz",
+      "title": "Topaz",
+      "image": "Topaz-Video-Upscaler-API.png",
+      "link": "/models/topaz",
+      "version": "v1",
+      "provider": "Topaz",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "ai-video-upscaler",
+          "label": "Video to Video (Video Upscaler)"
+        }
+      ]
+    },
+    {
+      "id": "tripo3d",
+      "title": "Tripo3D",
+      "image": "Tripo3D-v2.5-API.png",
+      "link": "/models/tripo3d",
+      "version": "v2.5",
+      "provider": "Tripo",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        },
+        {
+          "id": "3d-models",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        }
+      ]
+    },
+    {
+      "id": "auraflow",
+      "title": "Auraflow",
+      "image": "AuraFlow-v0.3-API.png",
+      "link": "/models/auraflow",
+      "version": "v0.3",
+      "provider": "Auraflow",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "veed",
+      "title": "Veed",
+      "image": "VEED-Fabric-1.0-API.jpg",
+      "link": "/models/veed",
+      "version": "v1.0",
+      "provider": "Veed",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "video-background-remover",
+          "label": "Video to Video (Video Background Remover)"
+        },
+        {
+          "id": "audio-to-video",
+          "label": "Audio to Video (Ref Image + Ref Audio to Video — Talking Avatar)"
+        },
+        {
+          "id": "lipsync",
+          "label": "AI Lipsync"
+        }
+      ]
+    },
+    {
+      "id": "vibevoice",
+      "title": "VibeVoice",
+      "image": "VibeVoice-Realtime-0.5B-API.png",
+      "link": "/models/vibevoice",
+      "version": "v1",
+      "provider": "Microsoft",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        },
+        {
+          "id": "voice-cloning",
+          "label": "Voice Cloning"
+        }
+      ]
+    },
+    {
+      "id": "vidu",
+      "title": "Vidu",
+      "image": "Vidu-Q2-Reference-to-Video-Pro-API.png",
+      "link": "/models/vidu",
+      "version": "v1",
+      "provider": "Vidu",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Image + Ref Video + Ref Audio to Video)"
+        }
+      ]
+    },
+    {
+      "id": "wan",
+      "title": "Wan",
+      "image": "Wan-2.2-image-to-video-–-2.png",
+      "link": "/models/wan",
+      "version": "v2.6",
+      "provider": "Alibaba",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Image + Ref Video to Video)"
+        },
+        {
+          "id": "audio-to-video",
+          "label": "Audio to Video (Ref Audio to Video)"
+        }
+      ]
+    },
+    {
+      "id": "xtts",
+      "title": "XTTS",
+      "image": "XTTS-v2-API.png",
+      "link": "/models/xtts",
+      "version": "v2",
+      "provider": "Xtts",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        },
+        {
+          "id": "voice-cloning",
+          "label": "Voice Cloning"
+        }
+      ]
+    },
+    {
+      "id": "tracks",
+      "title": "Tracks",
+      "image": "tracks.png",
+      "link": "/models/tracks",
+      "version": "v1.0",
+      "provider": "Pixazo",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-song",
+          "label": "Text to Song"
+        },
+        {
+          "id": "free",
+          "label": "Free"
+        }
+      ]
+    },
+    {
+      "id": "minimax",
+      "title": "Minimax",
+      "image": "minimax.png",
+      "link": "/models/minimax",
+      "version": "v2.3",
+      "provider": "MiniMax",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "text-to-music",
+          "label": "Text to Music"
+        },
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "ace-step",
+      "title": "Ace Step",
+      "image": "ace-step.png",
+      "link": "/models/ace-step",
+      "version": "v1.0",
+      "provider": "ACE Studio",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-song",
+          "label": "Text to Song"
+        }
+      ]
+    },
+    {
+      "id": "elevenlabs",
+      "title": "ElevenLabs",
+      "image": "ElevenLabs-Music-API.png",
+      "link": "/models/elevenlabs",
+      "version": "v3",
+      "provider": "ElevenLabs",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        },
+        {
+          "id": "voice-cloning",
+          "label": "Voice Cloning"
+        },
+        {
+          "id": "text-to-music",
+          "label": "Text to Music"
+        }
+      ]
+    },
+    {
+      "id": "z-image",
+      "title": "Z Image",
+      "image": "Z-Image-Turbo-API.png",
+      "link": "/models/z-image",
+      "version": "turbo",
+      "provider": "Z-Image",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "bria",
+      "title": "Bria",
+      "image": "bria.png",
+      "link": "/models/bria",
+      "version": "2.0",
+      "provider": "Bria",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Background Removal)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Background Removal)"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-background-remover",
+          "label": "Image to Image (Image Background Remover)"
+        }
+      ]
+    },
+    {
+      "id": "dalle",
+      "title": "Dalle",
+      "image": "dalle.png",
+      "link": "/models/dalle",
+      "version": "v1",
+      "provider": "OpenAI",
+      "status": 0,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "pixverse",
+      "title": "Pixverse",
+      "image": "pixverse.png",
+      "link": "/models/pixverse",
+      "version": "v6",
+      "provider": "Pixverse",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        }
+      ]
+    },
+    {
+      "id": "sdxl",
+      "title": "SDXL",
+      "image": "sdxl.png",
+      "link": "/models/sdxl",
+      "version": "v1.0",
+      "provider": "Stability AI",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "free",
+          "label": "Free"
+        }
+      ]
+    },
+    {
+      "id": "trellis3d",
+      "title": "Trellis3d",
+      "image": "trellis3d.png",
+      "link": "/models/trellis3d",
+      "version": "v2",
+      "provider": "Trellis",
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        },
+        {
+          "id": "3d-models",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        }
+      ]
+    },
+    {
+      "id": "firered-image-edit",
+      "title": "FireRed Image Edit",
+      "image": "fireRed1.png",
+      "link": "/models/firered-image-edit",
+      "version": "v1",
+      "provider": "FireRed Image Edit",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "lyria",
+      "title": "Lyria",
+      "image": "lyria.png",
+      "link": "/models/lyria",
+      "version": "v2",
+      "provider": "Google",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-music",
+          "label": "Text to Music"
+        }
+      ]
+    },
+    {
+      "id": "kandinsky",
+      "title": "Kandinsky",
+      "image": "kandinsky5Pro.png",
+      "link": "/models/kandinsky",
+      "version": "v5-pro",
+      "provider": "Kandinsky",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        }
+      ]
+    },
+    {
+      "id": "p-image",
+      "title": "P Image",
+      "image": "p-image.png",
+      "link": "/models/p-image",
+      "version": "v1",
+      "provider": "Pruna AI",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "ai-image-upscaler",
+          "label": "Image to Image (Image Upscaler)"
+        }
+      ]
+    },
+    {
+      "id": "gemini",
+      "title": "Gemini",
+      "image": "gemini.png",
+      "link": "/models/gemini",
+      "version": "v3.1",
+      "provider": "Google",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        }
+      ]
+    },
+    {
+      "id": "qwen-tts",
+      "title": "Qwen TTS",
+      "image": "Qwen3-TTS-1.7B-API.png",
+      "link": "/models/qwen-tts",
+      "version": "v3",
+      "provider": "Alibaba",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        }
+      ]
+    },
+    {
+      "id": "codeformer",
+      "title": "Codeformer",
+      "image": "codeformer.png",
+      "link": "/models/codeformer",
+      "version": "v1",
+      "provider": "Sczhou",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-restoration",
+          "label": "Image Restoration"
+        }
+      ]
+    },
+    {
+      "id": "gfpgan",
+      "title": "GFPGAN",
+      "image": "gfpgan.png",
+      "link": "/models/gfpgan",
+      "version": "v1",
+      "provider": "TencentARC",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-restoration",
+          "label": "Image Restoration"
+        }
+      ]
+    },
+    {
+      "id": "smart-resize",
+      "title": "Smart Resize",
+      "image": "QRE7DDxvKhSp4xXQ0zhk_017779792051167.webp",
+      "link": "/models/smart-resize",
+      "version": "1.0",
+      "provider": "Smart Resize",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Resize Image)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Resize Image)"
+        }
+      ]
+    },
+    {
+      "id": "nucleus",
+      "title": "Nucleus Image",
+      "image": "nucleus-image.webp",
+      "link": "/models/nucleus",
+      "version": "v1",
+      "provider": "Nucleus",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "glm-image",
+      "title": "GLM Image",
+      "image": "glm-image.png",
+      "link": "/models/glm-image",
+      "version": "v1",
+      "provider": "Z.ai",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "hidream",
+      "title": "HiDream",
+      "image": "hidream.jpg",
+      "link": "/models/hidream",
+      "version": "O1",
+      "provider": "HiDream",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "ernie-image",
+      "title": "Ernie Image",
+      "image": "ernie-image-api.png",
+      "link": "/models/ernie-image",
+      "version": "1.0",
+      "provider": "Baidu",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "meshy-3d",
+      "title": "Meshy",
+      "image": "meshy-3d.webp",
+      "link": "/models/meshy-3d",
+      "version": "v6",
+      "provider": "Meshy",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "3d-models",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        }
+      ]
+    },
+    {
+      "id": "hunyuan-video",
+      "title": "Hunyuan Video",
+      "image": "hunyuan-video.jpeg",
+      "link": "/models/hunyuan-video",
+      "version": "v1",
+      "provider": "Tencent",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        }
+      ]
+    },
+    {
+      "id": "heygen",
+      "title": "Heygen Video Agent",
+      "image": "heygen-video-agent.png",
+      "link": "/models/heygen",
+      "version": "3.0",
+      "provider": "HeyGen",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        }
+      ]
+    },
+    {
+      "id": "mmaudio",
+      "title": "MMAudio",
+      "image": "mmaudio.png",
+      "link": "/models/mmaudio",
+      "version": "v2",
+      "provider": "Sony AI",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "audio-generation",
+          "label": "Audio Generation"
+        }
+      ]
+    },
+    {
+      "id": "mirelo",
+      "title": "Mirelo SFX",
+      "image": "mirelo-sfx-api.png",
+      "link": "/models/mirelo",
+      "version": "1.0",
+      "provider": "Mirelo AI",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "video-to-audio",
+          "label": "Video to Audio"
+        }
+      ]
+    },
+    {
+      "id": "real-esrgan",
+      "title": "Real-ESRGAN",
+      "image": "nightmareai.png",
+      "link": "/models/real-esrgan",
+      "version": "v1",
+      "provider": "NightmareAI",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "image-restoration",
+          "label": "Image Restoration"
+        }
+      ]
+    },
+    {
+      "id": "pixal3d",
+      "title": "Pixal3D",
+      "image": "PIXAL-3D.jpg",
+      "link": "/models/pixal3d",
+      "version": "v1",
+      "provider": "Pixal3D",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "3d-models",
+          "label": "Image to Image (3D Models — Image to 3D)"
+        }
+      ]
+    },
+    {
+      "id": "grok-imagine-video",
+      "title": "Grok Imagine Video",
+      "image": "grok-imagine-video",
+      "link": "/models/grok-imagine-video",
+      "version": "v1",
+      "provider": "xAI",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "text-to-video",
+          "label": "Text to Video"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Images to Video)"
+        }
+      ]
+    },
+    {
+      "id": "gemini-omni",
+      "title": "Gemini Omni",
+      "image": "gemini-omni.jpg",
+      "link": "/models/gemini-omni",
+      "version": "v1",
+      "provider": "Google",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        },
+        {
+          "id": "reference-to-video",
+          "label": "Reference to Video (Ref Images to Video)"
+        },
+        {
+          "id": "video-to-video",
+          "label": "Video to Video"
+        },
+        {
+          "id": "video-editor",
+          "label": "Video to Video (Video Editing)"
+        }
+      ]
+    },
+    {
+      "id": "voxcpm",
+      "title": "Openbmb VoxCPM2",
+      "image": "openbmb-voxcpm2.png",
+      "link": "/models/voxcpm",
+      "version": "v1",
+      "provider": "Openbmb",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        },
+        {
+          "id": "voice-cloning",
+          "label": "Voice Cloning"
+        }
+      ]
+    },
+    {
+      "id": "mai-image",
+      "title": "MAI Image",
+      "image": "mai-image-2.5.png",
+      "link": "/models/mai-image",
+      "version": "2.5",
+      "provider": "Microsoft",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "cosmos",
+      "title": "Cosmos",
+      "image": "cosmos-3-super.png",
+      "link": "/models/cosmos",
+      "version": "3 super",
+      "provider": "NVIDIA",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-to-video",
+          "label": "Image to Video"
+        }
+      ]
+    },
+    {
+      "id": "stable-audio",
+      "title": "Stable Audio",
+      "image": "stable-audio-3.png",
+      "link": "/models/stable-audio",
+      "version": "v3",
+      "provider": "Stability AI",
+      "trending": false,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "audio-generation",
+          "label": "Audio Generation"
+        },
+        {
+          "id": "text-to-music",
+          "label": "Text to Music"
+        }
+      ]
+    },
+    {
+      "id": "pixelcut",
+      "title": "Pixelcut Video Background Removal",
+      "image": "pixelcut-video-background-removal.png",
+      "link": "/models/pixelcut",
+      "version": "1.0",
+      "provider": "Pixelcut",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "video-background-remover",
+          "label": "Video to Video (Video Background Remover)"
+        }
+      ]
+    },
+    {
+      "id": "krea",
+      "title": "Krea",
+      "image": "krea.png",
+      "link": "/models/krea",
+      "version": "2",
+      "provider": "Krea.AI",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        }
+      ]
+    },
+    {
+      "id": "boogu-image",
+      "title": "Boogu Image",
+      "image": "boogu-image.png",
+      "link": "/models/boogu-image",
+      "version": "1.0",
+      "provider": "Boogu",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-image",
+          "label": "Text to Image"
+        },
+        {
+          "id": "image-to-image",
+          "label": "Image to Image (Image Editing)"
+        },
+        {
+          "id": "image-editing",
+          "label": "Image to Image (Image Editing)"
+        }
+      ]
+    },
+    {
+      "id": "zonos",
+      "title": "Zonos2",
+      "image": "zonos2.png",
+      "link": "/models/zonos",
+      "version": "2",
+      "provider": "Zyphra",
+      "trending": true,
+      "status": 1,
+      "price": 0,
+      "save": "0%",
+      "categories": [
+        {
+          "id": "trends",
+          "label": "Trends"
+        },
+        {
+          "id": "text-to-speech",
+          "label": "Text to Speech"
+        },
+        {
+          "id": "voice-cloning",
+          "label": "Voice Cloning"
+        }
+      ]
+    }
+  ]
+}
